@@ -35,13 +35,21 @@ def load_pred(path):
 
 
 def build_fused_scores(records):
-    """对每条预测记录算融合分数。"""
+    """对每条预测记录算融合分数。LLM 预测的 main/aux 强制加入候选集。"""
     all_fused = []
     for r in records:
         if r["oos"]:
             all_fused.append({})
             continue
         candidates = [(it, sim) for it, sim in r["retrieved"]]
+        # 强制加入 LLM 预测的 intent（检索未召回时 sim=0 → f_ret=1.0）
+        cand_ints = {it for it, _ in candidates}
+        if r.get("llm_main") and r["llm_main"] not in cand_ints:
+            candidates.append((r["llm_main"], 0.0))
+        for a in (r.get("llm_aux") or []):
+            existing = {it for it, _ in candidates}
+            if a not in existing:
+                candidates.append((a, 0.0))
         ret = f_ret(candidates)
         llm = f_llm(r, candidates)
         fused = fuse(ret, llm, alpha=CFG["conformal"]["fusion_alpha"])

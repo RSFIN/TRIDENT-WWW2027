@@ -1,0 +1,10 @@
+﻿[calib] lambda=1.0000 empirical_risk=1.0000
+[oos] theta_oos=0.8251 (FPR=0.05)
+
+=== Results ===
+Main Macro-F1:     0.4372
+Set Exact Match:   0.0713
+Set Jaccard:       0.1676
+Coverage J>=0.5:   0.0266
+Avg set size:      3.16
+Decision dist:     Counter({'clarify': 655, 'reject': 173})

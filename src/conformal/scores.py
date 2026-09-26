@@ -9,12 +9,24 @@ def f_ret(candidates: List[Tuple[str, float]]) -> Dict[str, float]:
 
 
 def f_llm(llm_result: Dict, candidates: List[Tuple[str, float]]) -> Dict[str, float]:
-    """LLM 自报置信 → 非一致性。未在 confidence 里的给 1.0。"""
-    conf = llm_result.get("llm_confidence") or llm_result.get("confidence", {})
+    """LLM 结构化输出 → 非一致性。
+
+    利用 llm_main / llm_aux 字段构建分层信号：
+      - llm_main: 非一致性 = 0.0（主意图，最强信号）
+      - llm_aux:  非一致性 = 0.3
+      - 其他候选: 非一致性 = 0.7
+    confidence 数值仅在同层内做微调。
+    """
+    main = llm_result.get("llm_main", "")
+    aux = set(llm_result.get("llm_aux") or [])
     out = {}
     for intent, _ in candidates:
-        c = conf.get(intent, 0.5)  # 未提及的给中位置信
-        out[intent] = 1.0 - float(c)
+        if intent == main:
+            out[intent] = 0.0
+        elif intent in aux:
+            out[intent] = 0.3
+        else:
+            out[intent] = 0.7
     return out
 
 

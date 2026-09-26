@@ -28,16 +28,28 @@ def stratified_loss(
     pred_aux: List[str],
     true_main: str,
     true_aux: List[str],
-    tau_aux: float = 1.0,
+    tau_aux: float = 0.5,
 ) -> float:
-    """分层 loss，返回 {0, 0.5, 1}（归一化到 [0,1]）。"""
+    """分层 loss，返回 {0, 0.3, 0.5, 1.0}。
+
+    设计原则：正确答案在预测集合里就算部分正确。
+      - 0.0: main 对 且 aux Jaccard >= tau（集合完全覆盖）
+      - 0.3: main 对 但 aux Jaccard < tau（默认对但次意图不全）
+      - 0.5: main 错 但 true_main 在 pred_aux 里（给了候选但默认错了）
+      - 1.0: true_main 完全不在预测集合里
+    """
+    pred_set = {pred_main} | set(pred_aux)
     main_ok = (pred_main == true_main)
-    if not main_ok:
+    main_covered = true_main in pred_set
+
+    if not main_covered:
         return 1.0
-    aux_j = jaccard(pred_aux, true_aux)
-    if aux_j >= tau_aux:
-        return 0.0
-    return 0.5  # 主对、次不够好
+    if main_ok:
+        aux_j = jaccard(pred_aux, true_aux)
+        if aux_j >= tau_aux:
+            return 0.0
+        return 0.3
+    return 0.5  # main 错但 true_main 在 aux 里
 
 
 def calibrate_threshold(
