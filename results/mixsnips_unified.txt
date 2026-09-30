@@ -1,0 +1,13 @@
+﻿[mixsnips] 统一口径 v1.0 (alpha=0.1, full-level)
+lambda=1.0000 empirical_risk=1.0000 theta_oos=0.7321
+Main Macro-F1:      0.7674
+Set Exact Match:    0.0000
+Set IoU:            0.4274
+Hit@1/3/5:          0.1664 / 0.7617 / 0.7640
+Coverage(J>=0.5):   0.5966
+Coverage(含):       0.9477
+Avg set size:       3.81
+ECE (15 bins):      0.0156
+误拒率:             0.0482 (106/2199)
+澄清触发率:         0.9518
+Decision dist:      {'clarify': 2093, 'reject': 106}
