@@ -66,6 +66,8 @@ def main():
     ap.add_argument("--k-max", type=int, default=None)
     ap.add_argument("--fusion-alpha", type=float, default=None)
     ap.add_argument("--kr", type=int, default=None)
+    ap.add_argument("--tau-aux", type=float, default=None)
+    ap.add_argument("--pred-subdir", type=str, default="")
     args = ap.parse_args()
     ds = args.dataset
 
@@ -73,9 +75,12 @@ def main():
     fusion_alpha = args.fusion_alpha if args.fusion_alpha is not None \
         else CFG["conformal"]["fusion_alpha"]
     kr = args.kr
+    tau_aux = args.tau_aux if args.tau_aux is not None else CFG["conformal"]["tau_aux"]
 
-    calib = load_pred(ROOT / "data" / "predictions" / ds / "calib.jsonl")
-    test = load_pred(ROOT / "data" / "predictions" / ds / "test.jsonl")
+    pred_dir = ROOT / "data" / "predictions" / ds if not args.pred_subdir \
+        else ROOT / "data" / "predictions" / f"{ds}_{args.pred_subdir}"
+    calib = load_pred(pred_dir / "calib.jsonl")
+    test = load_pred(pred_dir / "test.jsonl")
 
     # === 校准 ===
     calib_fused = build_fused_scores(calib, fusion_alpha, kr)
@@ -87,7 +92,7 @@ def main():
     lam, meta = calibrate_threshold(
         calib_fused_in, calib_main, calib_aux,
         alpha=CFG["conformal"]["alpha"],
-        tau_aux=CFG["conformal"]["tau_aux"],
+        tau_aux=tau_aux,
         k_max=k_max,
     )
 
@@ -166,10 +171,12 @@ def main():
         oos_rej, m2 = None, None
 
     tag = f"ablation_{ds}_k{k_max}_fa{fusion_alpha}"
+    tag += f"_tau{tau_aux}" if args.tau_aux is not None else ""
     tag += f"_kr{kr}" if kr else ""
+    tag += f"_{args.pred_subdir}" if args.pred_subdir else ""
     out_lines = [
         f"[{tag}] alpha={CFG['conformal']['alpha']}, full-level 统一口径",
-        f"k_max={k_max} fusion_alpha={fusion_alpha:.3f} kr={kr if kr else 'full'}",
+        f"k_max={k_max} fusion_alpha={fusion_alpha:.3f} tau_aux={tau_aux} kr={kr if kr else 'full'} pred_subdir={args.pred_subdir or 'default'}",
         f"lambda={lam:.4f} emp_risk={meta['empirical_risk']:.4f} theta_oos={theta_oos:.4f}",
         f"Main Macro-F1:      {f1:.4f}",
         f"Set Exact Match:    {exact:.4f}",
