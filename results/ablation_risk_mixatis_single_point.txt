@@ -1,0 +1,13 @@
+[A4 ablation_risk_mixatis_single_point] loss=single_point alpha=0.1
+lambda=1.0000 emp_risk=1.0000 theta_oos=0.8251
+Main Macro-F1:      0.4372
+Set Exact Match:    0.0000
+Set IoU:            0.2225
+Hit@1/3/5:          0.0857 / 0.2778 / 0.2838
+Coverage(J>=0.5):   0.1920
+Coverage(含):       0.7258
+Avg set size:       3.16
+ECE (15 bins):      0.2439
+误拒率:             0.2089 (173/828)
+澄清触发率:         0.7911
+Decision dist:      {'clarify': 655, 'reject': 173}

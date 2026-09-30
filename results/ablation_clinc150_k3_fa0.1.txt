@@ -1,0 +1,16 @@
+[ablation_clinc150_k3_fa0.1] alpha=0.1, full-level 统一口径
+k_max=3 fusion_alpha=0.100 kr=full
+lambda=0.0000 emp_risk=0.0889 theta_oos=0.7115
+Main Macro-F1:      0.8955
+Set Exact Match:    0.8526
+Set IoU:            0.8526
+Hit@1/3/5:          0.8526 / 0.8526 / 0.8526
+Coverage(J>=0.5):   0.8526
+Coverage(含):       0.8526
+Avg set size:       0.86
+ECE (15 bins):      0.0049
+误拒率:             0.1425 (577/4050)
+澄清触发率:         0.0000
+OOS 拒识率:         1.0000
+OOS AUROC/AUPRC:    0.9748 / 0.9274
+Decision dist:      {'reject': 2027, 'release': 3473}
