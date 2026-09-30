@@ -1,0 +1,15 @@
+﻿[R10 clinc150] UniCR-style learned fusion, alpha=0.1, full-level 统一口径
+theta=-3.5713 emp_cov=0.9004 (n_cal=3375) theta_oos=0.7115
+Main Macro-F1:      0.9049
+Set Exact Match:    0.8669
+Set IoU:            0.8669
+Hit@1/3/5:          0.8669 / 0.8669 / 0.8669
+Coverage(J>=0.5):   0.8669
+Coverage(含):       0.8669
+Avg set size:       0.87
+ECE (15 bins):      0.0035
+误拒率:             0.1279 (518/4050)
+澄清触发率:         0.0000
+OOS 拒识率:         1.0000
+OOS AUROC/AUPRC:    0.9748 / 0.9274
+Decision dist:      {'reject': 1968, 'release': 3532}

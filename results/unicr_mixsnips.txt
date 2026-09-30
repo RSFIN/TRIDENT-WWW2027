@@ -1,0 +1,13 @@
+﻿[R10 mixsnips] UniCR-style learned fusion, alpha=0.1, full-level 统一口径
+theta=-4.6400 emp_cov=0.9001 (n_cal=9942) theta_oos=0.7321
+Main Macro-F1:      0.7436
+Set Exact Match:    0.1628
+Set IoU:            0.4914
+Hit@1/3/5:          0.1628 / 0.1628 / 0.1628
+Coverage(J>=0.5):   0.6730
+Coverage(含):       0.8936
+Avg set size:       0.90
+ECE (15 bins):      0.0285
+误拒率:             0.0987 (217/2199)
+澄清触发率:         0.0000
+Decision dist:      {'release': 1982, 'reject': 217}

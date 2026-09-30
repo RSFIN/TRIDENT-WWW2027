@@ -1,0 +1,13 @@
+﻿[R10 mixatis] UniCR-style learned fusion, alpha=0.1, full-level 统一口径
+theta=1.0000 emp_cov=0.9656 (n_cal=3284) theta_oos=0.8251
+Main Macro-F1:      0.4387
+Set Exact Match:    0.2621
+Set IoU:            0.4513
+Hit@1/3/5:          0.0857 / 0.2717 / 0.2717
+Coverage(J>=0.5):   0.4746
+Coverage(含):       0.7138
+Avg set size:       1.33
+ECE (15 bins):      0.1407
+误拒率:             0.2114 (175/828)
+澄清触发率:         0.4746
+Decision dist:      {'clarify': 393, 'reject': 175, 'release': 260}
