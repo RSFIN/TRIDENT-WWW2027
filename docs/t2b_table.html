@@ -35,6 +35,12 @@
 <tr><td>R12 MULACONF Tree fixed α / MixSNIPS</td><td>0.794</td><td>0.970</td><td>0.997</td><td>25.4</td><td>0.997</td><td>—*</td><td>0.537</td><td>1.000*</td><td>0.000</td></tr>
 <tr><td>R10 UniCR learned fusion / MixATIS</td><td>0.451</td><td>0.086</td><td>0.272</td><td>1.33</td><td>0.475</td><td>0.714</td><td>0.141</td><td>0.211</td><td>0.475</td></tr>
 <tr><td>R10 UniCR learned fusion / MixSNIPS</td><td>0.491</td><td>0.163</td><td>0.163</td><td>0.90</td><td>0.673</td><td>0.894</td><td>0.029</td><td>0.099</td><td>0.000</td></tr>
+<tr><td>R12-QP v1.0 1-shot / MixATIS†</td><td>0.211</td><td>0.066</td><td>0.197</td><td>4.64</td><td>0.085</td><td>0.818</td><td>0.016</td><td>0.000</td><td>0.966</td></tr>
+<tr><td>R12-QP v1.0 5-shot / MixATIS†</td><td>0.283</td><td>0.103</td><td>0.362</td><td>4.85</td><td>0.136</td><td>0.939</td><td>0.114</td><td>0.000</td><td>0.978</td></tr>
+<tr><td>R12-QP v1.0 10-shot / MixATIS†</td><td>0.299</td><td>0.114</td><td>0.435</td><td>4.90</td><td>0.148</td><td>0.961</td><td>0.154</td><td>0.000</td><td>0.975</td></tr>
+<tr><td>R12-QP v1.0 1-shot / MixSNIPS†</td><td>0.393</td><td>0.133</td><td>0.498</td><td>3.94</td><td>0.379</td><td>0.959</td><td>0.244</td><td>0.000</td><td>0.798</td></tr>
+<tr><td>R12-QP v1.0 5-shot / MixSNIPS†</td><td>0.444</td><td>0.162</td><td>0.671</td><td>4.17</td><td>0.467</td><td>0.994</td><td>0.306</td><td>0.000</td><td>0.880</td></tr>
+<tr><td>R12-QP v1.0 10-shot / MixSNIPS†</td><td>0.460</td><td>0.174</td><td>0.742</td><td>4.25</td><td>0.505</td><td>0.998</td><td>0.321</td><td>0.000</td><td>0.913</td></tr>
 <tr><td>R11 TECP-style qwen3-8b / MixATIS‡</td><td>0.368</td><td>0.117</td><td>0.117</td><td>0.99</td><td>0.512</td><td>0.673</td><td>0.566</td><td>0.006</td><td>0.000</td></tr>
 <tr><td>R11 TECP-style qwen3-14b / MixATIS‡</td><td>0.384</td><td>0.130</td><td>0.130</td><td>0.95</td><td>0.521</td><td>0.697</td><td>0.471</td><td>0.048</td><td>0.000</td></tr>
 <tr><td>R11 TECP-style qwen3-8b / MixSNIPS‡</td><td>0.536</td><td>0.190</td><td>0.190</td><td>1.00</td><td>0.737</td><td>0.955</td><td>0.181</td><td>0.004</td><td>0.000</td></tr>
@@ -45,7 +51,7 @@
 </table>
 </div>
 <div class="note">
-<b>表注</b>：‡ R11 为单次运行、argmax 单点输出（Hit@1=Hit@3），无澄清；14b 与 8b 均采用统一 legacy 原提示口径（见 T2a 注）。§ LLM 少样本基线无共形覆盖保证、无三态决策，ECE 与澄清率不适用（—）；失败样本按拒识计入。Ours 为 seed42/seed123 两次独立运行均值（高亮行）。加粗行为各数据集最强数值。
+<b>表注</b>：† R12-QP v1.0 为统一口径 v1.0 重算结果（3 次独立运行均值 seed42/43/44，±std 见汇总文档）：P 为 beam=5 候选中原子意图去重并按置信度降序的集合（avg 3.9–4.9，真实意图≤3），从不拒识（误拒 0.000）；澄清为统计性触发（前两个 beam 概率差<0.10，几乎全样本澄清）；ECE 用 top-1 beam 概率。MixATIS 10-shot IoU 0.299 / MixSNIPS 10-shot IoU 0.460，均低于 Ours（0.387/0.757）。‡ R11 为单次运行、argmax 单点输出（Hit@1=Hit@3），无澄清；14b 与 8b 均采用统一 legacy 原提示口径（见 T2a 注）。§ LLM 少样本基线无共形覆盖保证、无三态决策，ECE 与澄清率不适用（—）；失败样本按拒识计入。Ours 为 seed42/seed123 两次独立运行均值（高亮行）。加粗行为各数据集最强数值。
 </div>
 </div>
 </body>
