@@ -1,0 +1,4 @@
+﻿2026-10-01 16:20 | clinc150/calib 3812/3812 OK | clinc150/test 5500/5500 OK | mixatis/calib LLM 300/3284 | mixatis/test - | mixsnips - | rate ~18条/min | next: mixatis/test 17:45 | chain PID 56216 alive
+2026-10-02 06:55 | clinc150 calib+test OK | mixatis calib+test OK | mixsnips FAILED (token-plan quota exhausted) | seed2024 pending | BLOCKED: quota resets 10-24 16:00 UTC (10-25 00:00 Beijing) | all processes stopped
+2026-10-03 17:21:00 | P4 COMPLETE: seed123 eval + seed2024 done + seed42 restored
+2026-10-03 17:35 | P4 CLOSED as 2-seed (42+123) due to quota | seed123 eval done | seed42 baseline restored | T2a/T2b updated to 2-seed mean in Feishu rev134 | seed2024 abandoned

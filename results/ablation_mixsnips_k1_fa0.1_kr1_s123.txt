@@ -1,0 +1,14 @@
+[ablation_mixsnips_k1_fa0.1_kr1_s123] alpha=0.1, full-level 统一口径
+k_max=1 fusion_alpha=0.100 tau_aux=0.5 kr=1 pred_subdir=s123
+lambda=0.9000 emp_risk=0.0995 theta_oos=0.7329
+Main Macro-F1:      0.7848
+Set Exact Match:    0.5184
+Set IoU:            0.7569
+Hit@1/3/5:          0.1696 / 0.6071 / 0.6071
+Coverage(J>=0.5):   0.8804
+Coverage(含):       0.9527
+Avg set size:       1.76
+ECE (15 bins):      0.0417
+误拒率:             0.0427 (94/2199)
+澄清触发率:         0.8035
+Decision dist:      {'clarify': 1767, 'release': 338, 'reject': 94}

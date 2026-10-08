@@ -1,0 +1,1456 @@
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 
+Test-Path : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:23 字符: 23
++   if (-not (Test-Path $path)) { return 0 }
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Test-Path]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.TestPathCom 
+   mand
+ 
+Get-Content : 无法将参数绑定到参数“Path”，因为该参数是空值。
+所在位置 E:\PY-Project\WWW2027\code\intent-conformal\scripts\P4_run_chain.ps1:24 字符: 23
++   return (Get-Content $path -Encoding utf8 | Measure-Object -Line).Li ...
++                       ~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Content]，ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.GetContentC 
+   ommand
+ 

@@ -12,3 +12,6 @@ tqdm>=4.66.0
 python-dotenv>=1.0.0
 matplotlib>=3.8.0
 seaborn>=0.13.0
+# R13: SetFit + MC Dropout baseline
+setfit>=1.1.0
+torch>=2.0.0

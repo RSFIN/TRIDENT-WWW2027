@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="use-iframe" content="true">
+<meta name="html-box-height-mode" content="auto">
+<meta name="description" content="P0-1 等风险对比：CLINC150 OOS gate 敏感性（2-seed）">
+<title>P0-1 OOS gate 敏感性</title>
+<style>
+  body{margin:0;font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#FFFFFF;color:#1F2329;}
+  .tbl{width:100%;border-collapse:collapse;font-size:13px;line-height:1.5;}
+  .tbl th{background:#F2F3F5;color:#1F2329;font-weight:600;padding:7px 8px;border:1px solid #DEE3E8;text-align:center;white-space:nowrap;}
+  .tbl td{padding:6px 8px;border:1px solid #DEE3E8;text-align:center;white-space:nowrap;}
+  .tbl td:first-child{text-align:left;white-space:normal;min-width:140px;}
+  .tbl tr.cur td{background:#EAF3FB;font-weight:600;}
+  .note{font-size:12px;color:#646A73;line-height:1.6;margin-top:8px;}
+</style>
+</head>
+<body>
+<table class="tbl">
+<thead>
+<tr><th>OOS gate（oos_fpr）</th><th>seed42 F1</th><th>seed123 F1</th><th>2-seed 均值 F1</th><th>误拒率</th><th>Set IoU</th><th>ECE</th><th>OOS拒识率</th></tr>
+</thead>
+<tbody>
+<tr class="cur"><td>0.05（主配置）</td><td>0.8955</td><td>0.9019</td><td>0.899</td><td>0.139</td><td>0.856</td><td>0.005</td><td>1.000</td></tr>
+<tr><td>0.005</td><td>0.9232</td><td>0.9275</td><td>0.925</td><td>0.105</td><td>0.897</td><td>0.006</td><td>1.000</td></tr>
+<tr class="cur"><td>0.0005</td><td>0.9253</td><td>0.9322</td><td>0.929</td><td>0.097</td><td>0.897</td><td>0.007</td><td>1.000</td></tr>
+</tbody>
+</table>
+<div class="note"><b>表注</b>：CLINC150 上 OOS 与域内样本完全可分，任意 FPR 阈值下 OOS 拒识率均为 1.000。收紧 OOS gate 仅提升域内 F1 与降低误拒率，校准（ECE≤0.008）与覆盖（α=0.1）不受影响。该实验为纯本地评估，零 API 成本。</div>
+</body>
+</html>

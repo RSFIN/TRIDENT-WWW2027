@@ -1,0 +1,14 @@
+[ablation_mixatis_k1_fa0.1_kr1] alpha=0.1, full-level 统一口径
+k_max=1 fusion_alpha=0.100 kr=1
+lambda=1.0000 emp_risk=1.0000 theta_oos=0.8251
+Main Macro-F1:      0.4372
+Set Exact Match:    0.1969
+Set IoU:            0.3974
+Hit@1/3/5:          0.0857 / 0.2536 / 0.2536
+Coverage(J>=0.5):   0.3551
+Coverage(含):       0.7077
+Avg set size:       1.51
+ECE (15 bins):      0.2186
+误拒率:             0.2089 (173/828)
+澄清触发率:         0.7162
+Decision dist:      {'clarify': 593, 'reject': 173, 'release': 62}

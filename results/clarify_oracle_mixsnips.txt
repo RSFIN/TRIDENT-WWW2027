@@ -1,0 +1,12 @@
+[clarify_oracle_mixsnips] 现口径 vs oracle-clarify | kr=1 k_max=1 fa=0.1
+指标                    现口径   oracle澄清
+Main Macro-F1      0.7674     0.7674
+Set Exact          0.5248     0.9363
+Set IoU            0.7541     0.9423
+Cov(J>=0.5)        0.8513     0.9477
+Cov(含)             0.9486     0.9486
+Avg set              1.83       1.95
+澄清率                0.8736     0.8736
+误拒率                0.0482     0.0482
+ECE                0.0699     0.0699
+注：oracle 口径将 clarify 决策视为接受用户澄清后集合正确（集合=真实意图），用于评估澄清交互的系统价值上限。

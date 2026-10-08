@@ -1,0 +1,24 @@
+生成时间: 2026-09-30 13:21:42
+
+===== 04 L1-L5 (exit=0) =====
+[calib] lambda=1.0000 empirical_risk=1.0000
+[oos] theta_oos=0.7321 (FPR=0.05)
+
+=== Results ===
+Main Macro-F1:     0.7674
+Set Exact Match:   0.0337
+Set Jaccard:       0.2931
+Coverage J>=0.5:   0.1360
+Avg set size:      3.81
+Decision dist:     Counter({'clarify': 2093, 'reject': 106})
+
+
+===== 04b ECE/误拒率 (exit=0) =====
+Main Macro-F1: 0.7674
+ECE (15 bins, top1-fused): 0.0175
+in-domain: 2199, rejected in-domain: 106
+OOS: 0, rejected OOS: 0
+误拒率 (in-domain reject / total in-domain): 0.0482
+OOS 拒识率 (OOS reject / total OOS): 0.0000
+Decision dist: {'clarify': 2093, 'reject': 106}
+

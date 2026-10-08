@@ -1,0 +1,14 @@
+[resume] 3089 samples already done, skipping
+[todo] 723 samples to process (workers=6)
+[retrieval] 723 in-domain in 48s
+  [llm] 100/723
+  [llm] 200/723
+  [llm] 300/723
+  [llm] 400/723
+  [llm] 500/723
+  [llm] 600/723
+  [llm] 700/723
+  [clinc150/calib] wrote 200/723
+  [clinc150/calib] wrote 400/723
+  [clinc150/calib] wrote 600/723
+Done: E:\PY-Project\WWW2027\code\intent-conformal\data\predictions\clinc150_s123\calib.jsonl (llm failures=0)

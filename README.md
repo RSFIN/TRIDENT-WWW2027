@@ -46,3 +46,22 @@ data/           下载后的数据（gitignore）
 - **非一致性分数**：`s(q,i) = α·rank(f_ret) + (1-α)·rank(f_LLM)`
 - **RCPS**：split-conformal 在分层 loss 下取分位数 λ̂，`Ĉ = {i: s(q,i) ≤ λ̂}`
 - **OOS dual threshold**：in-domain RCPS + 检索相似度 gate（FPR95 标定）
+
+## 子任务（派发给同学）
+
+### R11: TECP-style token entropy 共形
+```bash
+# 1. 采样 LLM 5 次（先 500 条子样本试跑）
+python scripts/11_run_llm_samples.py --dataset clinc150 --split calib --num-samples 5 --limit 500
+python scripts/11_run_llm_samples.py --dataset clinc150 --split test  --num-samples 5 --limit 500
+# 2. 算 entropy + split CP 评测
+python scripts/11_eval_tecp.py --dataset clinc150 --alpha 0.1
+```
+参考：arXiv 2509.00461。输出 `data/predictions/{ds}/tecp_{split}.jsonl`。
+
+### R13: SetFit + MC Dropout 混合路由
+```bash
+pip install setfit torch
+python scripts/13_setfit_mc_dropout.py --dataset clinc150 --shots 16 --mc-samples 30
+```
+参考：arXiv 2410.01627。CPU 即可跑，不需要 GPU。

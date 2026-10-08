@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="use-iframe" content="true">
+<meta name="html-box-height-mode" content="auto">
+<meta name="description" content="T2a CLINC150 主结果表（12 行）：Ours 与 R10/R5/R12/R12-QP v1.0/R11/LLM 少样本基线对比">
+<title>T2a CLINC150 主结果</title>
+<style>
+  body{margin:0;font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#FFFFFF;color:#1F2329;}
+  .wrap{width:100%;box-sizing:border-box;}
+  .tbl{width:100%;border-collapse:collapse;font-size:13px;line-height:1.5;}
+  .tbl th{background:#F2F3F5;color:#1F2329;font-weight:600;padding:7px 8px;border:1px solid #DEE3E8;text-align:center;white-space:nowrap;}
+  .tbl td{padding:6px 8px;border:1px solid #DEE3E8;text-align:center;white-space:nowrap;}
+  .tbl td:first-child{text-align:left;white-space:normal;min-width:200px;}
+  .tbl tr.ours td{background:#EAF3FB;font-weight:600;}
+  .tbl tr.best td{font-weight:600;}
+  .tbl tr.old{opacity:0.55;}
+  .note{font-size:12px;color:#646A73;line-height:1.6;margin-top:8px;}
+  .muted{color:#646A73;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div style="overflow-x:auto;">
+<table class="tbl">
+<thead>
+<tr><th>方法</th><th>Macro-F1</th><th>Set IoU</th><th>Cov(J≥0.5)</th><th>Cov(含)</th><th>Avg set</th><th>ECE</th><th>误拒率</th><th>OOS拒识率</th><th>澄清率</th><th>OOS AUROC</th></tr>
+</thead>
+<tbody>
+<tr class="ours"><td>Ours（分层共形+融合分）</td><td>0.899</td><td>0.856</td><td>0.856</td><td>0.856</td><td>0.87</td><td>0.005</td><td>0.139</td><td>1.000</td><td>0.000</td><td>0.978</td></tr>
+<tr><td>R10 UniCR learned fusion [34]</td><td>0.905</td><td>0.867</td><td>0.867</td><td>0.867</td><td>0.87</td><td>0.004</td><td>0.128</td><td>1.000</td><td>0.000</td><td>0.975</td></tr>
+<tr><td>R5 CICC split CP [31]</td><td>0.625</td><td>—*</td><td>0.990</td><td>—*</td><td>78.7</td><td>0.163</td><td>0.588*</td><td>—*</td><td>—*</td><td>0.759</td></tr>
+<tr><td>R12 MULACONF Powerset [33]</td><td>0.625</td><td>—*</td><td>0.915</td><td>—*</td><td>4.5</td><td>0.163</td><td>0.637*</td><td>—*</td><td>0.469</td><td>0.768</td></tr>
+<tr><td>R12 MULACONF Tree fixed α [33]</td><td>0.625</td><td>—*</td><td>0.997</td><td>—*</td><td>135.1</td><td>0.163</td><td>0.637*</td><td>—*</td><td>0.000</td><td>0.768</td></tr>
+<tr><td>R12-QP 1-shot [12]†</td><td>0.137</td><td>0.018</td><td>0.000</td><td>0.090</td><td>0.46</td><td>0.463</td><td>0.909</td><td>0.979</td><td>0.000</td><td>—</td></tr>
+<tr><td>R12-QP 5-shot [12]†</td><td>0.196</td><td>0.027</td><td>0.000</td><td>0.133</td><td>0.66</td><td>0.461</td><td>0.867</td><td>0.983</td><td>0.000</td><td>—</td></tr>
+<tr><td>R12-QP 10-shot [12]†</td><td>0.203</td><td>0.027</td><td>0.000</td><td>0.137</td><td>0.68</td><td>0.471</td><td>0.863</td><td>0.985</td><td>0.000</td><td>—</td></tr>
+<tr><td>R11 TECP-style qwen3-8b（熵拒答，single）‡</td><td>0.938</td><td>0.945</td><td>0.945</td><td>0.945</td><td>1.00</td><td>0.055</td><td>0.000</td><td>0.004</td><td>0.000</td><td>0.918</td></tr>
+<tr><td>R11 TECP-style qwen3-14b（熵拒答，force-cand）‡</td><td>0.955</td><td>0.961</td><td>0.961</td><td>0.961</td><td>1.00</td><td>0.038</td><td>0.004</td><td>0.063</td><td>0.000</td><td>0.918</td></tr>
+<tr class="best"><td>LLM few-shot qwen3-14b 10-shot§</td><td>0.956</td><td>0.952</td><td>0.953</td><td>0.953</td><td>0.99</td><td>0.040</td><td>0.013</td><td>0.833</td><td>—</td><td>0.955</td></tr>
+<tr class="best"><td>LLM few-shot DeepSeek-R1-0528 10-shot§</td><td>0.956</td><td>0.953</td><td>0.953</td><td>0.953</td><td>0.99</td><td>0.062</td><td>0.006</td><td>0.955</td><td>—</td><td>0.912</td></tr>
+</tbody>
+</table>
+</div>
+<div class="note">
+<b>表注</b>：† QP-OneModel 为统一口径 v1.0 重算结果（3 次独立运行均值，±std 见附录 A）：固定 5 个候选导致与单意图金标的 Jaccard≤0.2，故 Cov(J≥0.5)=0；其 OOS AUROC 未提供。‡ R11 TECP-style 为熵拒答+argmax 单点输出（单次运行）；14b 采用强制候选分类策略（θ=0），与 8b 的开放生成策略不可直接归因于模型规模。§ LLM 少样本基线无三态决策，澄清率不适用（—）；失败样本按拒识计入。Ours 为 seed42/seed123 两次独立运行均值（高亮行）。
+</div>
+</div>
+</body>
+</html>
