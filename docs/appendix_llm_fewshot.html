@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="use-iframe" content="true">
+<meta name="html-box-height-mode" content="auto">
+<meta name="description" content="附录A：LLM少样本基线9组合全表（统一口径v1.0，3模型x3shot，含失败数标注与Ours参考）">
+<title>附录 A：LLM 少样本基线全组合</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; margin: 0; padding: 14px; background: #fff; color: #1F2329; }
+  .tcap { font-size: 14px; font-weight: 700; color: #1A2B4A; margin: 16px 0 8px 0; padding-left: 8px; border-left: 3px solid #1A2B4A; }
+  .tcap:first-child { margin-top: 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 6px 0 10px 0; }
+  th { background: #1A2B4A; color: #fff; font-weight: 600; padding: 6px 8px; border: 1px solid #DEE3E8; white-space: nowrap; }
+  td { padding: 5px 8px; border: 1px solid #DEE3E8; text-align: right; color: #333; }
+  td.l, th.l { text-align: left; }
+  tr:nth-child(even) td { background: #F7F9FB; }
+  tr.warn td { background: #FDF6EC; }
+  tr.warn td:first-child { box-shadow: inset 3px 0 0 #E6A23C; }
+  .note { font-size: 11px; color: #646A73; line-height: 1.7; margin: 4px 0 0 0; }
+  .note b { color: #4A4F55; }
+</style>
+</head>
+<body>
+
+<div class="tcap">表 A1 · CLINC150（单意图闭集 + OOS，N=4500 + 1000 OOS）</div>
+<table>
+  <thead><tr>
+    <th class="l">模型</th><th>shot</th><th>失败</th><th>Macro-F1</th><th>Set Exact</th><th>Set IoU</th><th>Hit@1</th><th>Hit@3</th><th>Cov(J≥0.5)</th><th>Cov(含)</th><th>Avg |P|</th><th>ECE</th><th>误拒率</th><th>OOS 拒识率</th>
+  </tr></thead>
+  <tbody>
+    <tr><td class="l">DeepSeek-R1-Distill (8B)</td><td>3</td><td>278</td><td>0.901</td><td>0.888</td><td>0.888</td><td>0.888</td><td>0.889</td><td>0.889</td><td>0.889</td><td>0.938</td><td>0.045</td><td>0.063</td><td>0.948</td></tr>
+    <tr class="warn"><td class="l">DeepSeek-R1-Distill (8B)</td><td>5</td><td>221</td><td>0.912</td><td>0.906</td><td>0.906</td><td>0.906</td><td>0.907</td><td>0.907</td><td>0.907</td><td>0.951</td><td>0.058</td><td>0.050</td><td>0.979</td></tr>
+    <tr><td class="l">DeepSeek-R1-Distill (8B)</td><td>10</td><td>25</td><td>0.956</td><td>0.952</td><td>0.953</td><td>0.953</td><td>0.953</td><td>0.953</td><td>0.953</td><td>0.995</td><td>0.062</td><td>0.006</td><td>0.955</td></tr>
+    <tr><td class="l">Qwen3-14B-Instruct</td><td>3</td><td>41</td><td>0.944</td><td>0.939</td><td>0.940</td><td>0.940</td><td>0.941</td><td>0.941</td><td>0.941</td><td>0.991</td><td>0.027</td><td>0.012</td><td>0.944</td></tr>
+    <tr class="warn"><td class="l">Qwen3-14B-Instruct</td><td>5</td><td>1487</td><td>0.649</td><td>0.637</td><td>0.638</td><td>0.638</td><td>0.639</td><td>0.639</td><td>0.639</td><td>0.671</td><td>0.048</td><td>0.332</td><td>0.857</td></tr>
+    <tr><td class="l">Qwen3-14B-Instruct</td><td>10</td><td>54</td><td>0.956</td><td>0.950</td><td>0.952</td><td>0.952</td><td>0.953</td><td>0.953</td><td>0.953</td><td>0.990</td><td>0.040</td><td>0.013</td><td>0.833</td></tr>
+    <tr><td class="l">Qwen3-8B-Instruct</td><td>3</td><td>0</td><td>0.934</td><td>0.931</td><td>0.933</td><td>0.935</td><td>0.936</td><td>0.936</td><td>0.936</td><td>1.004</td><td>0.117</td><td>0.004</td><td>0.385</td></tr>
+    <tr><td class="l">Qwen3-8B-Instruct</td><td>5</td><td>0</td><td>0.939</td><td>0.935</td><td>0.939</td><td>0.941</td><td>0.942</td><td>0.942</td><td>0.942</td><td>1.006</td><td>0.131</td><td>0.003</td><td>0.320</td></tr>
+    <tr class="warn"><td class="l">Qwen3-8B-Instruct</td><td>10</td><td>781</td><td>0.793</td><td>0.781</td><td>0.783</td><td>0.783</td><td>0.785</td><td>0.785</td><td>0.785</td><td>0.829</td><td>0.131</td><td>0.176</td><td>0.313</td></tr>
+  </tbody>
+</table>
+
+<div class="tcap">表 A2 · MixATIS（多意图闭集，N=828，无 OOS）</div>
+<table>
+  <thead><tr>
+    <th class="l">模型</th><th>shot</th><th>失败</th><th>Macro-F1</th><th>Set Exact</th><th>Set IoU</th><th>Hit@1</th><th>Hit@3</th><th>Cov(J≥0.5)</th><th>Cov(含)</th><th>Avg |P|</th><th>误拒率</th>
+  </tr></thead>
+  <tbody>
+    <tr><td class="l">DeepSeek-R1-Distill (8B)</td><td>3</td><td>21</td><td>0.704</td><td>0.589</td><td>0.736</td><td>0.147</td><td>0.627</td><td>0.750</td><td>0.931</td><td>2.005</td><td>0.025</td></tr>
+    <tr><td class="l">DeepSeek-R1-Distill (8B)</td><td>5</td><td>2</td><td>0.737</td><td>0.651</td><td>0.786</td><td>0.162</td><td>0.686</td><td>0.791</td><td>0.973</td><td>2.076</td><td>0.002</td></tr>
+    <tr class="warn"><td class="l">DeepSeek-R1-Distill (8B)</td><td>10</td><td>364</td><td>0.544</td><td>0.415</td><td>0.471</td><td>0.106</td><td>0.430</td><td>0.473</td><td>0.551</td><td>1.134</td><td>0.440</td></tr>
+    <tr><td class="l">Qwen3-14B-Instruct</td><td>3</td><td>0</td><td>0.750</td><td>0.633</td><td>0.794</td><td>0.161</td><td>0.751</td><td>0.808</td><td>0.989</td><td>2.267</td><td>0.001</td></tr>
+    <tr><td class="l">Qwen3-14B-Instruct</td><td>5</td><td>0</td><td>0.779</td><td>0.691</td><td>0.829</td><td>0.157</td><td>0.790</td><td>0.851</td><td>0.989</td><td>2.213</td><td>0.002</td></tr>
+    <tr><td class="l">Qwen3-14B-Instruct</td><td>10</td><td>0</td><td>0.810</td><td>0.758</td><td>0.872</td><td>0.162</td><td>0.843</td><td>0.901</td><td>0.994</td><td>2.152</td><td>0.002</td></tr>
+    <tr><td class="l">Qwen3-8B-Instruct</td><td>3</td><td>0</td><td>0.707</td><td>0.598</td><td>0.753</td><td>0.156</td><td>0.690</td><td>0.751</td><td>0.966</td><td>2.209</td><td>0.014</td></tr>
+    <tr><td class="l">Qwen3-8B-Instruct</td><td>5</td><td>0</td><td>0.733</td><td>0.636</td><td>0.782</td><td>0.161</td><td>0.728</td><td>0.792</td><td>0.972</td><td>2.170</td><td>0.011</td></tr>
+    <tr><td class="l">Qwen3-8B-Instruct</td><td>10</td><td>0</td><td>0.779</td><td>0.725</td><td>0.839</td><td>0.161</td><td>0.789</td><td>0.850</td><td>0.989</td><td>2.140</td><td>0.006</td></tr>
+  </tbody>
+</table>
+
+<div class="tcap">表 A3 · MixSNIPS（多意图闭集，N=2199，无 OOS）</div>
+<table>
+  <thead><tr>
+    <th class="l">模型</th><th>shot</th><th>失败</th><th>Macro-F1</th><th>Set Exact</th><th>Set IoU</th><th>Hit@1</th><th>Hit@3</th><th>Cov(J≥0.5)</th><th>Cov(含)</th><th>Avg |P|</th><th>误拒率</th>
+  </tr></thead>
+  <tbody>
+    <tr><td class="l">DeepSeek-R1-Distill (8B)</td><td>3</td><td>1</td><td>0.944</td><td>0.859</td><td>0.921</td><td>0.196</td><td>0.860</td><td>0.945</td><td>0.989</td><td>1.949</td><td>0.001</td></tr>
+    <tr><td class="l">DeepSeek-R1-Distill (8B)</td><td>5</td><td>6</td><td>0.949</td><td>0.872</td><td>0.928</td><td>0.196</td><td>0.877</td><td>0.946</td><td>0.989</td><td>1.966</td><td>0.003</td></tr>
+    <tr class="warn"><td class="l">DeepSeek-R1-Distill (8B)</td><td>10</td><td>458</td><td>0.844</td><td>0.718</td><td>0.748</td><td>0.163</td><td>0.719</td><td>0.756</td><td>0.784</td><td>1.567</td><td>0.208</td></tr>
+    <tr><td class="l">Qwen3-14B-Instruct</td><td>3</td><td>7</td><td>0.949</td><td>0.878</td><td>0.930</td><td>0.194</td><td>0.884</td><td>0.942</td><td>0.988</td><td>1.978</td><td>0.003</td></tr>
+    <tr><td class="l">Qwen3-14B-Instruct</td><td>5</td><td>0</td><td>0.955</td><td>0.894</td><td>0.940</td><td>0.198</td><td>0.900</td><td>0.947</td><td>0.994</td><td>1.997</td><td>0.000</td></tr>
+    <tr><td class="l">Qwen3-14B-Instruct</td><td>10</td><td>0</td><td>0.964</td><td>0.918</td><td>0.952</td><td>0.197</td><td>0.923</td><td>0.956</td><td>0.994</td><td>2.010</td><td>0.000</td></tr>
+    <tr><td class="l">Qwen3-8B-Instruct</td><td>3</td><td>0</td><td>0.955</td><td>0.887</td><td>0.938</td><td>0.196</td><td>0.890</td><td>0.957</td><td>0.991</td><td>1.975</td><td>0.000</td></tr>
+    <tr><td class="l">Qwen3-8B-Instruct</td><td>5</td><td>0</td><td>0.956</td><td>0.895</td><td>0.940</td><td>0.196</td><td>0.896</td><td>0.952</td><td>0.991</td><td>1.985</td><td>0.000</td></tr>
+    <tr><td class="l">Qwen3-8B-Instruct</td><td>10</td><td>13</td><td>0.957</td><td>0.900</td><td>0.939</td><td>0.194</td><td>0.902</td><td>0.948</td><td>0.986</td><td>1.984</td><td>0.006</td></tr>
+  </tbody>
+</table>
+
+<div class="note">
+<b>表注（附录 A，统一口径 v1.0）：</b><br>
+① 失败样本按 reject=∅ 计入完整分母（v1.0 规则）；浅橙底行失败率 ≥5%（DeepSeek CLINC 5-shot 4.9% 一并标出），其数值受失败拖累、与其他行不可直接比。最极端：Qwen3-14B CLINC 5-shot 失败 1487/4500（33%）、DeepSeek MixATIS 10-shot 失败 364/828（44%）、DeepSeek MixSNIPS 10-shot 失败 458/2199（21%）、Qwen3-8B CLINC 10-shot 失败 781/4500（17%）。<br>
+② 单次全量运行，无三次重复的均值±std；选例为本地 TF-IDF IR，闭集候选标签。<br>
+③ ECE 仅 CLINC150（15-bin top-1 置信度）；多意图无独立概率流，ECE/OOS 拒识率为 N/A；无三态澄清模拟器，澄清率全 N/A。<br>
+④ Ours 参考（2-seed 均值）：CLINC150 F1 0.899/IoU 0.856/ECE 0.005/误拒 0.139/<b>OOS 拒识 1.000</b>；MixATIS IoU 0.387/ECE 0.219/误拒 0.208/澄清 0.728；MixSNIPS IoU 0.757/ECE 0.045/误拒 0.046/澄清 0.839。<br>
+⑤ 解读要点：少样本最佳（Qwen3-14B 10-shot）在三数据集 F1/IoU 全面领先 Ours，但 CLINC OOS 漏检 16.7%（0.833 拒识）、无校准/无三态/无 coverage 保证；8B 模型 OOS AUROC 仅 0.798–0.806（见 L2 表），且高失败率设置（⚠行）性能不可复现——免训练 Ours 以可靠性指标换精度差距（P0 分析：~2.7pt）。
+</div>
+
+</body>
+</html>
