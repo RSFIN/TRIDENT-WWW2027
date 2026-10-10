@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="use-iframe" content="true">
+<meta name="html-box-height-mode" content="auto">
+<meta name="description" content="实验结果第二图组：消融分析/Pareto/Cost-Accuracy">
+<title>消融与系统级图组</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; margin: 0; padding: 14px; background: #fff; color: #1F2329; }
+  .title { font-size: 15px; font-weight: 700; color: #1A2B4A; margin: 0 0 4px 0; }
+  .subtitle { font-size: 11px; color: #8F959E; margin-bottom: 10px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .chart { border: 1px solid #E5E8EC; border-radius: 6px; padding: 6px; }
+  .chart h4 { font-size: 12px; font-weight: 600; margin: 4px 0 0 6px; color: #1A2B4A; }
+  .chart h4 span { color: #C0392B; }
+  .box { width: 100%; height: 280px; }
+</style>
+</head>
+<body>
+<div class="title">WWW 2027 选题 A — 消融与系统级图组</div>
+<div class="subtitle">统一口径 v1.0，复用现有 predictions 零额外 API；K=1/K_r=1/fa=0.1 为主配置（红色标注）</div>
+<div class="grid">
+
+  <div class="chart">
+    <h4>(g) A1：<span>K</span>（次意图上限）消融 — K=1 最优</h4>
+    <div id="g1" class="box"></div>
+  </div>
+
+  <div class="chart">
+    <h4>(h) A5：<span>K_r</span>（检索候选数）消融 — IoU↑ 且 avg set↓</h4>
+    <div id="g2" class="box"></div>
+  </div>
+
+  <div class="chart">
+    <h4>(i) A3：<span>fusion α</span> 分数构成消融 — 融合校准质量</h4>
+    <div id="g3" class="box"></div>
+  </div>
+
+  <div class="chart">
+    <h4>(j) F5 Pareto：<span>F1 × ECE</span>（气泡=LLM 调用成本）</h4>
+    <div id="g4" class="box"></div>
+  </div>
+
+  <div class="chart">
+    <h4>(k) F9 Cost-Accuracy：<span>LLM 调用次数</span> vs F1</h4>
+    <div id="g5" class="box"></div>
+  </div>
+
+  <div class="chart">
+    <h4>(l) A8 知识更新：<span>新意图覆盖率</span>（加条目即更新）</h4>
+    <div id="g6" class="box"></div>
+  </div>
+
+</div>
+
+<script>
+const C = { ours:'#C0392B', oursLight:'#E8837A', base:'#8F959E', blue:'#3B6FB6', green:'#2E7D5B', orange:'#E08E2A', purple:'#7B5EA7' };
+
+// (g) A1 K ablation: Set IoU on MixATIS / MixSNIPS
+echarts.init(document.getElementById('g1')).setOption({
+  tooltip:{trigger:'axis'},
+  legend:{bottom:0, textStyle:{fontSize:10}, itemWidth:12, itemHeight:8},
+  grid:{left:42, right:12, top:24, bottom:42},
+  xAxis:{type:'category', data:['K=0','K=1','K=2','K=3'], axisLabel:{fontSize:10}},
+  yAxis:{type:'value', min:0, max:0.8, axisLabel:{fontSize:10}, name:'Set IoU', nameTextStyle:{fontSize:10}},
+  series:[
+    {name:'MixSNIPS', type:'line', data:[0.517,0.719,0.567,0.435], itemStyle:{color:C.ours}, lineStyle:{width:2.5},
+     symbol:'circle', symbolSize:8, label:{show:true, fontSize:9, formatter:p=>p.value.toFixed(2)},
+     markPoint:{data:[{coord:['K=1',0.719], value:'opt'}], symbolSize:34, itemStyle:{color:C.ours}, label:{fontSize:9, color:'#fff'}}},
+    {name:'MixATIS', type:'line', data:[0.339,0.373,0.282,0.222], itemStyle:{color:C.blue}, lineStyle:{width:2},
+     symbol:'diamond', symbolSize:7, label:{show:true, fontSize:9, formatter:p=>p.value.toFixed(2)}}
+  ]
+});
+
+// (h) A5 Kr ablation: IoU + avg set size (MixSNIPS)
+echarts.init(document.getElementById('g2')).setOption({
+  tooltip:{trigger:'axis'},
+  legend:{bottom:0, textStyle:{fontSize:10}, itemWidth:12, itemHeight:8},
+  grid:{left:42, right:42, top:24, bottom:42},
+  xAxis:{type:'category', data:['Kr=1','Kr=3','Kr=5'], axisLabel:{fontSize:10}},
+  yAxis:[
+    {type:'value', name:'Set IoU', min:0, max:0.8, position:'left', axisLabel:{fontSize:10}, nameTextStyle:{fontSize:10}},
+    {type:'value', name:'avg set', min:1.5, max:4.2, position:'right', axisLabel:{fontSize:10}, nameTextStyle:{fontSize:10}}
+  ],
+  series:[
+    {name:'Set IoU', type:'bar', data:[0.723,0.517,0.435], itemStyle:{color:C.ours}, barWidth:26,
+     label:{show:true, position:'top', fontSize:9, color:C.ours, fontWeight:'bold'}},
+    {name:'avg set size', type:'line', yAxisIndex:1, data:[2.25,3.19,3.81], itemStyle:{color:C.orange}, lineStyle:{width:2, type:'dashed'},
+     symbol:'circle', symbolSize:8, label:{show:true, fontSize:9, color:C.orange}}
+  ]
+});
+
+// (i) A3 fusion alpha ECE
+echarts.init(document.getElementById('g3')).setOption({
+  tooltip:{trigger:'axis', axisPointer:{type:'shadow'}},
+  legend:{bottom:0, textStyle:{fontSize:10}, itemWidth:12, itemHeight:8},
+  grid:{left:42, right:12, top:24, bottom:42},
+  xAxis:{type:'category', data:['仅 LLM\n(α=0.0)','融合\n(α=0.1)','仅检索\n(α=1.0)'], axisLabel:{fontSize:10}},
+  yAxis:{type:'value', axisLabel:{fontSize:10}, name:'ECE↓', nameTextStyle:{fontSize:10}},
+  series:[
+    {name:'CLINC150', type:'bar', data:[0.018,0.005,0.084], itemStyle:{color:C.green}},
+    {name:'MixSNIPS', type:'bar', data:[0.037,0.008,0.641], itemStyle:{color:C.ours}},
+    {name:'MixATIS', type:'bar', data:[0.273,0.246,0.547], itemStyle:{color:C.orange}}
+  ]
+});
+
+// (j) Pareto scatter: F1 vs ECE, bubble = LLM calls
+echarts.init(document.getElementById('g4')).setOption({
+  tooltip:{formatter:p=>p.data.name+'<br/>F1: '+p.data.value[0]+'<br/>ECE: '+p.data.value[1]+'<br/>LLM调用/样本: '+p.data.value[2]},
+  grid:{left:46, right:20, top:24, bottom:42},
+  xAxis:{type:'value', name:'Macro-F1', min:0.85, max:0.97, axisLabel:{fontSize:10}, nameTextStyle:{fontSize:10}},
+  yAxis:{type:'value', name:'ECE↓', min:0, max:0.75, axisLabel:{fontSize:10}, nameTextStyle:{fontSize:10}},
+  series:[{type:'scatter',
+    data:[
+      {name:'Ours', value:[0.899,0.005,1], itemStyle:{color:C.ours}, symbolSize:22},
+      {name:'R10 UniCR', value:[0.905,0.004,1], itemStyle:{color:C.blue}, symbolSize:14},
+      {name:'R11 qwen3-14b', value:[0.948,0.045,5], itemStyle:{color:C.green}, symbolSize:18},
+      {name:'R13 SetFit+MC', value:[0.934,0.695,0.079], itemStyle:{color:C.purple}, symbolSize:12},
+      {name:'LLM FS 14B-10s', value:[0.956,0.15,1], itemStyle:{color:C.base}, symbolSize:16}
+    ],
+    label:{show:true, position:'top', fontSize:9, formatter:p=>p.data.name}
+  }]
+});
+
+// (k) Cost-Accuracy: LLM calls per query vs F1
+echarts.init(document.getElementById('g5')).setOption({
+  tooltip:{trigger:'axis', axisPointer:{type:'shadow'}},
+  legend:{show:false},
+  grid:{left:46, right:20, top:24, bottom:42},
+  xAxis:{type:'category', data:['R13\n(7.9% LLM)','Ours\n(1×)','LLM FS 14B\n(1×)','R11 qwen3-14b\n(5× 采样)'], axisLabel:{fontSize:9}},
+  yAxis:{type:'value', name:'CLINC F1', min:0.85, max:0.97, axisLabel:{fontSize:10}, nameTextStyle:{fontSize:10}},
+  series:[{type:'bar', barWidth:30,
+    data:[
+      {value:0.934, itemStyle:{color:C.purple}},
+      {value:0.899, itemStyle:{color:C.ours}},
+      {value:0.956, itemStyle:{color:C.base}},
+      {value:0.948, itemStyle:{color:C.green}}
+    ],
+    label:{show:true, position:'top', fontSize:10, fontWeight:'bold', formatter:p=>p.value.toFixed(3)}
+  }]
+});
+
+// (l) A8 knowledge update: coverage of new intents
+echarts.init(document.getElementById('g6')).setOption({
+  tooltip:{trigger:'axis', axisPointer:{type:'shadow'}, formatter:function(p){
+    return p[0].name+'<br/>'+p.map(x=>x.marker+x.seriesName+': '+(x.value*100).toFixed(1)+'%').join('<br/>');}},
+  legend:{bottom:0, textStyle:{fontSize:10}, itemWidth:12, itemHeight:8},
+  grid:{left:46, right:12, top:24, bottom:42},
+  xAxis:{type:'category', data:['旧意图样本','新上线意图样本'], axisLabel:{fontSize:10}},
+  yAxis:{type:'value', max:1, axisLabel:{fontSize:10, formatter:v=>(v*100)+'%'}, name:'Cov(含)', nameTextStyle:{fontSize:10}},
+  series:[
+    {name:'知识库未更新', type:'bar', data:[0.855,0.000], itemStyle:{color:C.base}, barWidth:26,
+     label:{show:true, position:'top', fontSize:9, formatter:p=>(p.value*100).toFixed(1)+'%'}},
+    {name:'加条目更新后', type:'bar', data:[0.850,0.870], itemStyle:{color:C.ours}, barWidth:26,
+     label:{show:true, position:'top', fontSize:9, color:C.ours, fontWeight:'bold', formatter:p=>(p.value*100).toFixed(1)+'%'}}
+  ]
+});
+</script>
+</body>
+</html>

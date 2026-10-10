@@ -1,0 +1,1 @@
+<h2>消融与系统级图组（实测数据渲染）</h2><p>下图为基于 P3 消融与系统级对比数据渲染的 6 子图，对应蓝图 F5/F9 与消融章节：（g）A1 K 消融（K=1 最优）；（h）A5 K_r 消融（IoU 与 avg set 双轴）；（i）A3 fusion α 分数构成（融合校准质量）；（j）F5 Pareto 前沿（F1×ECE，气泡=LLM 调用成本）；（k）F9 Cost-Accuracy；（l）A8 知识更新（加条目即恢复新意图覆盖）。</p><html5-block path="@E:\PY-Project\WWW2027\code\intent-conformal\docs\ablation_dashboard.html"></html5-block>
