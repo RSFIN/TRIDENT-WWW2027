@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="use-iframe" content="true">
+<meta name="html-box-height-mode" content="auto">
+<meta name="description" content="实验结果核心图组：主结果对比/校准/三态决策/等风险权衡/澄清公平化/消融">
+<title>实验结果图组</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; margin: 0; padding: 14px; background: #fff; color: #1F2329; }
+  .title { font-size: 15px; font-weight: 700; color: #1A2B4A; margin: 0 0 4px 0; }
+  .subtitle { font-size: 11px; color: #8F959E; margin-bottom: 10px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .chart { border: 1px solid #E5E8EC; border-radius: 6px; padding: 6px; }
+  .chart h4 { font-size: 12px; font-weight: 600; margin: 4px 0 0 6px; color: #1A2B4A; }
+  .chart h4 span { color: #C0392B; }
+  .box { width: 100%; height: 280px; }
+  .full { grid-column: 1 / -1; }
+</style>
+</head>
+<body>
+<div class="title">WWW 2027 选题 A — 实验结果核心图组</div>
+<div class="subtitle">统一口径 v1.0，α=0.1，seed42/123 两 seed 均值；Ours = 免训练检索-grounded 集合级共形 + 三态决策</div>
+<div class="grid">
+
+  <div class="chart">
+    <h4>(a) 主结果：<span>Set IoU</span> / Macro-F1 跨数据集对比</h4>
+    <div id="c1" class="box"></div>
+  </div>
+
+  <div class="chart">
+    <h4>(b) 校准质量 <span>ECE↓</span>（越低越准）</h4>
+    <div id="c2" class="box"></div>
+  </div>
+
+  <div class="chart">
+    <h4>(c) 三态决策分布 <span>release / clarify / reject</span></h4>
+    <div id="c3" class="box"></div>
+  </div>
+
+  <div class="chart">
+    <h4>(d) <span>OOS 拒识率</span>（CLINC150，仅 Ours 达 100%）</h4>
+    <div id="c4" class="box"></div>
+  </div>
+
+  <div class="chart">
+    <h4>(e) P0-1 等风险权衡：收紧 OOS gate → F1↑ / 误拒↓</h4>
+    <div id="c5" class="box"></div>
+  </div>
+
+  <div class="chart">
+    <h4>(f) P0-2 澄清公平化：现口径 vs <span>oracle 澄清</span></h4>
+    <div id="c6" class="box"></div>
+  </div>
+
+</div>
+
+<script>
+const C = { ours:'#C0392B', oursLight:'#E8837A', base:'#8F959E', blue:'#3B6FB6', green:'#2E7D5B', orange:'#E08E2A', purple:'#7B5EA7' };
+
+// (a) Main result: IoU / F1 across datasets
+echarts.init(document.getElementById('c1')).setOption({
+  tooltip:{trigger:'axis', axisPointer:{type:'shadow'}},
+  legend:{bottom:0, textStyle:{fontSize:10}, itemWidth:12, itemHeight:8},
+  grid:{left:42, right:12, top:24, bottom:48},
+  xAxis:{type:'category', data:['CLINC150\n(F1)','MixATIS\n(IoU)','MixSNIPS\n(IoU)'], axisLabel:{fontSize:10}},
+  yAxis:{type:'value', max:1, axisLabel:{fontSize:10}},
+  series:[
+    {name:'Ours', type:'bar', data:[0.899,0.387,0.757], itemStyle:{color:C.ours}, barWidth:14,
+     label:{show:true, position:'top', fontSize:9, color:C.ours, fontWeight:'bold'}},
+    {name:'R10 UniCR', type:'bar', data:[0.905,0.451,0.491], itemStyle:{color:C.blue}},
+    {name:'R11 qwen3-14b', type:'bar', data:[0.948,0.384,0.529], itemStyle:{color:C.green}},
+    {name:'R13 SetFit+MC', type:'bar', data:[0.934,0.302,0.475], itemStyle:{color:C.purple}},
+    {name:'QP 10-shot', type:'bar', data:[0.203,0.299,0.460], itemStyle:{color:C.orange}},
+    {name:'LLM FS 14B-10s', type:'bar', data:[0.956,0.872,0.952], itemStyle:{color:C.base}}
+  ]
+});
+
+// (b) ECE
+echarts.init(document.getElementById('c2')).setOption({
+  tooltip:{trigger:'axis', axisPointer:{type:'shadow'}},
+  legend:{bottom:0, textStyle:{fontSize:10}, itemWidth:12, itemHeight:8},
+  grid:{left:42, right:12, top:24, bottom:48},
+  xAxis:{type:'category', data:['CLINC150','MixATIS','MixSNIPS'], axisLabel:{fontSize:10}},
+  yAxis:{type:'value', axisLabel:{fontSize:10}, name:'ECE', nameTextStyle:{fontSize:10}},
+  series:[
+    {name:'Ours', type:'bar', data:[0.005,0.219,0.045], itemStyle:{color:C.ours}, barWidth:14,
+     label:{show:true, position:'top', fontSize:9, color:C.ours, fontWeight:'bold'}},
+    {name:'R10 UniCR', type:'bar', data:[0.004,0.141,0.029], itemStyle:{color:C.blue}},
+    {name:'R11 qwen3-14b', type:'bar', data:[0.045,0.471,0.566], itemStyle:{color:C.green}},
+    {name:'R13 SetFit+MC', type:'bar', data:[0.695,0.398,0.374], itemStyle:{color:C.purple}},
+    {name:'QP 10-shot', type:'bar', data:[0.05,0.154,0.321], itemStyle:{color:C.orange}}
+  ]
+});
+
+// (c) Three-state decision distribution (stacked %)
+echarts.init(document.getElementById('c3')).setOption({
+  tooltip:{trigger:'axis', axisPointer:{type:'shadow'}, formatter:function(p){
+    let s=p[0].name+'<br/>'; p.forEach(x=>s+=x.marker+x.seriesName+': '+(x.value*100).toFixed(1)+'%<br/>'); return s;}},
+  legend:{bottom:0, textStyle:{fontSize:10}, itemWidth:12, itemHeight:8},
+  grid:{left:42, right:12, top:24, bottom:48},
+  xAxis:{type:'category', data:['CLINC150','MixATIS','MixSNIPS'], axisLabel:{fontSize:10}},
+  yAxis:{type:'value', max:1, axisLabel:{fontSize:10, formatter:v=>(v*100)+'%'}},
+  series:[
+    {name:'release（放行）', type:'bar', stack:'d', data:[0.861,0.064,0.115], itemStyle:{color:C.green}},
+    {name:'clarify（澄清）', type:'bar', stack:'d', data:[0.000,0.728,0.839], itemStyle:{color:C.orange}},
+    {name:'reject（拒识）', type:'bar', stack:'d', data:[0.139,0.208,0.046], itemStyle:{color:C.ours}}
+  ]
+});
+
+// (d) OOS rejection rate on CLINC150
+echarts.init(document.getElementById('c4')).setOption({
+  tooltip:{trigger:'axis', axisPointer:{type:'shadow'}, formatter:function(p){
+    return p[0].name+'<br/>OOS 拒识率: '+(p[0].value*100).toFixed(1)+'%';}},
+  grid:{left:52, right:20, top:24, bottom:24},
+  xAxis:{type:'value', max:1, axisLabel:{fontSize:10, formatter:v=>(v*100)+'%'}},
+  yAxis:{type:'category', data:['LLM FS 14B-10s','DeepSeek-R1 10s','R11 qwen3-14b','R13 SetFit+MC','R10 UniCR','R5 CICC','Ours'], axisLabel:{fontSize:10}},
+  series:[{type:'bar', barWidth:14,
+    data:[
+      {value:0.833, itemStyle:{color:C.base}},
+      {value:0.955, itemStyle:{color:C.base}},
+      {value:0.083, itemStyle:{color:C.green}},
+      {value:0.057, itemStyle:{color:C.purple}},
+      {value:1.000, itemStyle:{color:C.blue}},
+      {value:0.000, itemStyle:{color:C.orange}},
+      {value:1.000, itemStyle:{color:C.ours}}
+    ],
+    label:{show:true, position:'right', fontSize:9, formatter:p=>(p.value*100).toFixed(1)+'%'}
+  }]
+});
+
+// (e) P0-1 risk tradeoff (CLINC150, zero API)
+echarts.init(document.getElementById('c5')).setOption({
+  tooltip:{trigger:'axis'},
+  legend:{bottom:0, textStyle:{fontSize:10}, itemWidth:14, itemHeight:8},
+  grid:{left:46, right:46, top:24, bottom:48},
+  xAxis:{type:'category', data:['FPR=0.05\n(主配置)','FPR=0.005','FPR=0.0005'], axisLabel:{fontSize:10}},
+  yAxis:[
+    {type:'value', name:'F1', min:0.85, max:0.95, position:'left', axisLabel:{fontSize:10}, nameTextStyle:{fontSize:10}},
+    {type:'value', name:'误拒率', min:0.05, max:0.18, position:'right', axisLabel:{fontSize:10}, nameTextStyle:{fontSize:10}}
+  ],
+  series:[
+    {name:'Macro-F1', type:'line', data:[0.899,0.925,0.929], itemStyle:{color:C.ours}, lineStyle:{width:2.5},
+     symbol:'circle', symbolSize:8, label:{show:true, fontSize:9, color:C.ours, formatter:p=>p.value.toFixed(3)}},
+    {name:'误拒率', type:'line', yAxisIndex:1, data:[0.139,0.101,0.097], itemStyle:{color:C.blue}, lineStyle:{width:2.5, type:'dashed'},
+     symbol:'diamond', symbolSize:8, label:{show:true, fontSize:9, color:C.blue, formatter:p=>p.value.toFixed(3)}}
+  ]
+});
+
+// (f) P0-2 clarify fairness: current vs oracle IoU
+echarts.init(document.getElementById('c6')).setOption({
+  tooltip:{trigger:'axis', axisPointer:{type:'shadow'}},
+  legend:{bottom:0, textStyle:{fontSize:10}, itemWidth:12, itemHeight:8},
+  grid:{left:42, right:12, top:24, bottom:48},
+  xAxis:{type:'category', data:['MixATIS','MixSNIPS'], axisLabel:{fontSize:10}},
+  yAxis:{type:'value', min:0, max:1, axisLabel:{fontSize:10}, name:'Set IoU', nameTextStyle:{fontSize:10}},
+  series:[
+    {name:'Ours 现口径（保守下界）', type:'bar', data:[0.396,0.754], itemStyle:{color:C.oursLight}, barWidth:22,
+     label:{show:true, position:'top', fontSize:9, color:'#8a4a42'}},
+    {name:'Ours oracle 澄清', type:'bar', data:[0.760,0.942], itemStyle:{color:C.ours}, barWidth:22,
+     label:{show:true, position:'top', fontSize:9, color:C.ours, fontWeight:'bold'}},
+    {name:'LLM FS 14B-10s（无校准/无拒识）', type:'bar', data:[0.872,0.952], itemStyle:{color:C.base}, barWidth:22,
+     label:{show:true, position:'top', fontSize:9, color:C.base}}
+  ]
+});
+</script>
+</body>
+</html>
