@@ -57,99 +57,77 @@ def save(fig, name):
     print("saved", name)
 
 # ============================================================
-# Fig 2: Main results — F1/Hit@1 & Set IoU across datasets
-# Source: T2a (CLINC150 Macro-F1) / T2b (MixATIS/MixSNIPS Hit@1)
+# Fig 2: Main results — Macro-F1 & Set IoU (rev 198 data, WWW two-col layout)
 # ============================================================
 datasets = ["CLINC150", "MixATIS", "MixSNIPS"]
-methods  = ["CICC", "MULACONF", "QP-10shot", "Ours"]
+methods  = ["TECP-14B", "SetFit+MC", "QP-10shot", "Ours"]
 colors   = [C_CICC, C_MULA, C_QP, C_OURS]
 
-# Accuracy: CLINC150 = Macro-F1; MixATIS/MixSNIPS = Hit@1
-acc = {
-    "CICC":      [0.625, None, None],
-    "MULACONF":  [0.625, 0.733, 0.970],
-    "QP-10shot": [0.203, 0.114, 0.174],
-    "Ours":      [0.899, 0.079, 0.168],
+macro_f1 = {
+    "TECP-14B":  [0.9483, 0.3735, 0.6614],
+    "SetFit+MC": [0.9341, 0.4971, 0.5677],
+    "QP-10shot": [0.2031, 0.2899, 0.5243],
+    "Ours":      [0.8987, 0.4229, 0.7761],
 }
-# Set IoU (Jaccard); None = not comparable
 set_iou = {
-    "CICC":      [None, None, None],
-    "MULACONF":  [None, 0.347, 0.794],
-    "QP-10shot": [0.027, 0.299, 0.460],
-    "Ours":      [0.856, 0.387, 0.757],
+    "TECP-14B":  [0.9541, 0.3843, 0.5286],
+    "SetFit+MC": [0.1898, 0.3023, 0.4745],
+    "QP-10shot": [0.0273, 0.2991, 0.4599],
+    "Ours":      [0.8561, 0.3869, 0.7571],
 }
 
-fig, axes = plt.subplots(1, 2, figsize=(6.9, 2.5), dpi=300)
-fig.subplots_adjust(left=0.09, right=0.98, top=0.88, bottom=0.18, wspace=0.28)
+fig, axes = plt.subplots(1, 2, figsize=(6.9, 2.7), dpi=300)
+fig.subplots_adjust(left=0.09, right=0.98, top=0.92, bottom=0.22, wspace=0.25)
 x = np.arange(len(datasets)); w = 0.18
-def _bar_nan(ax, pos, val, w_, color):
-    if val is None:
-        ax.bar(pos, 0.001, w_, color="white", edgecolor="#999999",
-               linewidth=0.6, hatch="//", zorder=2)
-        return
-    ax.bar(pos, val, w_, color=color, edgecolor="white", linewidth=0.6)
 for i, m in enumerate(methods):
-    for j in range(len(datasets)):
-        _bar_nan(axes[0], x[j] + (i-1.5)*w, acc[m][j], w, colors[i])
-        _bar_nan(axes[1], x[j] + (i-1.5)*w, set_iou[m][j], w, colors[i])
+    axes[0].bar(x + (i-1.5)*w, macro_f1[m], w, color=colors[i],
+                edgecolor="white", linewidth=0.6)
+    axes[1].bar(x + (i-1.5)*w, set_iou[m], w, color=colors[i],
+                edgecolor="white", linewidth=0.6)
 from matplotlib.patches import Patch
-axes[0].legend(handles=[Patch(color=colors[i], label=methods[i]) for i in range(len(methods))],
-               ncol=4, loc="lower center", bbox_to_anchor=(0.5, 1.02),
-               frameon=False, fontsize=7, handlelength=1.2, columnspacing=1.0)
+handles = [Patch(color=colors[i], label=methods[i]) for i in range(len(methods))]
+fig.legend(handles=handles, ncol=4, loc="lower center",
+           bbox_to_anchor=(0.5, 0.005), frameon=False,
+           fontsize=7.5, handlelength=1.2, columnspacing=1.2)
 for ax in axes:
     ax.set_xticks(x); ax.set_xticklabels(datasets, fontsize=8)
     ax.tick_params(axis='y', labelsize=8)
-axes[0].set_ylabel("Top-1 score", fontsize=8)
-axes[0].set_title("(a) Macro-F1 / Hit@1", fontsize=9)
-axes[1].set_ylabel("Set IoU", fontsize=8); axes[1].set_title("(b) Jaccard", fontsize=9)
-axes[0].set_ylim(0, 1.05); axes[1].set_ylim(0, 1.0)
-for j in (1, 2):
-    axes[0].text(x[j] + (0-1.5)*w, 0.02, "n/a", ha="center", va="bottom",
-                 fontsize=6, color="#666666", style="italic")
-axes[1].text(x[0] + (0-1.5)*w, 0.03, "n/a", ha="center", va="bottom",
-             fontsize=6, color="#666666", style="italic")
-axes[1].text(x[0] + (1-1.5)*w, 0.03, "n/a", ha="center", va="bottom",
-             fontsize=6, color="#666666", style="italic")
-for j in (1, 2):
-    axes[1].text(x[j] + (0-1.5)*w, 0.03, "n/a", ha="center", va="bottom",
-                 fontsize=6, color="#666666", style="italic")
+axes[0].set_ylabel("Macro-F1", fontsize=8.5); axes[0].set_title("(a) Macro-F1", fontsize=9)
+axes[1].set_ylabel("Set IoU", fontsize=8.5); axes[1].set_title("(b) Set IoU (Jaccard)", fontsize=9)
+axes[0].set_ylim(0, 1.0); axes[1].set_ylim(0, 1.0)
 save(fig, "fig2_main_results")
 
 # ============================================================
-# Fig 3: ECE & intra-domain false-reject rate
+# Fig 3: ECE & rejection rate (rev 198 data)
 # ============================================================
 ece = {
-    "CICC":      [0.163, None, None],
-    "MULACONF":  [0.163, 0.052, 0.537],
-    "QP-10shot":    [0.471, 0.154, 0.321],
-    "Ours":         [0.005, 0.219, 0.045],
+    "TECP-14B":  [0.0447, 0.4710, 0.1522],
+    "SetFit+MC": [0.6951, 0.3983, 0.3738],
+    "QP-10shot": [0.4709, 0.1539, 0.3214],
+    "Ours":      [0.0053, 0.2193, 0.0454],
 }
 reject = {
-    "CICC":      [0.588, None, None],
-    "MULACONF":  [0.637, 1.000, 0.819],
-    "QP-10shot":    [0.863, 0.000, 0.000],
-    "Ours":         [0.139, 0.208, 0.046],
+    "TECP-14B":  [0.0037, 0.0483, 0.0236],
+    "SetFit+MC": [0.0482, 0.0471, 0.0227],
+    "QP-10shot": [0.8631, 0.0000, 0.0000],
+    "Ours":      [0.1387, 0.2083, 0.0455],
 }
-fig, axes = plt.subplots(1, 2, figsize=(6.9, 2.5), dpi=300)
-fig.subplots_adjust(left=0.09, right=0.98, top=0.88, bottom=0.18, wspace=0.28)
+fig, axes = plt.subplots(1, 2, figsize=(6.9, 2.7), dpi=300)
+fig.subplots_adjust(left=0.09, right=0.98, top=0.92, bottom=0.22, wspace=0.25)
 for i, m in enumerate(methods):
-    for j in range(len(datasets)):
-        _bar_nan(axes[0], x[j] + (i-1.5)*w, ece[m][j], w, colors[i])
-        _bar_nan(axes[1], x[j] + (i-1.5)*w, reject[m][j], w, colors[i])
-axes[0].legend(handles=[Patch(color=colors[i], label=methods[i]) for i in range(len(methods))],
-              ncol=4, loc="lower center", bbox_to_anchor=(0.5, 1.02),
-              frameon=False, fontsize=7, handlelength=1.2, columnspacing=1.0)
+    axes[0].bar(x + (i-1.5)*w, ece[m], w, color=colors[i],
+                edgecolor="white", linewidth=0.6)
+    axes[1].bar(x + (i-1.5)*w, reject[m], w, color=colors[i],
+                edgecolor="white", linewidth=0.6)
+fig.legend(handles=handles, ncol=4, loc="lower center",
+           bbox_to_anchor=(0.5, 0.005), frameon=False,
+           fontsize=7.5, handlelength=1.2, columnspacing=1.2)
 for ax in axes:
     ax.set_xticks(x); ax.set_xticklabels(datasets, fontsize=8)
     ax.tick_params(axis='y', labelsize=8)
-axes[0].set_ylabel("ECE", fontsize=8); axes[0].set_title("(a) Calibration error", fontsize=9)
-axes[1].set_ylabel("False-reject rate", fontsize=8); axes[1].set_title("(b) Intra-domain refusal", fontsize=9)
-axes[0].set_ylim(0, 0.55); axes[1].set_ylim(0, 1.05)
-for j in (1, 2):
-    axes[0].text(x[j] + (0-1.5)*w, 0.02, "n/a", ha="center", va="bottom",
-                 fontsize=6, color="#666666", style="italic")
-    axes[1].text(x[j] + (0-1.5)*w, 0.02, "n/a", ha="center", va="bottom",
-                 fontsize=6, color="#666666", style="italic")
+axes[0].set_ylabel("ECE", fontsize=8.5); axes[0].set_title("(a) Expected Calibration Error", fontsize=9)
+axes[1].set_ylabel("False-reject rate", fontsize=8.5); axes[1].set_title("(b) Intra-domain refusal", fontsize=9)
+axes[0].set_ylim(0, 0.75); axes[1].set_ylim(0, 1.0)
 save(fig, "fig3_ece_reject")
 
 # ============================================================
