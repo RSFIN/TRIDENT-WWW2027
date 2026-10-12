@@ -146,21 +146,22 @@ release  = [1.0 - 0.0 - 0.1387, 1.0 - 0.7283 - 0.2083, 1.0 - 0.8386 - 0.0455]
 clarify  = [0.0, 0.7283, 0.8386]
 rejectv  = [0.1387, 0.2083, 0.0455]
 
-fig, ax = plt.subplots(figsize=(5.5, 3.4))
+fig, ax = plt.subplots(figsize=(3.4, 2.8))
 ax.bar(datasets, release, label="RELEASE", color="#2E7D32",
-       edgecolor="white", linewidth=0.7)
+       edgecolor="white", linewidth=0.7, width=0.6)
 ax.bar(datasets, clarify, bottom=release, label="CLARIFY", color=C_LLM,
-       edgecolor="white", linewidth=0.7)
+       edgecolor="white", linewidth=0.7, width=0.6)
 ax.bar(datasets, rejectv, bottom=[r+c for r,c in zip(release,clarify)],
-       label="REJECT", color=C_OURS, edgecolor="white", linewidth=0.7)
+       label="REJECT", color=C_OURS, edgecolor="white", linewidth=0.7, width=0.6)
 for i in range(3):
-    ax.text(i, release[i]/2, f"{release[i]:.2f}", ha="center", va="center", color="white", fontsize=9, fontweight="bold")
+    ax.text(i, release[i]/2, f"{release[i]:.2f}", ha="center", va="center", color="white", fontsize=7.5, fontweight="bold")
     if clarify[i] > 0.05:
-        ax.text(i, release[i]+clarify[i]/2, f"{clarify[i]:.2f}", ha="center", va="center", color="white", fontsize=9, fontweight="bold")
+        ax.text(i, release[i]+clarify[i]/2, f"{clarify[i]:.2f}", ha="center", va="center", color="white", fontsize=7.5, fontweight="bold")
     if rejectv[i] > 0.05:
-        ax.text(i, release[i]+clarify[i]+rejectv[i]/2, f"{rejectv[i]:.2f}", ha="center", va="center", color="white", fontsize=9, fontweight="bold")
-ax.set_ylabel("Fraction of test queries")
-ax.legend(loc="upper right", ncol=3, bbox_to_anchor=(1.0, -0.15))
+        ax.text(i, release[i]+clarify[i]+rejectv[i]/2, f"{rejectv[i]:.2f}", ha="center", va="center", color="white", fontsize=7.5, fontweight="bold")
+ax.set_ylabel("Fraction", fontsize=8)
+ax.tick_params(labelsize=7.5)
+ax.legend(loc="upper center", ncol=3, bbox_to_anchor=(0.5, -0.12), frameon=False, fontsize=7)
 ax.set_ylim(0, 1.05)
 fig.tight_layout()
 save(fig, "fig4_three_state")
