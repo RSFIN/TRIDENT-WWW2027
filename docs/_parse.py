@@ -1,5 +1,5 @@
 import re
-t = open('docs/_f10.txt', encoding='utf-8').read()
+t = open(r'E:\PY-Project\WWW2027\code\intent-conformal\docs\_f11.txt', encoding='utf-8').read()
 for m in re.finditer(r'<img[^>]*>', t):
     tag = m.group()
     bid = re.search(r'id=\\"([^\\]+)\\"', tag)
