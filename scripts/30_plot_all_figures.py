@@ -57,56 +57,59 @@ def save(fig, name):
     print("saved", name)
 
 # ============================================================
-# Fig 2: Main results — Macro-F1 & Set IoU across datasets
+# Fig 2: Main results — Set IoU & Avg set size across datasets
+# Source: T2a (CLINC150) / T2b (MixATIS/MixSNIPS) unified-protocol v1.0
 # ============================================================
 datasets = ["CLINC150", "MixATIS", "MixSNIPS"]
-methods  = ["TECP-14B", "SetFit+MC", "QP-10shot", "Ours"]
-colors   = [C_CICC, C_MULA, C_QP, C_OURS]
+methods  = ["R10 UniCR", "R11 TECP-14B", "QP-10shot", "Ours"]
+colors   = [C_GREY, C_CICC, C_QP, C_OURS]
 
-# values from T2a/T2b + QP summary + R11/R13 final reports + P4 summary
-macro_f1 = {
-    "TECP-14B":  [0.9483, 0.3735, 0.6614],   # R11 TECP-style, qwen3-14b legacy
-    "SetFit+MC": [0.9341, 0.4971, 0.5677],   # R13 SetFit + MC-dropout routing
-    "QP-10shot": [0.2031, 0.2899, 0.5243],   # QP-OneModel 10-shot
-    "Ours":      [0.8987, 0.4229, 0.7761],
-}
+# Set IoU (Jaccard)
 set_iou = {
-    "TECP-14B":  [0.9541, 0.3843, 0.5286],
-    "SetFit+MC": [0.1898, 0.3023, 0.4745],
-    "QP-10shot": [0.0273, 0.2991, 0.4599],
-    "Ours":      [0.8561, 0.3869, 0.7571],
+    "R10 UniCR":    [0.867, 0.451, 0.491],
+    "R11 TECP-14B": [0.954, 0.384, 0.529],
+    "QP-10shot":    [0.027, 0.299, 0.460],
+    "Ours":         [0.856, 0.387, 0.757],
+}
+# Avg predicted set size (compactness; lower = tighter, real #intents <=3 on multi-intet)
+avg_set = {
+    "R10 UniCR":    [0.87, 1.33, 0.90],
+    "R11 TECP-14B": [1.00, 0.95, 0.98],
+    "QP-10shot":    [0.68, 4.90, 4.25],
+    "Ours":         [0.87, 1.52, 1.80],
 }
 
 fig, axes = plt.subplots(1, 2, figsize=(9, 3.6))
 x = np.arange(len(datasets)); w = 0.19
 for i, m in enumerate(methods):
-    axes[0].bar(x + (i-1.5)*w, macro_f1[m], w, label=m, color=colors[i],
+    axes[0].bar(x + (i-1.5)*w, set_iou[m], w, label=m, color=colors[i],
                 edgecolor="white", linewidth=0.7)
-    axes[1].bar(x + (i-1.5)*w, set_iou[m], w, label=m, color=colors[i],
+    axes[1].bar(x + (i-1.5)*w, avg_set[m], w, label=m, color=colors[i],
                 edgecolor="white", linewidth=0.7)
 axes[0].set_xticks(x); axes[0].set_xticklabels(datasets)
 axes[1].set_xticks(x); axes[1].set_xticklabels(datasets)
-axes[0].set_ylabel("Macro-F1"); axes[0].set_title("(a) Macro-F1")
-axes[1].set_ylabel("Set IoU"); axes[1].set_title("(b) Set IoU (Jaccard)")
-axes[0].set_ylim(0, 1.0); axes[1].set_ylim(0, 1.0)
+axes[0].set_ylabel("Set IoU (Jaccard)"); axes[0].set_title("(a) Set IoU ↑")
+axes[1].set_ylabel("Avg predicted set size"); axes[1].set_title("(b) Avg set size ↓ (tighter)")
+axes[0].set_ylim(0, 1.0); axes[1].set_ylim(0, 5.5)
 axes[0].legend(ncol=4, loc="upper center", bbox_to_anchor=(1.0, -0.18))
 fig.tight_layout()
 save(fig, "fig2_main_results")
 
 # ============================================================
-# Fig 3: ECE & rejection rate
+# Fig 3: ECE & intra-domain false-reject rate
+# Source: T2a/T2b unified-protocol v1.0
 # ============================================================
 ece = {
-    "TECP-14B":  [0.0447, 0.4710, 0.1522],
-    "SetFit+MC": [0.6951, 0.3983, 0.3738],
-    "QP-10shot": [0.4709, 0.1539, 0.3214],
-    "Ours":      [0.0053, 0.2193, 0.0454],
+    "R10 UniCR":    [0.004, 0.141, 0.029],
+    "R11 TECP-14B": [0.045, 0.471, 0.152],
+    "QP-10shot":    [0.471, 0.154, 0.321],
+    "Ours":         [0.005, 0.219, 0.045],
 }
 reject = {
-    "TECP-14B":  [0.0037, 0.0483, 0.0236],
-    "SetFit+MC": [0.0482, 0.0471, 0.0227],
-    "QP-10shot": [0.8631, 0.0000, 0.0000],
-    "Ours":      [0.1387, 0.2083, 0.0455],
+    "R10 UniCR":    [0.128, 0.211, 0.099],
+    "R11 TECP-14B": [0.004, 0.048, 0.024],
+    "QP-10shot":    [0.863, 0.000, 0.000],
+    "Ours":         [0.139, 0.208, 0.046],
 }
 fig, axes = plt.subplots(1, 2, figsize=(9, 3.6))
 for i, m in enumerate(methods):
@@ -117,8 +120,8 @@ for i, m in enumerate(methods):
 axes[0].set_xticks(x); axes[0].set_xticklabels(datasets)
 axes[1].set_xticks(x); axes[1].set_xticklabels(datasets)
 axes[0].set_ylabel("ECE (15-bin)"); axes[0].set_title("(a) Expected Calibration Error ↓")
-axes[1].set_ylabel("Intra-domain rejection rate"); axes[1].set_title("(b) False-reject rate ↓")
-axes[0].set_ylim(0, 0.78); axes[1].set_ylim(0, 1.0)
+axes[1].set_ylabel("Intra-domain false-reject rate"); axes[1].set_title("(b) False-reject rate ↓")
+axes[0].set_ylim(0, 0.55); axes[1].set_ylim(0, 1.0)
 axes[0].legend(ncol=4, loc="upper center", bbox_to_anchor=(1.0, -0.18))
 fig.tight_layout()
 save(fig, "fig3_ece_reject")
