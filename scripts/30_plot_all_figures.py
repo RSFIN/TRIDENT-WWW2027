@@ -63,20 +63,20 @@ def save(fig, name):
 #            QP-OneModel 10-shot (generative), Ours (retrieval-grounded split CP)
 # ============================================================
 datasets = ["CLINC150", "MixATIS", "MixSNIPS"]
-methods  = ["R5 CICC", "R12 MULACONF", "QP-10shot", "Ours"]
+methods  = ["CICC", "MULACONF", "QP-10shot", "Ours"]
 colors   = [C_CICC, C_MULA, C_QP, C_OURS]
 
 # Set IoU (Jaccard); None = not comparable (single-label conformal emits huge sets)
 set_iou = {
-    "R5 CICC":      [None, None, None],
-    "R12 MULACONF": [None, 0.347, 0.794],
+    "CICC":      [None, None, None],
+    "MULACONF":  [None, 0.347, 0.794],
     "QP-10shot":    [0.027, 0.299, 0.460],
     "Ours":         [0.856, 0.387, 0.757],
 }
 # Avg predicted set size (compactness; lower = tighter; CICC/MULACONF emit 78-150)
 avg_set = {
-    "R5 CICC":      [78.7, None, None],
-    "R12 MULACONF": [4.5, 150.6, 9.9],
+    "CICC":      [78.7, None, None],
+    "MULACONF":  [4.5, 150.6, 9.9],
     "QP-10shot":    [0.68, 4.90, 4.25],
     "Ours":         [0.87, 1.52, 1.80],
 }
@@ -107,14 +107,14 @@ save(fig, "fig2_main_results")
 # Fig 3: ECE & intra-domain false-reject rate
 # ============================================================
 ece = {
-    "R5 CICC":      [0.163, None, None],
-    "R12 MULACONF": [0.163, 0.052, 0.537],
+    "CICC":      [0.163, None, None],
+    "MULACONF":  [0.163, 0.052, 0.537],
     "QP-10shot":    [0.471, 0.154, 0.321],
     "Ours":         [0.005, 0.219, 0.045],
 }
 reject = {
-    "R5 CICC":      [0.588, None, None],
-    "R12 MULACONF": [0.637, 1.000, 0.819],
+    "CICC":      [0.588, None, None],
+    "MULACONF":  [0.637, 1.000, 0.819],
     "QP-10shot":    [0.863, 0.000, 0.000],
     "Ours":         [0.139, 0.208, 0.046],
 }
