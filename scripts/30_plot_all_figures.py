@@ -79,42 +79,40 @@ set_iou = {
     "Ours":      [0.856, 0.387, 0.757],
 }
 
-fig, axes = plt.subplots(1, 2, figsize=(9, 3.6))
-x = np.arange(len(datasets)); w = 0.19
+fig, axes = plt.subplots(1, 2, figsize=(6.9, 2.5), dpi=300)
+fig.subplots_adjust(left=0.09, right=0.98, top=0.88, bottom=0.18, wspace=0.28)
+x = np.arange(len(datasets)); w = 0.18
 def _bar_nan(ax, pos, val, w_, color):
     if val is None:
         ax.bar(pos, 0.001, w_, color="white", edgecolor="#999999",
                linewidth=0.6, hatch="//", zorder=2)
         return
-    ax.bar(pos, val, w_, color=color, edgecolor="white", linewidth=0.7)
+    ax.bar(pos, val, w_, color=color, edgecolor="white", linewidth=0.6)
 for i, m in enumerate(methods):
     for j in range(len(datasets)):
         _bar_nan(axes[0], x[j] + (i-1.5)*w, acc[m][j], w, colors[i])
         _bar_nan(axes[1], x[j] + (i-1.5)*w, set_iou[m][j], w, colors[i])
 from matplotlib.patches import Patch
 axes[0].legend(handles=[Patch(color=colors[i], label=methods[i]) for i in range(len(methods))],
-               ncol=4, loc="upper center", bbox_to_anchor=(1.0, -0.18))
-axes[0].set_xticks(x); axes[0].set_xticklabels(datasets)
-axes[1].set_xticks(x); axes[1].set_xticklabels(datasets)
-axes[0].set_ylabel("Macro-F1 (CLINC150) / Hit@1 (multi-intent)")
-axes[0].set_title("(a) Top-1 accuracy ↑")
-axes[1].set_ylabel("Set IoU (Jaccard)"); axes[1].set_title("(b) Set IoU ↑")
+               ncol=4, loc="lower center", bbox_to_anchor=(0.5, 1.02),
+               frameon=False, fontsize=7, handlelength=1.2, columnspacing=1.0)
+for ax in axes:
+    ax.set_xticks(x); ax.set_xticklabels(datasets, fontsize=8)
+    ax.tick_params(axis='y', labelsize=8)
+axes[0].set_ylabel("Top-1 score", fontsize=8)
+axes[0].set_title("(a) Macro-F1 / Hit@1", fontsize=9)
+axes[1].set_ylabel("Set IoU", fontsize=8); axes[1].set_title("(b) Jaccard", fontsize=9)
 axes[0].set_ylim(0, 1.05); axes[1].set_ylim(0, 1.0)
-# n/a annotations
-# CICC: not on multi-intent benchmarks
 for j in (1, 2):
     axes[0].text(x[j] + (0-1.5)*w, 0.02, "n/a", ha="center", va="bottom",
-                 fontsize=7, color="#666666", style="italic")
-# CLINC150 set-IoU not defined for single-label conformal baselines
+                 fontsize=6, color="#666666", style="italic")
 axes[1].text(x[0] + (0-1.5)*w, 0.03, "n/a", ha="center", va="bottom",
-             fontsize=7, color="#666666", style="italic")
+             fontsize=6, color="#666666", style="italic")
 axes[1].text(x[0] + (1-1.5)*w, 0.03, "n/a", ha="center", va="bottom",
-             fontsize=7, color="#666666", style="italic")
-# CICC not on multi-intent set-IoU
+             fontsize=6, color="#666666", style="italic")
 for j in (1, 2):
     axes[1].text(x[j] + (0-1.5)*w, 0.03, "n/a", ha="center", va="bottom",
-                 fontsize=7, color="#666666", style="italic")
-fig.tight_layout()
+                 fontsize=6, color="#666666", style="italic")
 save(fig, "fig2_main_results")
 
 # ============================================================
@@ -132,25 +130,26 @@ reject = {
     "QP-10shot":    [0.863, 0.000, 0.000],
     "Ours":         [0.139, 0.208, 0.046],
 }
-fig, axes = plt.subplots(1, 2, figsize=(9, 3.6))
+fig, axes = plt.subplots(1, 2, figsize=(6.9, 2.5), dpi=300)
+fig.subplots_adjust(left=0.09, right=0.98, top=0.88, bottom=0.18, wspace=0.28)
 for i, m in enumerate(methods):
     for j in range(len(datasets)):
         _bar_nan(axes[0], x[j] + (i-1.5)*w, ece[m][j], w, colors[i])
         _bar_nan(axes[1], x[j] + (i-1.5)*w, reject[m][j], w, colors[i])
 axes[0].legend(handles=[Patch(color=colors[i], label=methods[i]) for i in range(len(methods))],
-              ncol=4, loc="upper center", bbox_to_anchor=(1.0, -0.18))
-axes[0].set_xticks(x); axes[0].set_xticklabels(datasets)
-axes[1].set_xticks(x); axes[1].set_xticklabels(datasets)
-axes[0].set_ylabel("ECE (15-bin)"); axes[0].set_title("(a) Expected Calibration Error ↓")
-axes[1].set_ylabel("Intra-domain false-reject rate"); axes[1].set_title("(b) False-reject rate ↓")
+              ncol=4, loc="lower center", bbox_to_anchor=(0.5, 1.02),
+              frameon=False, fontsize=7, handlelength=1.2, columnspacing=1.0)
+for ax in axes:
+    ax.set_xticks(x); ax.set_xticklabels(datasets, fontsize=8)
+    ax.tick_params(axis='y', labelsize=8)
+axes[0].set_ylabel("ECE", fontsize=8); axes[0].set_title("(a) Calibration error", fontsize=9)
+axes[1].set_ylabel("False-reject rate", fontsize=8); axes[1].set_title("(b) Intra-domain refusal", fontsize=9)
 axes[0].set_ylim(0, 0.55); axes[1].set_ylim(0, 1.05)
-# CICC not evaluated on multi-intent benchmarks
 for j in (1, 2):
     axes[0].text(x[j] + (0-1.5)*w, 0.02, "n/a", ha="center", va="bottom",
-                 fontsize=7, color="#666666", style="italic")
+                 fontsize=6, color="#666666", style="italic")
     axes[1].text(x[j] + (0-1.5)*w, 0.02, "n/a", ha="center", va="bottom",
-                 fontsize=7, color="#666666", style="italic")
-fig.tight_layout()
+                 fontsize=6, color="#666666", style="italic")
 save(fig, "fig3_ece_reject")
 
 # ============================================================
