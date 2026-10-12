@@ -1,0 +1,23 @@
+﻿{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "document": {
+      "content": "<fragment mode=\"section\" requested-start=\"doxcncdVCnZz0qrycyfxp15lbVg\"><h1 id=\"doxcncdVCnZz0qrycyfxp15lbVg\">参考实验结果配图设计</h1><p id=\"doxcnH6mQIVMgpAtPSiHHugpnob\">论文配图＝10 张 Figure＋5 张 Table，蓝图总览见下图；每张图与第 5 节实验一一对应，绘图安排在 W3–W4，先用占位数据跑通版式，再以最终实验数字替换。</p><html5-block id=\"doxcnlYr7TM1468cl3GAQdap5ie\" alt=\"论文图表蓝图总览：F1-F10 十张图的编号、形态、数据源与核心结论\" data-ref=\"html5_1\"></html5-block><p id=\"doxcnJy0l3wt1ws5tH70hDvUF2e\">表格分工：T1 数据集统计（第 5.1 节）、T2 主结果（L1/L2）、T3 消融（第 5.5 节）、T4 OOS 与决策指标（L2/L3/L5）、T5 效率与成本（L4，含免训练部署与知识更新成本）。T2 为全文核心表，最优值加粗、脚注标显著性；图与表不重复呈现同一信息（图看模式、表查明细）。</p></fragment>",
+      "document_id": "WtUqdMM1IoQJTGxQIwwcJiM9ndc",
+      "reference_map": {
+        "html5-block": {
+          "html5_1": {
+            "path": "@doc-fetch-resources/WtUqdMM1IoQJTGxQIwwcJiM9ndc/html5_1.html"
+          }
+        }
+      },
+      "revision_id": 56,
+      "title": "WWW 2027 选题 A 论文方案：背景、相关工作、实验设计与图表蓝图",
+      "url": "https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc"
+    }
+  },
+  "citations": [
+    "<document reference_id=\"https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc\"><title>WWW 2027 选题 A 论文方案：背景、相关工作、实验设计与图表蓝图</title><source_type>2</source_type><url>https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc</url></document>"
+  ]
+}

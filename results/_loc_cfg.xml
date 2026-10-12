@@ -1,0 +1,16 @@
+﻿{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "document": {
+      "content": "<fragment mode=\"keyword\" keyword=\"核心论点\"><p id=\"doxcnnx0bjNB4XNM3EpXlftwhbE\">结合实际实验路径（免训练为主，无 GPU 训练条件），基线按\"是否做共形校准\"组织，而非\"LLM vs 判别式\"。核心论点：零训练 LLM 已能做意图识别但 overconfident，本文贡献是给它加上带 coverage 保证的集合级校准与拒识。R1–R5 全部直接复用已有 predictions（无需再调 LLM API）；R6–R8 为消融，改 config/重跑 calib 阈值即可。</p><p id=\"doxcnEnvZ40wsG6Ft421KlEuMih\"><b>对比指标：</b>(a) 端到端 Main F1，(b) LLM API 调用比例（越低越好），(c) OOS AUROC，(d) 是否有 coverage guarantee（我们有，混合路由没有——这是核心论点）。</p></fragment>",
+      "document_id": "WtUqdMM1IoQJTGxQIwwcJiM9ndc",
+      "revision_id": 103,
+      "title": "WWW 2027 选题 A 论文方案：背景、相关工作、实验设计与图表蓝图",
+      "url": "https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc"
+    }
+  },
+  "citations": [
+    "<document reference_id=\"https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc\"><title>WWW 2027 选题 A 论文方案：背景、相关工作、实验设计与图表蓝图</title><source_type>2</source_type><url>https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc</url></document>"
+  ]
+}

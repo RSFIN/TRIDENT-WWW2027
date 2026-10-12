@@ -1,0 +1,16 @@
+﻿{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "document": {
+      "content": "<fragment mode=\"keyword\" keyword=\"MixATIS / MixSNIPS\"><h3 id=\"doxcnUIDb0gMgG6wRDkru5Ic7Fb\">T2b MixATIS / MixSNIPS 多意图结果</h3></fragment>",
+      "document_id": "WtUqdMM1IoQJTGxQIwwcJiM9ndc",
+      "revision_id": 63,
+      "title": "WWW 2027 选题 A 论文方案：背景、相关工作、实验设计与图表蓝图",
+      "url": "https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc"
+    }
+  },
+  "citations": [
+    "<document reference_id=\"https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc\"><title>WWW 2027 选题 A 论文方案：背景、相关工作、实验设计与图表蓝图</title><source_type>2</source_type><url>https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc</url></document>"
+  ]
+}

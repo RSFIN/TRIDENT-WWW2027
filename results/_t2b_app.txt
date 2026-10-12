@@ -1,0 +1,12 @@
+﻿{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "document": {
+      "revision_id": 84,
+      "url": "https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc"
+    },
+    "result": "success",
+    "warnings": []
+  }
+}

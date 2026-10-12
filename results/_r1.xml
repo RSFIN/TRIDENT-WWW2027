@@ -1,0 +1,1 @@
+<h2>实验结果汇总（基线实测，3 次重复）</h2><p>以下为 2026-09 已完成的基线实测数据，统一口径：α=0.1，split conformal，CLINC150 test=5500。Ours 为本方法 qwen3.7-plus 免训练版；R5=CICC [31]、R12=MULACONF [33]、R12-QP=QP-OneModel [12] 均在相同 calib/test 划分上复现。</p>

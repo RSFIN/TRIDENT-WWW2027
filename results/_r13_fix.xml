@@ -1,0 +1,1 @@
+﻿<li>混合路由决策：entropy 小于阈值 tau 时直接用 SetFit 结果（省 LLM）；entropy 大于等于 tau 或 OOS 时 fallback 到我们的 LLM + 共形校准。统计 LLM 调用率（fallback 比例）和整体准确率。</li>

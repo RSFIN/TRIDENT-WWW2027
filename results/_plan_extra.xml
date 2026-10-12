@@ -1,0 +1,10 @@
+﻿<h3>Plan-Extra：低参数量模型上的鲁棒性验证</h3>
+<p><b>实验设置：</b>用 DashScope 上的 Qwen2.5-7B-Instruct（或 Llama-3.1-8B）替换 qwen3.7-plus，保持相同 prompt、相同检索索引、相同共形 pipeline，在 CLINC150 上重跑 calib+test。预期 Main Macro-F1 从 0.896 降到 ~0.75-0.80。</p>
+<p><b>这个实验对论文的意义（写论文时必须讲清楚）：</b></p>
+<ol>
+<li><p><b>证明 coverage guarantee 是模型无关的。</b>共形预测的有限样本覆盖保证来自 exchangeability，不依赖 f_LLM 的准确率。无论 backbone 是 70B API 还是 7B 本地模型，calib 集上分位数取到的阈值都保证 test 集 coverage ≥ 1-α。这是我们方法的理论卖点——它把"模型能力差异"转化为"预测集大小/拒识率差异"，而不是破坏覆盖保证。</p></li>
+<li><p><p><b>展示 error-coverage tradeoff 曲线的形态。</b>小模型 baseline accuracy 低，共形校准会自动输出更大的候选集、更多 clarify/reject 决策，但 coverage 仍然达标。这张图（横轴 alpha，纵轴 empirical coverage，多条曲线对应不同模型规模）直接回应审稿人"你是不是只在强模型上 cherry-pick"的质疑。</p></li>
+<li><p><b>工程落地价值。</b>很多真实场景不能调用商用大模型 API（数据隐私、延迟、成本），必须本地部署 7B。我们的方法在小模型上仍然提供 finite-sample 统计保证，这把论文的适用范围从"云端大模型"扩展到"边缘本地模型"，是 WWW 审稿人看重的 deployment story。</p></li>
+<li><p><b>与 R13（SetFit 混合路由）形成呼应。</b>小模型实验 + 混合路由实验一起回答："为什么不直接用小模型+混合路由？"答案是：小模型+混合路由省了 API 调用但没有 coverage guarantee；我们的方法即使在 7B 上仍然有统计保证。</p></li>
+</ol>
+<p><b>时间点：</b>主表（CLINC150/MixATIS/MixSNIPS + R9/R10/R12）出来后再跑，不阻塞投稿。若算力紧张，只在 CLINC150 上做一个 7B 点即可。</p>

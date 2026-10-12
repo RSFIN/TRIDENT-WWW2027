@@ -1,0 +1,16 @@
+﻿{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "document": {
+      "content": "<fragment mode=\"keyword\" keyword=\"P3 消融执行结果\"><h3 id=\"doxcnE6v8c57UEW2vW9S1aeZMNb\">P3 消融执行结果（2026-09-30 完成，统一口径 v1.0，复用现有 predictions 零额外 API）</h3></fragment>",
+      "document_id": "WtUqdMM1IoQJTGxQIwwcJiM9ndc",
+      "revision_id": 102,
+      "title": "WWW 2027 选题 A 论文方案：背景、相关工作、实验设计与图表蓝图",
+      "url": "https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc"
+    }
+  },
+  "citations": [
+    "<document reference_id=\"https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc\"><title>WWW 2027 选题 A 论文方案：背景、相关工作、实验设计与图表蓝图</title><source_type>2</source_type><url>https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc</url></document>"
+  ]
+}

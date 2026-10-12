@@ -1,0 +1,27 @@
+﻿<h2 id="doxcnoLB5PzoO7uvDOwhiCDRwsc">基线与配置</h2>
+<p>结合实际实验路径（免训练为主，无 GPU 训练条件），基线按"是否做共形校准"组织，而非"LLM vs 判别式"。核心论点：零训练 LLM 已能做意图识别但 overconfident，本文贡献是给它加上带 coverage 保证的集合级校准与拒识。R1–R5 全部直接复用已有 predictions（无需再调 LLM API）；R6–R8 为消融，改 config/重跑 calib 阈值即可。</p>
+<table>
+<colgroup><col width="150"/><col width="260"/><col width="180"/><col width="230"/></colgroup>
+<thead><tr>
+<th><p>基线</p></th><th><p>实现方式</p></th><th><p>数据来源</p></th><th><p>对照角色</p></th>
+</tr></thead>
+<tbody>
+<tr><td><p><b>R1: LLM argmax（无校准）</b></p></td><td><p>直接取 llm_main，不拒识、不扩集合</p></td><td><p>已有 predictions</p></td><td><p>LLM 本身准确率；暴露 overconfident</p></td></tr>
+<tr><td><p><b>R2: LLM 固定 top-k</b></p></td><td><p>固定 k=1/2/3 取集合，无校准</p></td><td><p>llm_main + llm_aux</p></td><td><p>证明"多猜几个"≠自适应校准，set size 不随难度变化</p></td></tr>
+<tr><td><p><b>R3: LLM confidence 阈值拒识</b></p></td><td><p>用 llm_confidence 卡阈值扫 PR</p></td><td><p>已有字段</p></td><td><p>标准 OOS 拒识；对比共形的 coverage 保证</p></td></tr>
+<tr><td><p><b>R4: 纯检索 top1_sim 拒识</b></p></td><td><p>用 top1_sim 卡阈值扫 PR</p></td><td><p>已有字段</p></td><td><p>证明检索单独不够（MixATIS top1 acc 仅 15%）</p></td></tr>
+<tr><td><p><b>R5: 标准 split CP（单标签）</b></p></td><td><p>在 LLM confidence 上做 split conformal，输出单标签集合</p></td><td><p>已有 predictions</p></td><td><p><b>最直接对照</b>：单标签覆盖 vs 本文集合级覆盖</p></td></tr>
+<tr><td><p><b>R6: 硬 loss 共形（消融）</b></p></td><td><p>分层 loss 改回 0/1（main 错即 loss=1）</p></td><td><p>改 src/conformal/rcps.py 重跑阈值</p></td><td><p>证明四档分层 loss 的必要性</p></td></tr>
+<tr><td><p><b>R7: 纯 f_LLM（消融）</b></p></td><td><p>fusion_alpha=1.0，仅靠 LLM 信号</p></td><td><p>改 config 重跑 calib</p></td><td><p>证明融合 f_ret 的边际价值</p></td></tr>
+<tr><td><p><b>R8: 纯 f_ret（消融）</b></p></td><td><p>fusion_alpha=0.0，仅靠检索</p></td><td><p>改 config 重跑 calib</p></td><td><p>证明检索单独不行</p></td></tr>
+<tr><td><p><b>Ours</b></p></td><td><p>f_LLM+f_ret rank 归一化融合 + 四档分层共形 + 自适应最小澄清集 + dual OOS threshold</p></td><td><p>当前实现</p></td><td><p>本文方法</p></td></tr>
+</tbody>
+</table>
+<p><b>降级/移除的原设计：</b></p>
+<ul>
+<li><p>BERT/SetFit 微调：无 GPU 训练条件，改为引用 CLINC150/MixATIS/MixSNIPS 公开 SOTA 报告值作为外部参照，不自己复现。</p></li>
+<li><p>开源 7B/14B LLM（Qwen2.5-7B、Llama-3.1-8B）：放入 Plan-Extra（低参数量模型鲁棒性验证），待算力补充后用 API 小模型重跑 CLINC150。</p></li>
+<li><p>混合路由（SetFit + MC Dropout → LLM 兜底）：系统级基线，待算力补充后加入，设计见下文。</p></li>
+<li><p>mulaconf/powerset 多标签共形：相关工作提一句，不复刻（本文集合是变长多意图，非固定多标签）。</p></li>
+<li><p>QP-OneModel 生成式意图：相关工作提一句，不同范式。</p></li>
+</ul>

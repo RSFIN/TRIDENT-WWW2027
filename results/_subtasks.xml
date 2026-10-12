@@ -1,0 +1,25 @@
+﻿<h3>子任务 R11：TECP-style Token Entropy 共形（参考论文 + 实现）</h3>
+<p><b>参考论文：</b>TECP: Token-Entropy Conformal Prediction for LLMs（arXiv 2509.00461）。核心思想：对同一 query 用 temperature>0 采样 LLM T 次，统计 main intent 的预测分布熵作为 epistemic uncertainty，再做 split conformal。</p>
+<p><b>派给同学的具体步骤：</b></p>
+<ol>
+<li><p>新建 <code>scripts/11_run_llm_samples.py</code>，基于现有 <code>03_run_llm.py</code>，把 <code>llm.classify_intent()</code> 调用包成循环：temperature=0.7，采样 T=5 次，输出 5 个 llm_main 列表。</p></li>
+<li><p>先在 CLINC150 test 上跑 500 条子样本（<code>--limit 500</code>），确认 API 配额够用。输出格式：每条 record 加字段 <code>"samples": ["intent1","intent2",...]</code>。</p></li>
+<li><p>新建 <code>scripts/11_eval_tecp.py</code>：对每条样本，统计 5 次采样中 main intent 的频率分布 p(y)，算 entropy <code>H = -Σ p(y) log p(y)</code>；calib 集上取分位数作为阈值 θ；test 集上 entropy > θ 则 reject，否则取 argmax。</p></li>
+<li><p>对比指标：和我们的方法在同一 test 子集上比 (a) Main Macro-F1，(b) OOS AUROC，(c) avg 调用成本（5× vs 1×），(d) coverage at α=0.1。</p></li>
+</ol>
+<p><b>预期结论：</b>TECP 的 entropy 准确率可能略高，但 5× API 成本；我们单次调用 + 检索融合在 coverage 相当的情况下成本 1/5。这张 cost-accuracy tradeoff 图放论文 Figure 4。</p>
+<p><b>时间估计：</b>脚本 0.5 天，500 条采样 ~2 小时跑通，3 天出结果。</p>
+<h3>子任务 R13：SetFit + MC Dropout 混合路由（参考论文 + 实现）</h3>
+<p><b>参考论文：</b>"Intent Detection in the Age of LLMs"（arXiv 2410.01627）——用 BGE sentence transformer + 0.1 dropout 做 MC sampling；<b>开源库：</b><code>pip install setfit open-autonlu</code>（open-autonlu 内置 SetFit + MSP/Mahalanobis OOD detection）。</p>
+<p><b>派给同学的具体步骤：</b></p>
+<ol>
+<li><p>环境：<code>pip install setfit open-autonlu datasets</code>，不需要 GPU（CPU 即可，SetFit few-shot 训练很快）。</p></li>
+<li><p>数据：用现有 <code>data/processed/{clinc150,mixatis}/train.jsonl</code>，每类随机抽 16 例做 few-shot train（CLINC150 135 类 × 16 = 2160 条，MixATIS 17 类 × 16 = 272 条）。</p></li>
+<li><p>训练：<code>SetFitModel.from_pretrained("BAAI/bge-small-en-v1.5")</code>，用 sklearn LogisticRegression 做 classification head，1 epoch 对比学习训练。参考 HuggingFace 官方 notebook <code>setfit_doc/en/zero_shot.ipynb</code>。</p></li>
+<li><p>MC Dropout 推理：把 model 设为 <code>model.model_body.eval()</code> 但打开 dropout（<code>for m in model.modules(): if isinstance(m, nn.Dropout): m.train()</code>），对每条 test 样本前向 T=30 次，收集 30 个预测分布，算 predictive entropy 和 mutual information。</p></li>
+<li><p>OOS 检测：用 open-autonlu 的 <code>OodMethod.MSP_OOD</code> 或 Mahalanobis 距离，在 calib 集上定 FPR=0.05 阈值。</p></li>
+<li><p>混合路由决策：entropy < τ 时直接用 SetFit 结果（省 LLM）；entropy ≥ τ 或 OOS 时 fallback 到我们的 LLM + 共形校准。统计 LLM 调用率（fallback 比例）和整体准确率。</p></li>
+</ol>
+<p><b>对比指标：</b>(a) 端到端 Main F1，(b) LLM API 调用比例（越低越好），(c) OOS AUROC，(d) 是否有 coverage guarantee（我们有，混合路由没有——这是核心论点）。</p>
+<p><b>时间估计：</b>环境搭建 0.5 天，训练+MC 推理 1 天，调通 OOS 和 fallback 逻辑 1 天，3 天出结果。</p>
+<p><b>风险提示：</b>SetFit 在 CLINC150 135 类上 few-shot 可能准确率不高（~70%），但这不影响对比——重点是展示"它省了 LLM 调用但没有 coverage 保证"。</p>

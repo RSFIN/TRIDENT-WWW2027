@@ -1,0 +1,16 @@
+﻿{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "document": {
+      "content": "<fragment mode=\"keyword\" keyword=\"F7|F8|F9|F10|补充图|Coverage vs\"><p id=\"doxcnUd3CGUAVZhbQZdaXIaCVOe\"><b>补充图（根据当前实验进展新增）：</b></p><ul><li id=\"doxcnENuODEXxhuZ5XIauaCXxEe\"><b>F7 Coverage vs 平均集合大小曲线：</b>横轴 α∈{0.05,0.1,0.15,0.2,0.25}，纵轴左=empirical stratified coverage，纵轴右=avg set size。三条曲线对应 R5（单标签 CP）、R6（硬 loss）、Ours（四档分层）。这是共形论文最核心的图——展示我们的方法在达到相同 coverage 时集合更小。</li><li id=\"doxcnhafOdnC7vmEqMdUqGZeOYd\"><b>F8 OOS ROC 曲线：</b>在 CLINC150 test 上画 R3（LLM confidence）、R4（retrieval top1_sim）、Ours（融合分）三条 ROC 曲线，标注 AUROC。我们已有 AUROC=0.975。</li><li id=\"doxcn1sziUo2CIsJJpoEWBi0yzd\"><b>F9 Cost-Accuracy tradeoff（R11 用）：</b>散点图，x=每次查询的 LLM 调用次数（1× vs 5×），y=Main Macro-F1。Ours 在 (1×, 0.896)，TECP 在 (5×, ~0.91)，证明我们单次调用性价比高。</li><li id=\"doxcnG5lpNK9ClTfInQLE715JzG\"><b>F10 模型规模鲁棒性（Plan-Extra）：</b>柱状图，x=backbone 规模（qwen3.7-plus vs Qwen2.5-7B），y=empirical coverage at α=0.1。两根柱子都接近 0.9，证明 coverage guarantee 模型无关。</li></ul></fragment>",
+      "document_id": "WtUqdMM1IoQJTGxQIwwcJiM9ndc",
+      "revision_id": 50,
+      "title": "WWW 2027 选题 A 论文方案：背景、相关工作、实验设计与图表蓝图",
+      "url": "https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc"
+    }
+  },
+  "citations": [
+    "<document reference_id=\"https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc\"><title>WWW 2027 选题 A 论文方案：背景、相关工作、实验设计与图表蓝图</title><source_type>2</source_type><url>https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc</url></document>"
+  ]
+}

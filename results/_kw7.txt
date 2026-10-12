@@ -1,0 +1,16 @@
+﻿{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "document": {
+      "content": "<fragment mode=\"keyword\" keyword=\"T3 消融中分析\"><p id=\"doxcnzjY3y6tqrJtFJw333E1xhd\"><b>T2b 结论</b>：MULACONF Tree fixed α 在 MixATIS 上 avg set size=748（17 个意图几乎全选），误拒率=1.0（全部误拒，不可用）；Powerset 版本 set size=150.6 同样过大。Ours 在 MixATIS 上 avg set size=3.16，三态决策分布为 release/clarify/reject，证明分层共形在多意图场景下仍保持紧致性。MixATIS 主任务 Macro-F1（0.437）与 MULACONF 的差距待 R11/R13 补充后在 T3 消融中分析。</p></fragment>",
+      "document_id": "WtUqdMM1IoQJTGxQIwwcJiM9ndc",
+      "revision_id": 63,
+      "title": "WWW 2027 选题 A 论文方案：背景、相关工作、实验设计与图表蓝图",
+      "url": "https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc"
+    }
+  },
+  "citations": [
+    "<document reference_id=\"https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc\"><title>WWW 2027 选题 A 论文方案：背景、相关工作、实验设计与图表蓝图</title><source_type>2</source_type><url>https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc</url></document>"
+  ]
+}

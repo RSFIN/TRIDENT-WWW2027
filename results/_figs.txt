@@ -1,0 +1,23 @@
+﻿{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "document": {
+      "content": "<fragment mode=\"section\" requested-start=\"doxcncdVCnZz0qrycyfxp15lbVg\"><h1 id=\"doxcncdVCnZz0qrycyfxp15lbVg\">参考实验结果配图设计</h1><p id=\"doxcnMGEN5SqMnUssZQdC8xhXwg\">论文配图＝6 张 Figure＋5 张 Table，蓝图总览见下图；每张图与第 5 节实验一一对应，绘图安排在 W3–W4，先用占位数据跑通版式，再以最终实验数字替换。</p><html5-block id=\"doxcncKttpcPcPqxHjACUKiY9dv\" alt=\"选题 A 论文的配图与表格蓝图总览：6 张图、5 张表的编号、标题、形态、数据源与预期看点，支撑正文第 6 节逐图设计。\" data-ref=\"html5_1\"></html5-block><p id=\"doxcn0tjEuUlWZpiOvgDrk0CJQg\">表 6-1 逐图给出\"目的—数据源—看点\"，作为写作与绘图的分工清单。</p><table id=\"doxcnZzaL3mZg1t0nsonBg6Snwc\"><colgroup><col width=\"100\"/><col width=\"180\"/><col width=\"200\"/><col width=\"340\"/></colgroup><thead><tr><th vertical-align=\"top\"><p id=\"doxcnrGSxrq8EyejzUowBz8zBBc\">图</p></th><th vertical-align=\"top\"><p id=\"doxcnKYeoV0ObZlNPELEeYYNhEo\">形态</p></th><th vertical-align=\"top\"><p id=\"doxcnwc8hMLRYQUIOQFbZvCZWJZ\">数据源</p></th><th vertical-align=\"top\"><p id=\"doxcnGZlPw9vYugL8tJhhYUUged\">要读者看到的结论</p></th></tr></thead><tbody><tr><td vertical-align=\"top\"><p id=\"doxcneta5r9BiIgQyX62l1Xdy8e\">F1 方法框架</p></td><td vertical-align=\"top\"><p id=\"doxcnWUCQGdWgU4sF42T2PERUBd\">流程图</p></td><td vertical-align=\"top\"><p id=\"doxcnssLdVl18dphxgOGRVqfWlc\">第 4 节</p></td><td vertical-align=\"top\"><p id=\"doxcnWqRtb0Za8rxbuz6CejwGbs\">10 秒看懂\"知识库→检索→推理→校准→决策\"闭环；模块与消融一一对应</p></td></tr><tr><td vertical-align=\"top\"><p id=\"doxcnW75NOnI3MBRah4MqYlpFag\">F2 主结果</p></td><td vertical-align=\"top\"><p id=\"doxcnb0TlbfW7UQU7450si2e5fb\">分组条形图</p></td><td vertical-align=\"top\"><p id=\"doxcnhSXRFxfNSLLUvqqXOKOInh\">表 T2（3 组数据×5 类方法）</p></td><td vertical-align=\"top\"><p id=\"doxcnk13iCE8IB6gqkVFkwHlDKf\">ours 整体领先；误差条＝3 次重复 std；与判别式、纯 LLM、混合路由的差距可视化</p></td></tr><tr><td vertical-align=\"top\"><p id=\"doxcnw8qUoKp77JFZeE45FdFBte\">F3 次意图质量</p></td><td vertical-align=\"top\"><p id=\"doxcnCI9pI9haKTbC4oLFGIC5ff\">折线＋条形</p></td><td vertical-align=\"top\"><p id=\"doxcn34VhcKwMPpXLyT3UgFKzxg\">L2 次意图指标（MixATIS/MixSNIPS/MultiSNIPS）</p></td><td vertical-align=\"top\"><p id=\"doxcnAHrwsqjBQ6RYVBpPh2gyxg\">K 增大时 Hit@k 增益与主任务代价，证明有序意图集优于单标签</p></td></tr><tr><td vertical-align=\"top\"><p id=\"doxcnYEg0FUD9RzpE4Ms4SIOnSf\">F4 校准可靠性</p></td><td vertical-align=\"top\"><p id=\"doxcn2VeU3E5tRjNcTUHqrmAoOf\">reliability diagram</p></td><td vertical-align=\"top\"><p id=\"doxcnX6CjaH8WMRAzXcpWhvQ74b\">L3 校准（ours vs 判别式 logits vs LLM 自报置信）</p></td><td vertical-align=\"top\"><p id=\"doxcnBYLk39HXkBmwAr4iGUDu7e\">对角线贴合度；共形的覆盖保证可见</p></td></tr><tr><td vertical-align=\"top\"><p id=\"doxcnqJSG3QD4W2cBHSrZuOTVtc\">F5 三维 Pareto</p></td><td vertical-align=\"top\"><p id=\"doxcnoqC0nlBLVFP2j4tJhjZ2Nh\">散点图</p></td><td vertical-align=\"top\"><p id=\"doxcnK4GAIYb5x0f5538QARcVXd\">L1/L3/L4（延迟 P50×F1×ECE）</p></td><td vertical-align=\"top\"><p id=\"doxcndvb5qBfvjpLOpb5B8RO0lc\">ours 位于\"低延迟＋高精度＋低 ECE\"前沿，支撑 Web 部署主张</p></td></tr><tr><td vertical-align=\"top\"><p id=\"doxcn3g0Pfcv70yaOEmS29Haxod\">F6 决策与 bad-case</p></td><td vertical-align=\"top\"><p id=\"doxcnF26In2d0UQqNx6QtFVyiQi\">决策矩阵＋案例表</p></td><td vertical-align=\"top\"><p id=\"doxcnlSuuqaE8aMNu3iBgqEEiWf\">L5 决策指标；CAsT/Needle 误拒、误放行案例聚类</p></td><td vertical-align=\"top\"><p id=\"doxcnGC6beSCmVwvcOerr0P5WNh\">同等 FPR95 下拒识率与澄清触发准确率对比；模糊 vs hard-negative vs 真域外的失败模式差异</p></td></tr></tbody></table><p id=\"doxcnJy0l3wt1ws5tH70hDvUF2e\">表格分工：T1 数据集统计（第 5.1 节）、T2 主结果（L1/L2）、T3 消融（第 5.5 节）、T4 OOS 与决策指标（L2/L3/L5）、T5 效率与成本（L4，含免训练部署与知识更新成本）。T2 为全文核心表，最优值加粗、脚注标显著性；图与表不重复呈现同一信息（图看模式、表查明细）。</p></fragment>",
+      "document_id": "WtUqdMM1IoQJTGxQIwwcJiM9ndc",
+      "reference_map": {
+        "html5-block": {
+          "html5_1": {
+            "path": "@doc-fetch-resources/WtUqdMM1IoQJTGxQIwwcJiM9ndc/html5_1.html"
+          }
+        }
+      },
+      "revision_id": 48,
+      "title": "WWW 2027 选题 A 论文方案：背景、相关工作、实验设计与图表蓝图",
+      "url": "https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc"
+    }
+  },
+  "citations": [
+    "<document reference_id=\"https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc\"><title>WWW 2027 选题 A 论文方案：背景、相关工作、实验设计与图表蓝图</title><source_type>2</source_type><url>https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc</url></document>"
+  ]
+}

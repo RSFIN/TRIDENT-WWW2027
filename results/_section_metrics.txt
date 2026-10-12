@@ -1,0 +1,16 @@
+﻿{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "document": {
+      "content": "<fragment mode=\"section\" requested-start=\"doxcnZPqZJwZcU0bdTNe3OV7XhZ\"><h2 id=\"doxcnZPqZJwZcU0bdTNe3OV7XhZ\">指标定义</h2><table id=\"doxcnxW9mhHR6rD76P0ARWzoupd\"><colgroup><col width=\"120\"/><col width=\"280\"/><col width=\"420\"/></colgroup><thead><tr><th vertical-align=\"top\"><p id=\"doxcnAQvaeAi5dEi76bfWeefQFd\">层级</p></th><th vertical-align=\"top\"><p id=\"doxcn8ngh2bI0fF4WRM9HDdoTjd\">指标</p></th><th vertical-align=\"top\"><p id=\"doxcnTH4F5Rw1bqzjz2NsODeuzc\">口径说明</p></th></tr></thead><tbody><tr><td vertical-align=\"top\"><p id=\"doxcn5t6Uii78it07S47asWI4hc\">L1 闭集</p></td><td vertical-align=\"top\"><p id=\"doxcnxlWPgw29jOvtXNeoaurbDe\">Accuracy / Macro-F1</p></td><td vertical-align=\"top\"><p id=\"doxcni8gfp5oEX5iH9Zx5AFo3Dc\">主判据 Macro-F1</p></td></tr><tr><td vertical-align=\"top\"><p id=\"doxcnGFV28kYhUC88uOJ4Eui1cc\">L1 多意图</p></td><td vertical-align=\"top\"><p id=\"doxcnVZQOQd5cvoX3QN1uemk4Gb\">Exact Match、意图集 IoU、Hit@1/3/5</p></td><td vertical-align=\"top\"><p id=\"doxcnZjVYwl0PzwCVEMsIfo5mqc\">MixATIS/MixSNIPS 组合标签当多标签金标；Hit@k 用于次意图</p></td></tr><tr><td vertical-align=\"top\"><p id=\"doxcnhp4HHC4eBEQbmsE4GsEPRe\">L2 OOS</p></td><td vertical-align=\"top\"><p id=\"doxcnsg3pjoEoQL7dTtXPXyQ69b\">AUROC / AUPRC / FPR95 / F1-OOS</p></td><td vertical-align=\"top\"><p id=\"doxcnmmRr5rOjOLk6QBhCsiu4yf\">阈值无关指标；hard-negative 子集单独报</p></td></tr><tr><td vertical-align=\"top\"><p id=\"doxcns8hKd6wVF1n3wPDLacVCmb\">L3 校准</p></td><td vertical-align=\"top\"><p id=\"doxcnCAeK81nxqQGCInm6mOTKJg\">ECE / Brier / 可靠性图；<b>集合级覆盖率（Jaccard≥0.5 的经验覆盖率 vs 名义 1−α）</b>；<b>平均预测集大小</b></p></td><td vertical-align=\"top\"><p id=\"doxcntdLPyjfOS415HHgsOTHBge\">15 箱；集合级覆盖率检验共形保证是否成立；紧致性（集合大小）衡量自适应澄清集收益</p></td></tr><tr><td vertical-align=\"top\"><p id=\"doxcnnMmdIjZWcZhcKb0QJFQTUb\">L4 效率</p></td><td vertical-align=\"top\"><p id=\"doxcnFLZ1rgVZNxgalZqp0D7Fsc\">延迟 P50/P99、tokens/样本、参数量</p></td><td vertical-align=\"top\"><p id=\"doxcnkzyDp9JIHcWFQOvDHgvFOe\">同一硬件与批大小；含免训练部署与知识更新成本</p></td></tr><tr><td vertical-align=\"top\"><p id=\"doxcn3JBLeSsh5aT7ivDn30op0f\">L5 决策</p></td><td vertical-align=\"top\"><p id=\"doxcnggywaCxyeywFALANHV72Eb\">拒识率@95% OOS 召回、误拒率、澄清触发准确率、澄清轮次；<b>集合级 Jaccard 错误率、澄清集大小分布</b></p></td><td vertical-align=\"top\"><p id=\"doxcn6GejelRwNKrU1QIE8beM5u\">CAsT/Needle 模糊查询上的决策质量；澄清用模拟器评测；集合级错误率是本文主指标</p></td></tr></tbody></table></fragment>",
+      "document_id": "WtUqdMM1IoQJTGxQIwwcJiM9ndc",
+      "revision_id": 76,
+      "title": "WWW 2027 选题 A 论文方案：背景、相关工作、实验设计与图表蓝图",
+      "url": "https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc"
+    }
+  },
+  "citations": [
+    "<document reference_id=\"https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc\"><title>WWW 2027 选题 A 论文方案：背景、相关工作、实验设计与图表蓝图</title><source_type>2</source_type><url>https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc</url></document>"
+  ]
+}

@@ -1,0 +1,14 @@
+﻿<h3>前沿工作复现对比（R9–R12）</h3>
+<p>根据 Related Work 调研，以下前沿工作与本文最接近，需在实验中显式对比以证明贡献。R9–R10 可直接复用已有 predictions；R11 需少量额外 LLM 采样；R12 仅改 loss 函数。</p>
+<table>
+<colgroup><col width="140"/><col width="280"/><col width="160"/><col width="240"/></colgroup>
+<thead><tr><th><p>基线</p></th><th><p>复现方式</p></th><th><p>成本</p></th><th><p>对比目的</p></th></tr></thead>
+<tbody>
+<tr><td><p><b>R9: CICC-style split CP</b> [31]</p></td><td><p>在 LLM confidence 上做标准 split conformal，输出单标签预测集（无分层 loss、无 aux 扩展）</p></td><td><p>已有 predictions，改脚本即可</p></td><td><p>证明四档分层 + 集合扩展比单标签 CP 更适合多意图</p></td></tr>
+<tr><td><p><b>R10: UniCR-style learned fusion</b> [34]</p></td><td><p>在 calib 集上 fit 一个 logistic calibration head，融合 f_ret / f_LLM / top1_sim / confidence 四个特征，再做 split CP</p></td><td><p>已有 predictions，sklearn LogisticRegression 秒级</p></td><td><p>证明无参数 rank 融合 vs 学参数融合：我们的方法零训练且 coverage 相当</p></td></tr>
+<tr><td><p><b>R11: TECP-style token entropy</b> [35]</p></td><td><p>对 calib/test 每条采样 LLM 5 次，计算 main 预测的预测分布熵作为 nonconformity score，做 split CP</p></td><td><p>需重跑 LLM 5 次×(3812+5500) ≈ 5万次调用</p></td><td><p>证明我们单次 LLM 调用 + 检索融合即可达到多次采样 entropy 的效果（成本-精度权衡）</p></td></tr>
+<tr><td><p><b>R12: MiRD-style binary loss</b> [36]</p></td><td><p>把四档分层 loss 退化为二分类错/对（漏答 vs 错答），做 split CP</p></td><td><p>改 src/conformal/rcps.py，重跑 calib 阈值</p></td><td><p>证明四档分层 loss 比二分解更能区分 main/aux 错误</p></td></tr>
+<tr><td><p><b>R13: 混合路由（SetFit+MC Dropout）</b></p></td><td><p>SetFit few-shot 训练（每类 16 例）+ MC Dropout 30 次采样估计 entropy，低置信时 fallback LLM</p></td><td><p>CPU 可跑，~1 小时；open-autonlu 库直接复现</p></td><td><p>系统级对比：成本（LLM 调用率）vs coverage guarantee。我们 100% LLM 但有 finite-sample 保证，混合路由省成本但无保证</p></td></tr>
+</tbody>
+</table>
+<p><b>实验执行优先级：</b>R9/R10/R12 零额外 API 成本，和主表一起出；R13 待算力/时间允许时加入；R11 作为 cost-vs-performance 的可选补充，若时间紧可只在 CLINC150 上做 500 条子样本。</p>

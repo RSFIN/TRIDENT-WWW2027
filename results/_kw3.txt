@@ -1,0 +1,16 @@
+﻿{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "document": {
+      "content": "<fragment mode=\"keyword\" keyword=\"Ours\"><excerpt top-block-id=\"doxcnyWmOCQc4xmASlLthLCsW4e\"><table id=\"doxcnyWmOCQc4xmASlLthLCsW4e\"><thead><tr><th vertical-align=\"top\"><p id=\"doxcn87dwSeUgXJMW1IkkEPVt4g\">基线</p></th><th vertical-align=\"top\"><p id=\"doxcns6XXkg1Ph63FrBM9w8p5ye\">实现方式</p></th><th vertical-align=\"top\"><p id=\"doxcnqNt61swP1XU63mhxULVnAd\">数据来源</p></th><th vertical-align=\"top\"><p id=\"doxcnnkHpjm55pT8Rxz5mAmiLkg\">对照角色</p></th></tr></thead><tbody><tr><td vertical-align=\"top\"><p id=\"doxcnAQgPJDvLPfqkB6y5ioEXPe\"><b>Ours</b></p></td><td vertical-align=\"top\"><p id=\"doxcnaW9DENo3eBKHLa5UFFVb9c\">f_LLM+f_ret rank 归一化融合 + 四档分层共形 + 自适应最小澄清集 + dual OOS threshold</p></td><td vertical-align=\"top\"><p id=\"doxcn0YcscX4FTqtgXoynkEJBdc\">当前实现</p></td><td vertical-align=\"top\"><p id=\"doxcnBYtg1kgCgkKSGiAFoKgxnd\">本文方法</p></td></tr></tbody></table></excerpt><excerpt top-block-id=\"doxcnCGH0ZI4KBPsUTMRqE8cUjh\"><table id=\"doxcnCGH0ZI4KBPsUTMRqE8cUjh\"><thead><tr><th vertical-align=\"top\"><p id=\"doxcns0dXkrKcC3lUsf8o0iNI5C\">消融维度</p></th><th vertical-align=\"top\"><p id=\"doxcnj7GnCvjartU5dq9lxXrM2g\">设置</p></th><th vertical-align=\"top\"><p id=\"doxcnePee1gtACrA9hKebki0gDc\">回答的问题</p></th></tr></thead><tbody><tr><td vertical-align=\"top\"><p id=\"doxcnzAaqju8GgNrViZOkl3fYhh\">跨域泛化</p></td><td vertical-align=\"top\"><p id=\"doxcnj4pR1Wa6cHt850Aeb2wejg\">CLINC150 校准→MixSNIPS 测试</p></td><td vertical-align=\"top\"><p id=\"doxcngXxkMwvRE2ipdQxsPpeCzd\">共形保证是否依赖同域分布</p><h2 id=\"doxcn8PZxUQPboc6uevfypNtnff\">实验结果汇总（基线实测，3 次重复）</h2><p id=\"doxcnLV3FEahSk3wOk8x9thuhkg\">以下为 2026-09 已完成的基线实测数据，统一口径：α=0.1，split conformal，CLINC150 test=5500。Ours 为本方法 qwen3.7-plus 免训练版；R5=CICC [31]、R12=MULACONF [33]、R12-QP=QP-OneModel [12] 均在相同 calib/test 划分上复现。</p><h3 id=\"doxcnyH7kVDIDiQUnp1rqeflCYb\">T2a CLINC150 主结果</h3></td></tr></tbody></table></excerpt><table id=\"doxcnpEwpuiXpHChw34nbCx8Pyc\"><colgroup><col width=\"120\"/><col width=\"98\"/></colgroup><thead><tr><th vertical-align=\"top\"><p id=\"doxcn5OCDAe8RUxZJslaMGtl01b\">方法</p></th><th vertical-align=\"top\"><p id=\"doxcnCfZF5X5nQvcfSyBKQyAaxg\">F1</p></th></tr></thead><tbody><tr><td vertical-align=\"top\"><p id=\"doxcnXY3mesMGrj5sASAjUUBW8b\">Ours</p></td><td vertical-align=\"top\"><p id=\"doxcnEKYjKoMwqaZ40Km91kcXpg\">0.896</p></td></tr></tbody></table></fragment>",
+      "document_id": "WtUqdMM1IoQJTGxQIwwcJiM9ndc",
+      "revision_id": 60,
+      "title": "WWW 2027 选题 A 论文方案：背景、相关工作、实验设计与图表蓝图",
+      "url": "https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc"
+    }
+  },
+  "citations": [
+    "<document reference_id=\"https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc\"><title>WWW 2027 选题 A 论文方案：背景、相关工作、实验设计与图表蓝图</title><source_type>2</source_type><url>https://xdbdilab.feishu.cn/docx/WtUqdMM1IoQJTGxQIwwcJiM9ndc</url></document>"
+  ]
+}
