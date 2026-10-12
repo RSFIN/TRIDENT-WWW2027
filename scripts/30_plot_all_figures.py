@@ -116,7 +116,7 @@ ece = {
 reject = {
     "CICC":      [0.5879, None, None],
     "MULACONF":  [0.6369, 1.0000, 0.8190],
-    "QP-10shot": [0.863, 0.000, 0.000],
+    "QP-10shot": [0.863, None, None],
     "Ours":      [0.1387, 0.2083, 0.0455],
 }
 fig, axes = plt.subplots(1, 2, figsize=(6.9, 2.6), dpi=300)
