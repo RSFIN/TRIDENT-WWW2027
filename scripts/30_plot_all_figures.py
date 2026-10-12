@@ -60,19 +60,19 @@ def save(fig, name):
 # Fig 2: Main results — Macro-F1 & Set IoU across datasets
 # ============================================================
 datasets = ["CLINC150", "MixATIS", "MixSNIPS"]
-methods  = ["CICC", "MULACONF", "QP-10shot", "Ours"]
+methods  = ["TECP-14B", "SetFit+MC", "QP-10shot", "Ours"]
 colors   = [C_CICC, C_MULA, C_QP, C_OURS]
 
-# values from T2a/T2b + QP summary + P4 summary
+# values from T2a/T2b + QP summary + R11/R13 final reports + P4 summary
 macro_f1 = {
-    "CICC":      [0.8520, 0.3100, 0.6200],   # R5 single-label baseline
-    "MULACONF":  [0.8800, 0.3500, 0.7000],   # R12 multi-label baseline
+    "TECP-14B":  [0.9483, 0.3735, 0.6614],   # R11 TECP-style, qwen3-14b legacy
+    "SetFit+MC": [0.9341, 0.4971, 0.5677],   # R13 SetFit + MC-dropout routing
     "QP-10shot": [0.2031, 0.2899, 0.5243],   # QP-OneModel 10-shot
     "Ours":      [0.8987, 0.4229, 0.7761],
 }
 set_iou = {
-    "CICC":      [0.8200, 0.2500, 0.5500],
-    "MULACONF":  [0.8400, 0.3200, 0.6800],
+    "TECP-14B":  [0.9541, 0.3843, 0.5286],
+    "SetFit+MC": [0.1898, 0.3023, 0.4745],
     "QP-10shot": [0.0273, 0.2991, 0.4599],
     "Ours":      [0.8561, 0.3869, 0.7571],
 }
@@ -97,15 +97,15 @@ save(fig, "fig2_main_results")
 # Fig 3: ECE & rejection rate
 # ============================================================
 ece = {
-    "CICC":      [0.085, 0.280, 0.120],
-    "MULACONF":  [0.060, 0.250, 0.090],
-    "QP-10shot": [0.471, 0.154, 0.321],
+    "TECP-14B":  [0.0447, 0.4710, 0.1522],
+    "SetFit+MC": [0.6951, 0.3983, 0.3738],
+    "QP-10shot": [0.4709, 0.1539, 0.3214],
     "Ours":      [0.0053, 0.2193, 0.0454],
 }
 reject = {
-    "CICC":      [0.310, 0.000, 0.000],
-    "MULACONF":  [0.180, 0.000, 0.000],
-    "QP-10shot": [0.863, 0.000, 0.000],
+    "TECP-14B":  [0.0037, 0.0483, 0.0236],
+    "SetFit+MC": [0.0482, 0.0471, 0.0227],
+    "QP-10shot": [0.8631, 0.0000, 0.0000],
     "Ours":      [0.1387, 0.2083, 0.0455],
 }
 fig, axes = plt.subplots(1, 2, figsize=(9, 3.6))
@@ -118,7 +118,7 @@ axes[0].set_xticks(x); axes[0].set_xticklabels(datasets)
 axes[1].set_xticks(x); axes[1].set_xticklabels(datasets)
 axes[0].set_ylabel("ECE (15-bin)"); axes[0].set_title("(a) Expected Calibration Error ↓")
 axes[1].set_ylabel("Intra-domain rejection rate"); axes[1].set_title("(b) False-reject rate ↓")
-axes[0].set_ylim(0, 0.55); axes[1].set_ylim(0, 1.0)
+axes[0].set_ylim(0, 0.78); axes[1].set_ylim(0, 1.0)
 axes[0].legend(ncol=4, loc="upper center", bbox_to_anchor=(1.0, -0.18))
 fig.tight_layout()
 save(fig, "fig3_ece_reject")
