@@ -81,7 +81,7 @@ fig.subplots_adjust(left=0.09, right=0.98, top=0.92, bottom=0.22, wspace=0.25)
 x = np.arange(len(datasets)); w = 0.18
 def _bar_nan(ax, pos, val, w_, color):
     if val is None:
-        ax.bar(pos, 0.001, w_, color="white", edgecolor="#999999",
+        ax.bar(pos, 1.0, w_, color="white", edgecolor="#999999",
                linewidth=0.5, hatch="//", zorder=2)
         return
     ax.bar(pos, val, w_, color=color, edgecolor="white", linewidth=0.6)
