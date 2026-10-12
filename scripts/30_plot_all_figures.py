@@ -83,8 +83,12 @@ avg_set = {
 
 fig, axes = plt.subplots(1, 2, figsize=(9, 3.6))
 x = np.arange(len(datasets)); w = 0.19
-def _bar_nan(ax, pos, val, w_, color):
-    if val is None: return
+def _bar_nan(ax, pos, val, w_, color, baseline_y=0.0):
+    if val is None:
+        # hatched n/a stub
+        ax.bar(pos, 0.001, w_, color="white", edgecolor="#999999",
+               linewidth=0.6, hatch="//", zorder=2)
+        return
     ax.bar(pos, val, w_, color=color, edgecolor="white", linewidth=0.7)
 for i, m in enumerate(methods):
     for j in range(len(datasets)):
@@ -100,6 +104,15 @@ axes[0].set_ylabel("Set IoU (Jaccard)"); axes[0].set_title("(a) Set IoU ↑")
 axes[1].set_ylabel("Avg predicted set size"); axes[1].set_title("(b) Avg set size ↓ (log scale)")
 axes[0].set_ylim(0, 1.0); axes[1].set_yscale("log"); axes[1].set_ylim(0.5, 300)
 axes[1].set_yticks([1, 10, 100]); axes[1].set_yticklabels(["1", "10", "100"])
+# annotate n/a on CLINC150 Set IoU panel (CICC, MULACONF single-label not comparable)
+axes[0].text(x[0] + (0-1.5)*w, 0.03, "n/a", ha="center", va="bottom",
+             fontsize=7, color="#666666", style="italic")
+axes[0].text(x[0] + (1-1.5)*w, 0.03, "n/a", ha="center", va="bottom",
+             fontsize=7, color="#666666", style="italic")
+# annotate CICC n/a on multi-intent avg-set panel
+for j in (1, 2):
+    axes[1].text(x[j] + (0-1.5)*w, 0.6, "n/a", ha="center", va="bottom",
+                 fontsize=7, color="#666666", style="italic")
 fig.tight_layout()
 save(fig, "fig2_main_results")
 
@@ -130,6 +143,12 @@ axes[1].set_xticks(x); axes[1].set_xticklabels(datasets)
 axes[0].set_ylabel("ECE (15-bin)"); axes[0].set_title("(a) Expected Calibration Error ↓")
 axes[1].set_ylabel("Intra-domain false-reject rate"); axes[1].set_title("(b) False-reject rate ↓")
 axes[0].set_ylim(0, 0.55); axes[1].set_ylim(0, 1.05)
+# CICC not evaluated on multi-intent benchmarks
+for j in (1, 2):
+    axes[0].text(x[j] + (0-1.5)*w, 0.02, "n/a", ha="center", va="bottom",
+                 fontsize=7, color="#666666", style="italic")
+    axes[1].text(x[j] + (0-1.5)*w, 0.02, "n/a", ha="center", va="bottom",
+                 fontsize=7, color="#666666", style="italic")
 fig.tight_layout()
 save(fig, "fig3_ece_reject")
 
