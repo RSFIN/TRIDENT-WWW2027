@@ -57,61 +57,62 @@ def save(fig, name):
     print("saved", name)
 
 # ============================================================
-# Fig 2: Main results — Set IoU & Avg set size across datasets
-# Source: T2a (CLINC150) / T2b (MixATIS/MixSNIPS) unified-protocol v1.0
-# Baselines: CICC (split CP, single-intent BERT), MULACONF (powerset conformal),
-#            QP-OneModel 10-shot (generative), Ours (retrieval-grounded split CP)
+# Fig 2: Main results — F1/Hit@1 & Set IoU across datasets
+# Source: T2a (CLINC150 Macro-F1) / T2b (MixATIS/MixSNIPS Hit@1)
 # ============================================================
 datasets = ["CLINC150", "MixATIS", "MixSNIPS"]
 methods  = ["CICC", "MULACONF", "QP-10shot", "Ours"]
 colors   = [C_CICC, C_MULA, C_QP, C_OURS]
 
-# Set IoU (Jaccard); None = not comparable (single-label conformal emits huge sets)
+# Accuracy: CLINC150 = Macro-F1; MixATIS/MixSNIPS = Hit@1
+acc = {
+    "CICC":      [0.625, None, None],
+    "MULACONF":  [0.625, 0.733, 0.970],
+    "QP-10shot": [0.203, 0.114, 0.174],
+    "Ours":      [0.899, 0.079, 0.168],
+}
+# Set IoU (Jaccard); None = not comparable
 set_iou = {
     "CICC":      [None, None, None],
     "MULACONF":  [None, 0.347, 0.794],
-    "QP-10shot":    [0.027, 0.299, 0.460],
-    "Ours":         [0.856, 0.387, 0.757],
-}
-# Avg predicted set size (compactness; lower = tighter; CICC/MULACONF emit 78-150)
-avg_set = {
-    "CICC":      [78.7, None, None],
-    "MULACONF":  [4.5, 150.6, 9.9],
-    "QP-10shot":    [0.68, 4.90, 4.25],
-    "Ours":         [0.87, 1.52, 1.80],
+    "QP-10shot": [0.027, 0.299, 0.460],
+    "Ours":      [0.856, 0.387, 0.757],
 }
 
 fig, axes = plt.subplots(1, 2, figsize=(9, 3.6))
 x = np.arange(len(datasets)); w = 0.19
-def _bar_nan(ax, pos, val, w_, color, baseline_y=0.0):
+def _bar_nan(ax, pos, val, w_, color):
     if val is None:
-        # hatched n/a stub
         ax.bar(pos, 0.001, w_, color="white", edgecolor="#999999",
                linewidth=0.6, hatch="//", zorder=2)
         return
     ax.bar(pos, val, w_, color=color, edgecolor="white", linewidth=0.7)
 for i, m in enumerate(methods):
     for j in range(len(datasets)):
-        _bar_nan(axes[0], x[j] + (i-1.5)*w, set_iou[m][j], w, colors[i])
-        _bar_nan(axes[1], x[j] + (i-1.5)*w, avg_set[m][j], w, colors[i])
-# legend via proxy artists
+        _bar_nan(axes[0], x[j] + (i-1.5)*w, acc[m][j], w, colors[i])
+        _bar_nan(axes[1], x[j] + (i-1.5)*w, set_iou[m][j], w, colors[i])
 from matplotlib.patches import Patch
 axes[0].legend(handles=[Patch(color=colors[i], label=methods[i]) for i in range(len(methods))],
                ncol=4, loc="upper center", bbox_to_anchor=(1.0, -0.18))
 axes[0].set_xticks(x); axes[0].set_xticklabels(datasets)
 axes[1].set_xticks(x); axes[1].set_xticklabels(datasets)
-axes[0].set_ylabel("Set IoU (Jaccard)"); axes[0].set_title("(a) Set IoU ↑")
-axes[1].set_ylabel("Avg predicted set size"); axes[1].set_title("(b) Avg set size ↓ (log scale)")
-axes[0].set_ylim(0, 1.0); axes[1].set_yscale("log"); axes[1].set_ylim(0.5, 300)
-axes[1].set_yticks([1, 10, 100]); axes[1].set_yticklabels(["1", "10", "100"])
-# annotate n/a on CLINC150 Set IoU panel (CICC, MULACONF single-label not comparable)
-axes[0].text(x[0] + (0-1.5)*w, 0.03, "n/a", ha="center", va="bottom",
-             fontsize=7, color="#666666", style="italic")
-axes[0].text(x[0] + (1-1.5)*w, 0.03, "n/a", ha="center", va="bottom",
-             fontsize=7, color="#666666", style="italic")
-# annotate CICC n/a on multi-intent avg-set panel
+axes[0].set_ylabel("Macro-F1 (CLINC150) / Hit@1 (multi-intent)")
+axes[0].set_title("(a) Top-1 accuracy ↑")
+axes[1].set_ylabel("Set IoU (Jaccard)"); axes[1].set_title("(b) Set IoU ↑")
+axes[0].set_ylim(0, 1.05); axes[1].set_ylim(0, 1.0)
+# n/a annotations
+# CICC: not on multi-intent benchmarks
 for j in (1, 2):
-    axes[1].text(x[j] + (0-1.5)*w, 0.6, "n/a", ha="center", va="bottom",
+    axes[0].text(x[j] + (0-1.5)*w, 0.02, "n/a", ha="center", va="bottom",
+                 fontsize=7, color="#666666", style="italic")
+# CLINC150 set-IoU not defined for single-label conformal baselines
+axes[1].text(x[0] + (0-1.5)*w, 0.03, "n/a", ha="center", va="bottom",
+             fontsize=7, color="#666666", style="italic")
+axes[1].text(x[0] + (1-1.5)*w, 0.03, "n/a", ha="center", va="bottom",
+             fontsize=7, color="#666666", style="italic")
+# CICC not on multi-intent set-IoU
+for j in (1, 2):
+    axes[1].text(x[j] + (0-1.5)*w, 0.03, "n/a", ha="center", va="bottom",
                  fontsize=7, color="#666666", style="italic")
 fig.tight_layout()
 save(fig, "fig2_main_results")
