@@ -59,70 +59,77 @@ def save(fig, name):
 # ============================================================
 # Fig 2: Main results — Set IoU & Avg set size across datasets
 # Source: T2a (CLINC150) / T2b (MixATIS/MixSNIPS) unified-protocol v1.0
+# Baselines: CICC (split CP, single-intent BERT), MULACONF (powerset conformal),
+#            QP-OneModel 10-shot (generative), Ours (retrieval-grounded split CP)
 # ============================================================
 datasets = ["CLINC150", "MixATIS", "MixSNIPS"]
-methods  = ["R10 UniCR", "R11 TECP-14B", "QP-10shot", "Ours"]
-colors   = [C_GREY, C_CICC, C_QP, C_OURS]
+methods  = ["R5 CICC", "R12 MULACONF", "QP-10shot", "Ours"]
+colors   = [C_CICC, C_MULA, C_QP, C_OURS]
 
-# Set IoU (Jaccard)
+# Set IoU (Jaccard); None = not comparable (single-label conformal emits huge sets)
 set_iou = {
-    "R10 UniCR":    [0.867, 0.451, 0.491],
-    "R11 TECP-14B": [0.954, 0.384, 0.529],
+    "R5 CICC":      [None, None, None],
+    "R12 MULACONF": [None, 0.347, 0.794],
     "QP-10shot":    [0.027, 0.299, 0.460],
     "Ours":         [0.856, 0.387, 0.757],
 }
-# Avg predicted set size (compactness; lower = tighter, real #intents <=3 on multi-intet)
+# Avg predicted set size (compactness; lower = tighter; CICC/MULACONF emit 78-150)
 avg_set = {
-    "R10 UniCR":    [0.87, 1.33, 0.90],
-    "R11 TECP-14B": [1.00, 0.95, 0.98],
+    "R5 CICC":      [78.7, None, None],
+    "R12 MULACONF": [4.5, 150.6, 9.9],
     "QP-10shot":    [0.68, 4.90, 4.25],
     "Ours":         [0.87, 1.52, 1.80],
 }
 
 fig, axes = plt.subplots(1, 2, figsize=(9, 3.6))
 x = np.arange(len(datasets)); w = 0.19
+def _bar_nan(ax, pos, val, w_, color):
+    if val is None: return
+    ax.bar(pos, val, w_, color=color, edgecolor="white", linewidth=0.7)
 for i, m in enumerate(methods):
-    axes[0].bar(x + (i-1.5)*w, set_iou[m], w, label=m, color=colors[i],
-                edgecolor="white", linewidth=0.7)
-    axes[1].bar(x + (i-1.5)*w, avg_set[m], w, label=m, color=colors[i],
-                edgecolor="white", linewidth=0.7)
+    for j in range(len(datasets)):
+        _bar_nan(axes[0], x[j] + (i-1.5)*w, set_iou[m][j], w, colors[i])
+        _bar_nan(axes[1], x[j] + (i-1.5)*w, avg_set[m][j], w, colors[i])
+# legend via proxy artists
+from matplotlib.patches import Patch
+axes[0].legend(handles=[Patch(color=colors[i], label=methods[i]) for i in range(len(methods))],
+               ncol=4, loc="upper center", bbox_to_anchor=(1.0, -0.18))
 axes[0].set_xticks(x); axes[0].set_xticklabels(datasets)
 axes[1].set_xticks(x); axes[1].set_xticklabels(datasets)
 axes[0].set_ylabel("Set IoU (Jaccard)"); axes[0].set_title("(a) Set IoU ↑")
-axes[1].set_ylabel("Avg predicted set size"); axes[1].set_title("(b) Avg set size ↓ (tighter)")
-axes[0].set_ylim(0, 1.0); axes[1].set_ylim(0, 5.5)
-axes[0].legend(ncol=4, loc="upper center", bbox_to_anchor=(1.0, -0.18))
+axes[1].set_ylabel("Avg predicted set size"); axes[1].set_title("(b) Avg set size ↓ (log scale)")
+axes[0].set_ylim(0, 1.0); axes[1].set_yscale("log"); axes[1].set_ylim(0.5, 300)
+axes[1].set_yticks([1, 10, 100]); axes[1].set_yticklabels(["1", "10", "100"])
 fig.tight_layout()
 save(fig, "fig2_main_results")
 
 # ============================================================
 # Fig 3: ECE & intra-domain false-reject rate
-# Source: T2a/T2b unified-protocol v1.0
 # ============================================================
 ece = {
-    "R10 UniCR":    [0.004, 0.141, 0.029],
-    "R11 TECP-14B": [0.045, 0.471, 0.152],
+    "R5 CICC":      [0.163, None, None],
+    "R12 MULACONF": [0.163, 0.052, 0.537],
     "QP-10shot":    [0.471, 0.154, 0.321],
     "Ours":         [0.005, 0.219, 0.045],
 }
 reject = {
-    "R10 UniCR":    [0.128, 0.211, 0.099],
-    "R11 TECP-14B": [0.004, 0.048, 0.024],
+    "R5 CICC":      [0.588, None, None],
+    "R12 MULACONF": [0.637, 1.000, 0.819],
     "QP-10shot":    [0.863, 0.000, 0.000],
     "Ours":         [0.139, 0.208, 0.046],
 }
 fig, axes = plt.subplots(1, 2, figsize=(9, 3.6))
 for i, m in enumerate(methods):
-    axes[0].bar(x + (i-1.5)*w, ece[m], w, label=m, color=colors[i],
-                edgecolor="white", linewidth=0.7)
-    axes[1].bar(x + (i-1.5)*w, reject[m], w, label=m, color=colors[i],
-                edgecolor="white", linewidth=0.7)
+    for j in range(len(datasets)):
+        _bar_nan(axes[0], x[j] + (i-1.5)*w, ece[m][j], w, colors[i])
+        _bar_nan(axes[1], x[j] + (i-1.5)*w, reject[m][j], w, colors[i])
+axes[0].legend(handles=[Patch(color=colors[i], label=methods[i]) for i in range(len(methods))],
+              ncol=4, loc="upper center", bbox_to_anchor=(1.0, -0.18))
 axes[0].set_xticks(x); axes[0].set_xticklabels(datasets)
 axes[1].set_xticks(x); axes[1].set_xticklabels(datasets)
 axes[0].set_ylabel("ECE (15-bin)"); axes[0].set_title("(a) Expected Calibration Error ↓")
 axes[1].set_ylabel("Intra-domain false-reject rate"); axes[1].set_title("(b) False-reject rate ↓")
-axes[0].set_ylim(0, 0.55); axes[1].set_ylim(0, 1.0)
-axes[0].legend(ncol=4, loc="upper center", bbox_to_anchor=(1.0, -0.18))
+axes[0].set_ylim(0, 0.55); axes[1].set_ylim(0, 1.05)
 fig.tight_layout()
 save(fig, "fig3_ece_reject")
 
