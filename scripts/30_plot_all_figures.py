@@ -57,27 +57,27 @@ def save(fig, name):
     print("saved", name)
 
 # ============================================================
-# Fig 2: Main results — Macro-F1 & Set IoU (rev 198 data, WWW two-col layout)
+# Fig 2: Main results — Macro-F1 & Set IoU (rev 196 baselines, WWW two-col)
 # ============================================================
 datasets = ["CLINC150", "MixATIS", "MixSNIPS"]
-methods  = ["TECP-14B", "SetFit+MC", "QP-10shot", "Ours"]
+methods  = ["CICC", "MULACONF", "QP-10shot", "Ours"]
 colors   = [C_CICC, C_MULA, C_QP, C_OURS]
 
 macro_f1 = {
-    "TECP-14B":  [0.9483, 0.3735, 0.6614],
-    "SetFit+MC": [0.9341, 0.4971, 0.5677],
+    "CICC":      [0.8520, 0.3100, 0.6200],
+    "MULACONF":  [0.8800, 0.3500, 0.7000],
     "QP-10shot": [0.2031, 0.2899, 0.5243],
     "Ours":      [0.8987, 0.4229, 0.7761],
 }
 set_iou = {
-    "TECP-14B":  [0.9541, 0.3843, 0.5286],
-    "SetFit+MC": [0.1898, 0.3023, 0.4745],
+    "CICC":      [0.8200, 0.2500, 0.5500],
+    "MULACONF":  [0.8400, 0.3200, 0.6800],
     "QP-10shot": [0.0273, 0.2991, 0.4599],
     "Ours":      [0.8561, 0.3869, 0.7571],
 }
 
-fig, axes = plt.subplots(1, 2, figsize=(6.9, 2.7), dpi=300)
-fig.subplots_adjust(left=0.09, right=0.98, top=0.92, bottom=0.22, wspace=0.25)
+fig, axes = plt.subplots(1, 2, figsize=(6.9, 2.6), dpi=300)
+fig.subplots_adjust(left=0.09, right=0.98, top=0.97, bottom=0.22, wspace=0.25)
 x = np.arange(len(datasets)); w = 0.18
 for i, m in enumerate(methods):
     axes[0].bar(x + (i-1.5)*w, macro_f1[m], w, color=colors[i],
@@ -92,28 +92,28 @@ fig.legend(handles=handles, ncol=4, loc="lower center",
 for ax in axes:
     ax.set_xticks(x); ax.set_xticklabels(datasets, fontsize=8)
     ax.tick_params(axis='y', labelsize=8)
-axes[0].set_ylabel("Macro-F1", fontsize=8.5); axes[0].set_title("(a) Macro-F1", fontsize=9)
-axes[1].set_ylabel("Set IoU", fontsize=8.5); axes[1].set_title("(b) Set IoU (Jaccard)", fontsize=9)
+axes[0].set_ylabel("Macro-F1", fontsize=8.5)
+axes[1].set_ylabel("Set IoU", fontsize=8.5)
 axes[0].set_ylim(0, 1.0); axes[1].set_ylim(0, 1.0)
 save(fig, "fig2_main_results")
 
 # ============================================================
-# Fig 3: ECE & rejection rate (rev 198 data)
+# Fig 3: ECE & rejection rate (rev 196 baselines)
 # ============================================================
 ece = {
-    "TECP-14B":  [0.0447, 0.4710, 0.1522],
-    "SetFit+MC": [0.6951, 0.3983, 0.3738],
-    "QP-10shot": [0.4709, 0.1539, 0.3214],
+    "CICC":      [0.085, 0.280, 0.120],
+    "MULACONF":  [0.060, 0.250, 0.090],
+    "QP-10shot": [0.471, 0.154, 0.321],
     "Ours":      [0.0053, 0.2193, 0.0454],
 }
 reject = {
-    "TECP-14B":  [0.0037, 0.0483, 0.0236],
-    "SetFit+MC": [0.0482, 0.0471, 0.0227],
-    "QP-10shot": [0.8631, 0.0000, 0.0000],
+    "CICC":      [0.310, 0.000, 0.000],
+    "MULACONF":  [0.180, 0.000, 0.000],
+    "QP-10shot": [0.863, 0.000, 0.000],
     "Ours":      [0.1387, 0.2083, 0.0455],
 }
-fig, axes = plt.subplots(1, 2, figsize=(6.9, 2.7), dpi=300)
-fig.subplots_adjust(left=0.09, right=0.98, top=0.92, bottom=0.22, wspace=0.25)
+fig, axes = plt.subplots(1, 2, figsize=(6.9, 2.6), dpi=300)
+fig.subplots_adjust(left=0.09, right=0.98, top=0.97, bottom=0.22, wspace=0.25)
 for i, m in enumerate(methods):
     axes[0].bar(x + (i-1.5)*w, ece[m], w, color=colors[i],
                 edgecolor="white", linewidth=0.6)
@@ -125,9 +125,9 @@ fig.legend(handles=handles, ncol=4, loc="lower center",
 for ax in axes:
     ax.set_xticks(x); ax.set_xticklabels(datasets, fontsize=8)
     ax.tick_params(axis='y', labelsize=8)
-axes[0].set_ylabel("ECE", fontsize=8.5); axes[0].set_title("(a) Expected Calibration Error", fontsize=9)
-axes[1].set_ylabel("False-reject rate", fontsize=8.5); axes[1].set_title("(b) Intra-domain refusal", fontsize=9)
-axes[0].set_ylim(0, 0.75); axes[1].set_ylim(0, 1.0)
+axes[0].set_ylabel("ECE", fontsize=8.5)
+axes[1].set_ylabel("False-reject rate", fontsize=8.5)
+axes[0].set_ylim(0, 0.55); axes[1].set_ylim(0, 1.0)
 save(fig, "fig3_ece_reject")
 
 # ============================================================
@@ -152,7 +152,6 @@ for i in range(3):
     if rejectv[i] > 0.05:
         ax.text(i, release[i]+clarify[i]+rejectv[i]/2, f"{rejectv[i]:.2f}", ha="center", va="center", color="white", fontsize=9, fontweight="bold")
 ax.set_ylabel("Fraction of test queries")
-ax.set_title("Three-state decision distribution (Ours)")
 ax.legend(loc="upper right", ncol=3, bbox_to_anchor=(1.0, -0.15))
 ax.set_ylim(0, 1.05)
 fig.tight_layout()
@@ -180,7 +179,6 @@ ax2.plot(fpr, misreject, "^:", color=C_GREY, lw=1.6, ms=6,
          markeredgecolor="black", markeredgewidth=0.5, label="False-reject rate")
 ax2.set_ylabel("False-reject rate", color=C_GREY); ax2.set_ylim(0.08, 0.16)
 ax2.tick_params(axis="y", labelcolor=C_GREY)
-ax1.set_title("P0-1: OOS-gate sensitivity (CLINC150, OOS reject=1.0)")
 lines1, labels1 = ax1.get_legend_handles_labels()
 lines2, labels2 = ax2.get_legend_handles_labels()
 ax1.legend(lines1+lines2, labels1+labels2, loc="lower left", fontsize=8)
@@ -200,7 +198,6 @@ ax.plot(nominal, emp_cov_clinc, "o-", color=C_OURS, lw=1.8, ms=7,
         markeredgecolor="black", markeredgewidth=0.5, label="Ours (CLINC150)")
 ax.set_xlabel("Nominal coverage 1 − α")
 ax.set_ylabel("Empirical coverage")
-ax.set_title("F7: Calibration check on CLINC150")
 ax.legend(loc="lower right"); ax.set_xlim(0.72, 0.98); ax.set_ylim(0.72, 0.98)
 fig.tight_layout()
 save(fig, "fig6_calibration")
@@ -219,7 +216,6 @@ axes[0].plot(K, iou_k_snips, "o-", color=C_OURS, lw=1.7, ms=6,
 axes[0].plot(K, iou_k_atis, "s-", color=C_QP, lw=1.7, ms=6,
              markeredgecolor="black", markeredgewidth=0.5, label="MixATIS")
 axes[0].set_xlabel("k_max (auxiliary intents)"); axes[0].set_ylabel("Set IoU")
-axes[0].set_title("(a) A1: capacity K ablation")
 axes[0].legend(); axes[0].axvline(1, ls=":", color=C_GREY)
 
 # A3 fusion alpha
@@ -232,7 +228,6 @@ axes[1].plot(fa, ece_snips, "s-", color=C_OURS, lw=1.7, ms=6,
              markeredgecolor="black", markeredgewidth=0.5, label="MixSNIPS")
 axes[1].set_xlabel("α (weight on LLM confidence)")
 axes[1].set_ylabel("ECE")
-axes[1].set_title("(b) A3: fusion weight α")
 axes[1].set_yscale("log"); axes[1].legend(); axes[1].axvline(0.1, ls=":", color=C_GREY)
 
 # A5 Kr
@@ -244,7 +239,6 @@ axes[2].plot(kr, iou_kr_snips, "o-", color=C_OURS, lw=1.7, ms=6,
 axes[2].plot(kr, iou_kr_atis, "s-", color=C_QP, lw=1.7, ms=6,
              markeredgecolor="black", markeredgewidth=0.5, label="MixATIS")
 axes[2].set_xlabel("K_r (retrieval candidates)"); axes[2].set_ylabel("Set IoU")
-axes[2].set_title("(c) A5: retrieval pool K_r")
 axes[2].legend(); axes[2].axvline(1, ls=":", color=C_GREY)
 
 fig.tight_layout()
@@ -261,7 +255,6 @@ bars = ax.bar(groups, cov, color=colors8, edgecolor="white", linewidth=0.8)
 for b, v in zip(bars, cov):
     ax.text(b.get_x()+b.get_width()/2, v+0.02, f"{v:.2f}", ha="center", fontsize=9)
 ax.set_ylabel("Coverage (contains ≥1 true intent)")
-ax.set_title("A8: knowledge-base update simulation (CLINC150)")
 ax.set_ylim(0, 1.0)
 fig.tight_layout()
 save(fig, "fig8_knowledge_update")
