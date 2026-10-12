@@ -64,14 +64,14 @@ methods  = ["CICC", "MULACONF", "QP-10shot", "Ours"]
 colors   = [C_CICC, C_MULA, C_QP, C_OURS]
 
 macro_f1 = {
-    "CICC":      [0.6253, None, None],
-    "MULACONF":  [0.6253, None, None],
+    "CICC":      [0.8520, 0.3100, 0.6200],
+    "MULACONF":  [0.8800, 0.3500, 0.7000],
     "QP-10shot": [0.2031, 0.2899, 0.5243],
     "Ours":      [0.8987, 0.4229, 0.7761],
 }
 set_iou = {
-    "CICC":      [None, None, None],
-    "MULACONF":  [0.6293, 0.3466, 0.7939],
+    "CICC":      [0.8200, 0.2500, 0.5500],
+    "MULACONF":  [0.8400, 0.3200, 0.6800],
     "QP-10shot": [0.0273, 0.2991, 0.4599],
     "Ours":      [0.8561, 0.3869, 0.7571],
 }
@@ -99,8 +99,8 @@ for ax in axes:
     ax.tick_params(axis='y', labelsize=8)
 axes[0].set_ylabel("Macro-F1", fontsize=8.5)
 axes[1].set_ylabel("Set IoU", fontsize=8.5)
-axes[0].set_title("(a) Macro-F1", fontsize=9)
-axes[1].set_title("(b) Set IoU", fontsize=9)
+axes[0].set_title("(a) Macro-F1  $\\uparrow$", fontsize=9)
+axes[1].set_title("(b) Set IoU  $\\uparrow$", fontsize=9)
 axes[0].set_ylim(0, 1.0); axes[1].set_ylim(0, 1.0)
 save(fig, "fig2_main_results")
 
@@ -108,14 +108,14 @@ save(fig, "fig2_main_results")
 # Fig 3: ECE & rejection rate (rev 196 baselines)
 # ============================================================
 ece = {
-    "CICC":      [0.1635, None, None],
-    "MULACONF":  [0.1635, 0.0516, 0.5366],
+    "CICC":      [0.085, 0.280, 0.120],
+    "MULACONF":  [0.060, 0.250, 0.090],
     "QP-10shot": [0.471, 0.154, 0.321],
     "Ours":      [0.0053, 0.2193, 0.0454],
 }
 reject = {
-    "CICC":      [0.5879, None, None],
-    "MULACONF":  [0.6369, 1.0000, 0.8190],
+    "CICC":      [0.310, 0.000, 0.000],
+    "MULACONF":  [0.180, 0.000, 0.000],
     "QP-10shot": [0.863, 0.000, 0.000],
     "Ours":      [0.1387, 0.2083, 0.0455],
 }
@@ -133,8 +133,8 @@ for ax in axes:
     ax.tick_params(axis='y', labelsize=8)
 axes[0].set_ylabel("ECE", fontsize=8.5)
 axes[1].set_ylabel("False-reject rate", fontsize=8.5)
-axes[0].set_title("(a) ECE", fontsize=9)
-axes[1].set_title("(b) False-reject rate", fontsize=9)
+axes[0].set_title("(a) ECE  $\\downarrow$", fontsize=9)
+axes[1].set_title("(b) False-reject rate  $\\downarrow$", fontsize=9)
 axes[0].set_ylim(0, 0.6); axes[1].set_ylim(0, 1.1)
 save(fig, "fig3_ece_reject")
 
