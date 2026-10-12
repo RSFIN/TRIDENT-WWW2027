@@ -1,0 +1,190 @@
+﻿{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "entries": [
+      {
+        "edit_time": "2026-10-12T01:51:51Z",
+        "editor_ids": [
+          "7656295319184903365"
+        ],
+        "history_version_id": "221184",
+        "revision_id": 220,
+        "type": 3
+      },
+      {
+        "edit_time": "2026-10-12T01:50:48Z",
+        "editor_ids": [
+          "7656295319184903365"
+        ],
+        "history_version_id": "220160",
+        "revision_id": 219,
+        "type": 3
+      },
+      {
+        "edit_time": "2026-10-12T01:46:07Z",
+        "editor_ids": [
+          "7656295319184903365"
+        ],
+        "history_version_id": "219136",
+        "revision_id": 218,
+        "type": 2
+      },
+      {
+        "edit_time": "2026-10-12T01:46:05Z",
+        "editor_ids": [
+          "7656295319184903365"
+        ],
+        "history_version_id": "218112",
+        "revision_id": 217,
+        "type": 2
+      },
+      {
+        "edit_time": "2026-10-12T01:43:56Z",
+        "editor_ids": [
+          "7656295319184903365"
+        ],
+        "history_version_id": "217088",
+        "revision_id": 216,
+        "type": 2
+      },
+      {
+        "edit_time": "2026-10-12T01:43:54Z",
+        "editor_ids": [
+          "7656295319184903365"
+        ],
+        "history_version_id": "216064",
+        "revision_id": 215,
+        "type": 2
+      },
+      {
+        "edit_time": "2026-10-12T01:43:37Z",
+        "editor_ids": [
+          "7656295319184903365"
+        ],
+        "history_version_id": "215040",
+        "revision_id": 214,
+        "type": 2
+      },
+      {
+        "edit_time": "2026-10-12T01:43:35Z",
+        "editor_ids": [
+          "7656295319184903365"
+        ],
+        "history_version_id": "214016",
+        "revision_id": 213,
+        "type": 2
+      },
+      {
+        "edit_time": "2026-10-12T01:38:22Z",
+        "editor_ids": [
+          "7656295319184903365"
+        ],
+        "history_version_id": "212992",
+        "revision_id": 212,
+        "type": 2
+      },
+      {
+        "edit_time": "2026-10-12T01:38:20Z",
+        "editor_ids": [
+          "7656295319184903365"
+        ],
+        "history_version_id": "211968",
+        "revision_id": 211,
+        "type": 2
+      },
+      {
+        "edit_time": "2026-10-12T01:38:12Z",
+        "editor_ids": [
+          "7656295319184903365"
+        ],
+        "history_version_id": "210944",
+        "revision_id": 210,
+        "type": 2
+      },
+      {
+        "edit_time": "2026-10-12T01:38:10Z",
+        "editor_ids": [
+          "7656295319184903365"
+        ],
+        "history_version_id": "209920",
+        "revision_id": 209,
+        "type": 2
+      },
+      {
+        "edit_time": "2026-10-12T01:35:01Z",
+        "editor_ids": [
+          "7656295319184903365"
+        ],
+        "history_version_id": "208896",
+        "revision_id": 208,
+        "type": 2
+      },
+      {
+        "edit_time": "2026-10-12T01:34:58Z",
+        "editor_ids": [
+          "7656295319184903365"
+        ],
+        "history_version_id": "207872",
+        "revision_id": 207,
+        "type": 2
+      },
+      {
+        "edit_time": "2026-10-12T01:34:52Z",
+        "editor_ids": [
+          "7656295319184903365"
+        ],
+        "history_version_id": "206848",
+        "revision_id": 206,
+        "type": 2
+      },
+      {
+        "edit_time": "2026-10-12T01:34:50Z",
+        "editor_ids": [
+          "7656295319184903365"
+        ],
+        "history_version_id": "205824",
+        "revision_id": 205,
+        "type": 2
+      },
+      {
+        "edit_time": "2026-10-12T01:32:23Z",
+        "editor_ids": [
+          "7656295319184903365"
+        ],
+        "history_version_id": "204800",
+        "revision_id": 204,
+        "type": 2
+      },
+      {
+        "edit_time": "2026-10-12T01:32:21Z",
+        "editor_ids": [
+          "7656295319184903365"
+        ],
+        "history_version_id": "203776",
+        "revision_id": 203,
+        "type": 2
+      },
+      {
+        "edit_time": "2026-10-12T01:32:15Z",
+        "editor_ids": [
+          "7656295319184903365"
+        ],
+        "history_version_id": "202752",
+        "revision_id": 202,
+        "type": 2
+      },
+      {
+        "edit_time": "2026-10-12T01:32:13Z",
+        "editor_ids": [
+          "7656295319184903365"
+        ],
+        "history_version_id": "201728",
+        "revision_id": 201,
+        "type": 2
+      }
+    ],
+    "has_more": true,
+    "page_token": "v1:eyJvZmZzZXQiOjIwfQ"
+  }
+}

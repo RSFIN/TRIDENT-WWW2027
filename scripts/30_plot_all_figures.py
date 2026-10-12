@@ -94,6 +94,8 @@ for ax in axes:
     ax.tick_params(axis='y', labelsize=8)
 axes[0].set_ylabel("Macro-F1", fontsize=8.5)
 axes[1].set_ylabel("Set IoU", fontsize=8.5)
+axes[0].set_title("(a) Macro-F1", fontsize=9)
+axes[1].set_title("(b) Set IoU", fontsize=9)
 axes[0].set_ylim(0, 1.0); axes[1].set_ylim(0, 1.0)
 save(fig, "fig2_main_results")
 
@@ -127,6 +129,8 @@ for ax in axes:
     ax.tick_params(axis='y', labelsize=8)
 axes[0].set_ylabel("ECE", fontsize=8.5)
 axes[1].set_ylabel("False-reject rate", fontsize=8.5)
+axes[0].set_title("(a) ECE", fontsize=9)
+axes[1].set_title("(b) False-reject rate", fontsize=9)
 axes[0].set_ylim(0, 0.55); axes[1].set_ylim(0, 1.0)
 save(fig, "fig3_ece_reject")
 
