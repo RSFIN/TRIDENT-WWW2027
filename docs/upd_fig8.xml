@@ -1,0 +1,1 @@
+<img path="@E:\PY-Project\WWW2027\code\intent-conformal\docs\figs\fig8_knowledge_update.png" caption="Fig 8: Knowledge-base update simulation on CLINC150. New intents unseen by the KB are 100% rejected (coverage ~0.0); adding them to the KB restores coverage to ~0.87 without retraining, confirming the training-free update path."/>

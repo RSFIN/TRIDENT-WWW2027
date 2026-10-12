@@ -64,26 +64,31 @@ methods  = ["CICC", "MULACONF", "QP-10shot", "Ours"]
 colors   = [C_CICC, C_MULA, C_QP, C_OURS]
 
 macro_f1 = {
-    "CICC":      [0.8520, 0.3100, 0.6200],
-    "MULACONF":  [0.8800, 0.3500, 0.7000],
+    "CICC":      [0.6253, None, None],
+    "MULACONF":  [0.6253, None, None],
     "QP-10shot": [0.2031, 0.2899, 0.5243],
     "Ours":      [0.8987, 0.4229, 0.7761],
 }
 set_iou = {
-    "CICC":      [0.8200, 0.2500, 0.5500],
-    "MULACONF":  [0.8400, 0.3200, 0.6800],
+    "CICC":      [None, None, None],
+    "MULACONF":  [0.6293, 0.3466, 0.7939],
     "QP-10shot": [0.0273, 0.2991, 0.4599],
     "Ours":      [0.8561, 0.3869, 0.7571],
 }
 
 fig, axes = plt.subplots(1, 2, figsize=(6.9, 2.6), dpi=300)
-fig.subplots_adjust(left=0.09, right=0.98, top=0.97, bottom=0.22, wspace=0.25)
+fig.subplots_adjust(left=0.09, right=0.98, top=0.92, bottom=0.22, wspace=0.25)
 x = np.arange(len(datasets)); w = 0.18
+def _bar_nan(ax, pos, val, w_, color):
+    if val is None:
+        ax.bar(pos, 0.001, w_, color="white", edgecolor="#999999",
+               linewidth=0.5, hatch="//", zorder=2)
+        return
+    ax.bar(pos, val, w_, color=color, edgecolor="white", linewidth=0.6)
 for i, m in enumerate(methods):
-    axes[0].bar(x + (i-1.5)*w, macro_f1[m], w, color=colors[i],
-                edgecolor="white", linewidth=0.6)
-    axes[1].bar(x + (i-1.5)*w, set_iou[m], w, color=colors[i],
-                edgecolor="white", linewidth=0.6)
+    for j in range(len(datasets)):
+        _bar_nan(axes[0], x[j] + (i-1.5)*w, macro_f1[m][j], w, colors[i])
+        _bar_nan(axes[1], x[j] + (i-1.5)*w, set_iou[m][j], w, colors[i])
 from matplotlib.patches import Patch
 handles = [Patch(color=colors[i], label=methods[i]) for i in range(len(methods))]
 fig.legend(handles=handles, ncol=4, loc="lower center",
@@ -103,24 +108,23 @@ save(fig, "fig2_main_results")
 # Fig 3: ECE & rejection rate (rev 196 baselines)
 # ============================================================
 ece = {
-    "CICC":      [0.085, 0.280, 0.120],
-    "MULACONF":  [0.060, 0.250, 0.090],
+    "CICC":      [0.1635, None, None],
+    "MULACONF":  [0.1635, 0.0516, 0.5366],
     "QP-10shot": [0.471, 0.154, 0.321],
     "Ours":      [0.0053, 0.2193, 0.0454],
 }
 reject = {
-    "CICC":      [0.310, 0.000, 0.000],
-    "MULACONF":  [0.180, 0.000, 0.000],
+    "CICC":      [0.5879, None, None],
+    "MULACONF":  [0.6369, 1.0000, 0.8190],
     "QP-10shot": [0.863, 0.000, 0.000],
     "Ours":      [0.1387, 0.2083, 0.0455],
 }
 fig, axes = plt.subplots(1, 2, figsize=(6.9, 2.6), dpi=300)
-fig.subplots_adjust(left=0.09, right=0.98, top=0.97, bottom=0.22, wspace=0.25)
+fig.subplots_adjust(left=0.09, right=0.98, top=0.92, bottom=0.22, wspace=0.25)
 for i, m in enumerate(methods):
-    axes[0].bar(x + (i-1.5)*w, ece[m], w, color=colors[i],
-                edgecolor="white", linewidth=0.6)
-    axes[1].bar(x + (i-1.5)*w, reject[m], w, color=colors[i],
-                edgecolor="white", linewidth=0.6)
+    for j in range(len(datasets)):
+        _bar_nan(axes[0], x[j] + (i-1.5)*w, ece[m][j], w, colors[i])
+        _bar_nan(axes[1], x[j] + (i-1.5)*w, reject[m][j], w, colors[i])
 fig.legend(handles=handles, ncol=4, loc="lower center",
            bbox_to_anchor=(0.5, 0.005), frameon=False,
            fontsize=7.5, handlelength=1.2, columnspacing=1.2)
@@ -131,7 +135,7 @@ axes[0].set_ylabel("ECE", fontsize=8.5)
 axes[1].set_ylabel("False-reject rate", fontsize=8.5)
 axes[0].set_title("(a) ECE", fontsize=9)
 axes[1].set_title("(b) False-reject rate", fontsize=9)
-axes[0].set_ylim(0, 0.55); axes[1].set_ylim(0, 1.0)
+axes[0].set_ylim(0, 0.6); axes[1].set_ylim(0, 1.1)
 save(fig, "fig3_ece_reject")
 
 # ============================================================

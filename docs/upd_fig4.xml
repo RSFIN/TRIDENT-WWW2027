@@ -1,0 +1,1 @@
+<img path="@E:\PY-Project\WWW2027\code\intent-conformal\docs\figs\fig4_three_state.png" caption="Fig 4: Three-state decision distribution (release / clarify / reject) under FPR95 calibration. CLINC150 releases almost all in-domain queries; multi-intent datasets route the majority to interactive clarification rather than forced single-label output."/>
