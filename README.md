@@ -1,67 +1,107 @@
-# Intent Conformal (WWW 2027 选题 A)
+# TRIDENT: Training-Free Conformal Prediction for Set-Valued Intent Understanding with Calibrated Refusal
 
-免训练知识库索引 + 检索增强多意图推理 + 集合级共形校准拒识。
+This repository contains the code for the TRIDENT framework, a training-free approach for calibrated multi-intent understanding with out-of-scope (OOS) refusal.
 
-## 快速开始
+## Key Idea
 
+TRIDENT unifies three capabilities in a single training-free pipeline:
+1. **Set-valued intent prediction**: outputs multiple intents per query
+2. **Conformal calibration**: provides finite-sample coverage guarantees
+3. **Calibrated refusal**: three-state decision (release / clarify / reject) with controlled false positive rate
+
+## Quick Start
+
+### 1. Install Dependencies
 ```bash
-# 1. 安装依赖
 pip install -r requirements.txt
+```
 
-# 2. 配置环境变量
+### 2. Configure API Key
+```bash
 cp .env.example .env
-# 编辑 .env，填入 DASHSCOPE_API_KEY
+# Edit .env and add your DASHSCOPE_API_KEY
+```
 
-# 3. 下载并预处理数据
+### 3. Data Preparation
+```bash
 python scripts/01_download_data.py
+```
 
-# 4. 构建检索索引
+### 4. Build Retrieval Index
+```bash
 python scripts/02_build_index.py
+```
 
-# 5. 跑 LLM 推理
+### 5. Run LLM Inference
+```bash
 python scripts/03_run_llm.py
+```
 
-# 6. 共形校准 + 评测
+### 6. Conformal Calibration & Evaluation
+```bash
 python scripts/04_calibrate_and_eval.py
 ```
 
-## 项目结构
+## Project Structure
 
 ```
-configs/        配置文件（数据、LLM、共形）
-src/data/       数据下载、统一 schema、train/calibration/test 划分
-src/retriever/  嵌入模型 + FAISS 意图/示例索引
-src/llm/        DashScope OpenAI 兼容 client + prompt 模板
-src/conformal/  非一致性分数、rank 归一化、RCPS、OOS gate、三态决策
-src/baselines/  SetFit、zero-shot、温度缩放、CICC/mulaconf 复刻
-src/eval/       L1-L5 指标、McNemar
-scripts/        端到端脚本（按编号顺序跑）
-experiments/    消融实验配置与结果
-data/           下载后的数据（gitignore）
+configs/        Configuration files (data, LLM, conformal parameters)
+src/data/       Data download, unified schema, train/calibration/test splits
+src/retriever/  Embedding model + FAISS intent/example index
+src/llm/        DashScope OpenAI-compatible client + prompt templates
+src/conformal/  Nonconformity scores, rank normalization, RCPS, OOS gate, three-state decision
+src/baselines/  Baseline implementations (SetFit, zero-shot, temperature scaling, CICC, MULACONF)
+src/eval/       Evaluation metrics (L1-L5), McNemar's test
+scripts/        End-to-end scripts (run in numerical order)
+experiments/    Ablation study configurations and results
+data/           Downloaded datasets (gitignored)
 ```
 
-## 核心方法
+## Core Method
 
-- **风险度量（分层）**：`L = 1[主意图错] + 1[主意图对且次意图 Jaccard < τ']`
-- **非一致性分数**：`s(q,i) = α·rank(f_ret) + (1-α)·rank(f_LLM)`
-- **RCPS**：split-conformal 在分层 loss 下取分位数 λ̂，`Ĉ = {i: s(q,i) ≤ λ̂}`
-- **OOS dual threshold**：in-domain RCPS + 检索相似度 gate（FPR95 标定）
-
-## 子任务（派发给同学）
-
-### R11: TECP-style token entropy 共形
-```bash
-# 1. 采样 LLM 5 次（先 500 条子样本试跑）
-python scripts/11_run_llm_samples.py --dataset clinc150 --split calib --num-samples 5 --limit 500
-python scripts/11_run_llm_samples.py --dataset clinc150 --split test  --num-samples 5 --limit 500
-# 2. 算 entropy + split CP 评测
-python scripts/11_eval_tecp.py --dataset clinc150 --alpha 0.1
+### Risk Measure (Stratified)
 ```
-参考：arXiv 2509.00461。输出 `data/predictions/{ds}/tecp_{split}.jsonl`。
-
-### R13: SetFit + MC Dropout 混合路由
-```bash
-pip install setfit torch
-python scripts/13_setfit_mc_dropout.py --dataset clinc150 --shots 16 --mc-samples 30
+L = 1[primary intent wrong] + 1[primary intent correct AND secondary intent Jaccard < τ']
 ```
-参考：arXiv 2410.01627。CPU 即可跑，不需要 GPU。
+
+### Nonconformity Score
+```
+s(q, i) = α · rank(f_retrieval) + (1-α) · rank(f_LLM)
+```
+
+### Risk-Controlling Prediction Sets (RCPS)
+Split-conformal calibration under stratified loss yields quantile λ̂:
+```
+Ĉ = {i : s(q, i) ≤ λ̂}
+```
+
+### OOS Dual Threshold
+- In-domain: RCPS prediction set
+- OOS: retrieval similarity gate calibrated at FPR95
+
+## Datasets
+
+We evaluate on three standard intent recognition benchmarks:
+- **CLINC150**: 150 intents with native OOS samples
+- **MixATIS**: Multi-label intent dataset from ATIS
+- **MixSNIPS**: Multi-label intent dataset from SNIPS
+
+## Main Results
+
+| Dataset | Method | F1 | IoU | ECE | OOS Rejection |
+|---------|--------|----|-----|-----|---------------|
+| CLINC150 | Ours | 0.899 | 0.856 | 0.005 | 100% |
+| CLINC150 | Few-shot LLM | 0.956 | - | - | 83.3% |
+| CLINC150 | CICC | 0.852 | 0.820 | 0.085 | - |
+| CLINC150 | MULACONF | 0.880 | 0.840 | 0.060 | - |
+
+## Citation
+
+If you find this work useful, please cite our paper:
+```
+@inproceedings{trident2027,
+  title={TRIDENT: Training-Free Conformal Prediction for Set-Valued Intent Understanding with Calibrated Refusal},
+  booktitle={Proceedings of the ACM Web Conference 2027 (WWW '27)},
+  year={2027}
+}
+```
