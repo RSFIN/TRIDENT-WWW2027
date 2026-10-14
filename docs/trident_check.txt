@@ -1,6 +1,0 @@
-PAGES: 11
-TRIDENT -> True
-three prongs -> True
-We present TRIDENT -> True
-We propose TRIDENT -> True
-occurrences: ['contrib p1', 'method-open p3']

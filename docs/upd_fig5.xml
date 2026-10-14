@@ -1,1 +1,0 @@
-<img path="@E:\PY-Project\WWW2027\code\intent-conformal\docs\figs\fig5_pareto.png" caption="Fig 5: OOS-gate sensitivity on CLINC150 (P0-1). Tightening the OOS FPR threshold from 0.05 to 0.0005 raises Macro-F1 while keeping OOS refusal at 100% and reducing false rejection, showing the trade-off space available to practitioners."/>

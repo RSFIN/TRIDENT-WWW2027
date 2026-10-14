@@ -1,1 +1,0 @@
-<h2>实验结果图组（实测数据渲染）</h2><p>下图为基于统一口径 v1.0 实测结果（seed42/123 两 seed 均值）渲染的 6 子图核心图组，对应蓝图 F2/F4/F6/F8/F11 与 P0 补充实验；Ours 以深红色高亮。（a）主结果跨数据集对比；（b）ECE 校准质量（越低越准）；（c）release/clarify/reject 三态决策分布；（d）CLINC150 OOS 拒识率；（e）P0-1 等风险权衡曲线（零 API）；（f）P0-2 澄清公平化对比。</p><html5-block path="@E:\PY-Project\WWW2027\code\intent-conformal\docs\results_dashboard.html"></html5-block>

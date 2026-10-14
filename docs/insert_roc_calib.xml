@@ -1,1 +1,0 @@
-<h2>共形核心图（F7 / F8，实测数据渲染）</h2><p>下图为共形论文核心图：（m）F8 OOS ROC（CLINC150，检索融合信号 AUROC=0.975）；（n）F7 Coverage 校准图（CLINC150，empirical coverage 贴合对角线，split CP finite-sample guarantee 成立）。注：LLM 自报置信在 OOS 上 AUROC=1.0 为 trivial 结果（OOS 时 LLM 全输出低置信），故仅展示检索融合信号。</p><html5-block path="@E:\PY-Project\WWW2027\code\intent-conformal\docs\roc_calib_dashboard.html"></html5-block>
