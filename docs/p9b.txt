@@ -1,0 +1,4 @@
+TRIDENT: Training-Free Conformal Prediction for Set-Valued Intent Understanding with Calibrated Refusal
+WWW ’27, May 10–14, 2027, Dublin, Ireland
+holds whether the reasoner is an LLM or a small classifier. Future
+work includes open-web catalogs and multi-turn dialogue.

@@ -1,0 +1,18 @@
+PAGES: 10
+p1 body=103 | head=TRIDENT: Training-Free Conformal Prediction for Set-Valued | tail=entiated from multi-turn clarification, vertical-domain grou
+p2 body=113 | head=WWW ’27, May 10–14, 2027, Dublin, Ireland | tail=generative query understanding. We differ by not relying on
+p3 body=73 | head=TRIDENT: Training-Free Conformal Prediction for Set-Valued I | tail=variable-length intent set 𝑌; the object of coverage is the 
+p4 body=135 | head=WWW ’27, May 10–14, 2027, Dublin, Ireland | tail=or backpropagation are involved.
+p5 body=123 | head=TRIDENT: Training-Free Conformal Prediction for Set-Valued I | tail=from 0.899 to 0.929 and reduces false rejection from 0.139 t
+p6 body=207 | head=WWW ’27, May 10–14, 2027, Dublin, Ireland | tail=tion is ad-hoc (based on verbosity/abstention keywords) and 
+p7 body=131 | head=TRIDENT: Training-Free Conformal Prediction for Set-Valued I | tail=the fusion weight.
+p8 body=126 | head=WWW ’27, May 10–14, 2027, Dublin, Ireland | tail=work includes open-web catalogs and multi-turn dialogue.
+p9 body=117 | head=TRIDENT: Training-Free Conformal Prediction for Set-Valued I | tail=In Advances in Neural Information Processing Systems (NeurIP
+p10 body=148 | head=WWW ’27, May 10–14, 2027, Dublin, Ireland | tail=tion.
+UNRESOLVED-??: []
+title-prefix-ok: True
+naming-sentence-ok: True
+p1 images=0
+p2 images=0
+p3 images=0
+p4 images=0

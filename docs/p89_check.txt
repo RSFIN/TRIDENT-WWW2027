@@ -1,0 +1,6 @@
+p8: 131 lines
+HEAD: WWW ’27, May 10–14, 2027, Dublin, Ireland | Anon.
+TAIL: bration, and tight sets at zero training cost. The F1 gap to few-shot | LLMs narrows to ∼2.7pt under equal risk. The core insight is that
+p9: 8 lines
+HEAD: TRIDENT: Training-Free Conformal Prediction for Set-Valued Intent Understanding with Calibrated Refusal | WWW ’27, May 10–14, 2027, Dublin, Ireland
+TAIL: includes scaling to open-web catalogs and extending to multi-turn | dialogue.

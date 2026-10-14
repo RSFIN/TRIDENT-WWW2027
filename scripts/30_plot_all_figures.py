@@ -10,13 +10,14 @@ import numpy as np
 
 # ---------- academic style (NeurIPS/ICML) ----------
 mpl.rcParams.update({
-    "font.family": "DejaVu Sans",
-    "font.size": 10.5,
-    "axes.titlesize": 12,
-    "axes.labelsize": 11,
-    "legend.fontsize": 9,
-    "xtick.labelsize": 9.5,
-    "ytick.labelsize": 9.5,
+    "font.family": "serif",
+    "font.serif": ["Times New Roman", "DejaVu Serif"],
+    "font.size": 12,
+    "axes.titlesize": 13,
+    "axes.labelsize": 12.5,
+    "legend.fontsize": 10.5,
+    "xtick.labelsize": 11,
+    "ytick.labelsize": 11,
     "axes.linewidth": 0.9,
     "axes.spines.top": False,
     "axes.spines.right": False,
@@ -36,6 +37,7 @@ mpl.rcParams.update({
     "savefig.bbox": "tight",
     "pdf.fonttype": 42,
     "ps.fonttype": 42,
+    "mathtext.fontset": "stix",
 })
 
 # low-saturation, print-safe palette
@@ -76,8 +78,8 @@ set_iou = {
     "Ours":      [0.8561, 0.3869, 0.7571],
 }
 
-fig, axes = plt.subplots(1, 2, figsize=(6.9, 2.6), dpi=300)
-fig.subplots_adjust(left=0.09, right=0.98, top=0.92, bottom=0.22, wspace=0.25)
+fig, axes = plt.subplots(1, 2, figsize=(7.0, 3.6), dpi=300)
+fig.subplots_adjust(left=0.10, right=0.98, top=0.90, bottom=0.20, wspace=0.28)
 x = np.arange(len(datasets)); w = 0.18
 def _bar_nan(ax, pos, val, w_, color):
     if val is None:
@@ -93,14 +95,14 @@ from matplotlib.patches import Patch
 handles = [Patch(color=colors[i], label=methods[i]) for i in range(len(methods))]
 fig.legend(handles=handles, ncol=4, loc="lower center",
            bbox_to_anchor=(0.5, 0.005), frameon=False,
-           fontsize=7.5, handlelength=1.2, columnspacing=1.2)
+           fontsize=10, handlelength=1.2, columnspacing=1.2)
 for ax in axes:
-    ax.set_xticks(x); ax.set_xticklabels(datasets, fontsize=8)
-    ax.tick_params(axis='y', labelsize=8)
-axes[0].set_ylabel("Macro-F1", fontsize=8.5)
-axes[1].set_ylabel("Set IoU", fontsize=8.5)
-axes[0].set_title("(a) Macro-F1  $\\uparrow$", fontsize=9)
-axes[1].set_title("(b) Set IoU  $\\uparrow$", fontsize=9)
+    ax.set_xticks(x); ax.set_xticklabels(datasets, fontsize=11)
+    ax.tick_params(axis='y', labelsize=11)
+axes[0].set_ylabel("Macro-F1", fontsize=11.5)
+axes[1].set_ylabel("Set IoU", fontsize=11.5)
+axes[0].set_title("(a) Macro-F1  $\\uparrow$", fontsize=12)
+axes[1].set_title("(b) Set IoU  $\\uparrow$", fontsize=12)
 axes[0].set_ylim(0, 1.0); axes[1].set_ylim(0, 1.0)
 save(fig, "fig2_main_results")
 
@@ -119,22 +121,22 @@ reject = {
     "QP-10shot": [0.863, None, None],
     "Ours":      [0.1387, 0.2083, 0.0455],
 }
-fig, axes = plt.subplots(1, 2, figsize=(6.9, 2.6), dpi=300)
-fig.subplots_adjust(left=0.09, right=0.98, top=0.92, bottom=0.22, wspace=0.25)
+fig, axes = plt.subplots(1, 2, figsize=(7.0, 3.6), dpi=300)
+fig.subplots_adjust(left=0.10, right=0.98, top=0.90, bottom=0.20, wspace=0.28)
 for i, m in enumerate(methods):
     for j in range(len(datasets)):
         _bar_nan(axes[0], x[j] + (i-1.5)*w, ece[m][j], w, colors[i])
         _bar_nan(axes[1], x[j] + (i-1.5)*w, reject[m][j], w, colors[i])
 fig.legend(handles=handles, ncol=4, loc="lower center",
            bbox_to_anchor=(0.5, 0.005), frameon=False,
-           fontsize=7.5, handlelength=1.2, columnspacing=1.2)
+           fontsize=10, handlelength=1.2, columnspacing=1.2)
 for ax in axes:
-    ax.set_xticks(x); ax.set_xticklabels(datasets, fontsize=8)
-    ax.tick_params(axis='y', labelsize=8)
-axes[0].set_ylabel("ECE", fontsize=8.5)
-axes[1].set_ylabel("False-reject rate", fontsize=8.5)
-axes[0].set_title("(a) ECE  $\\downarrow$", fontsize=9)
-axes[1].set_title("(b) False-reject rate  $\\downarrow$", fontsize=9)
+    ax.set_xticks(x); ax.set_xticklabels(datasets, fontsize=11)
+    ax.tick_params(axis='y', labelsize=11)
+axes[0].set_ylabel("ECE", fontsize=11.5)
+axes[1].set_ylabel("False-reject rate", fontsize=11.5)
+axes[0].set_title("(a) ECE  $\\downarrow$", fontsize=12)
+axes[1].set_title("(b) False-reject rate  $\\downarrow$", fontsize=12)
 axes[0].set_ylim(0, 0.6); axes[1].set_ylim(0, 1.1)
 save(fig, "fig3_ece_reject")
 
@@ -146,7 +148,7 @@ release  = [1.0 - 0.0 - 0.1387, 1.0 - 0.7283 - 0.2083, 1.0 - 0.8386 - 0.0455]
 clarify  = [0.0, 0.7283, 0.8386]
 rejectv  = [0.1387, 0.2083, 0.0455]
 
-fig, ax = plt.subplots(figsize=(3.4, 2.8))
+fig, ax = plt.subplots(figsize=(3.4, 3.0))
 ax.bar(datasets, release, label="RELEASE", color="#2E7D32",
        edgecolor="white", linewidth=0.7, width=0.6)
 ax.bar(datasets, clarify, bottom=release, label="CLARIFY", color=C_LLM,
@@ -154,14 +156,15 @@ ax.bar(datasets, clarify, bottom=release, label="CLARIFY", color=C_LLM,
 ax.bar(datasets, rejectv, bottom=[r+c for r,c in zip(release,clarify)],
        label="REJECT", color=C_OURS, edgecolor="white", linewidth=0.7, width=0.6)
 for i in range(3):
-    ax.text(i, release[i]/2, f"{release[i]:.2f}", ha="center", va="center", color="white", fontsize=7.5, fontweight="bold")
+    ax.text(i, release[i]/2, f"{release[i]:.2f}", ha="center", va="center", color="white", fontsize=10, fontweight="bold")
     if clarify[i] > 0.05:
-        ax.text(i, release[i]+clarify[i]/2, f"{clarify[i]:.2f}", ha="center", va="center", color="white", fontsize=7.5, fontweight="bold")
+        ax.text(i, release[i]+clarify[i]/2, f"{clarify[i]:.2f}", ha="center", va="center", color="white", fontsize=10, fontweight="bold")
     if rejectv[i] > 0.05:
-        ax.text(i, release[i]+clarify[i]+rejectv[i]/2, f"{rejectv[i]:.2f}", ha="center", va="center", color="white", fontsize=7.5, fontweight="bold")
-ax.set_ylabel("Fraction", fontsize=8)
-ax.tick_params(labelsize=7.5)
-ax.legend(loc="upper center", ncol=3, bbox_to_anchor=(0.5, -0.12), frameon=False, fontsize=7)
+        ax.text(i, release[i]+clarify[i]+rejectv[i]/2, f"{rejectv[i]:.2f}", ha="center", va="center", color="white", fontsize=10, fontweight="bold")
+ax.set_ylabel("Fraction", fontsize=11.5)
+ax.tick_params(labelsize=11)
+ax.legend(loc="upper center", ncol=3, bbox_to_anchor=(0.5, -0.13), frameon=False, fontsize=9)
+ax.set_title("(a) Three-state decisions", fontsize=12)
 ax.set_ylim(0, 1.05)
 fig.tight_layout()
 save(fig, "fig4_three_state")
@@ -201,20 +204,22 @@ alpha = [0.05, 0.10, 0.15, 0.20, 0.25]
 nominal = [1-a for a in alpha]
 emp_cov_clinc = [0.951, 0.892, 0.892, 0.892, 0.892]
 
-fig, ax = plt.subplots(figsize=(5, 3.6))
+fig, ax = plt.subplots(figsize=(3.4, 3.0))
 ax.plot([0.7, 1.0], [0.7, 1.0], "--", color=C_GREY, lw=1.2, label="y = x (ideal)")
 ax.plot(nominal, emp_cov_clinc, "o-", color=C_OURS, lw=1.8, ms=7,
         markeredgecolor="black", markeredgewidth=0.5, label="Ours (CLINC150)")
-ax.set_xlabel("Nominal coverage 1 − α")
-ax.set_ylabel("Empirical coverage")
-ax.legend(loc="lower right"); ax.set_xlim(0.72, 0.98); ax.set_ylim(0.72, 0.98)
+ax.set_xlabel("Nominal coverage 1 − α", fontsize=11.5)
+ax.set_ylabel("Empirical coverage", fontsize=11.5)
+ax.tick_params(labelsize=11)
+ax.legend(loc="lower right", fontsize=10); ax.set_xlim(0.72, 0.98); ax.set_ylim(0.72, 0.98)
+ax.set_title("(b) Coverage calibration", fontsize=12)
 fig.tight_layout()
 save(fig, "fig6_calibration")
 
 # ============================================================
-# Fig 7: Ablations (A1 K, A3 alpha, A5 Kr)
+# Fig 7: Ablations (A1 K, A3 fusion lambda, A5 Kr)
 # ============================================================
-fig, axes = plt.subplots(1, 3, figsize=(11, 3.4))
+fig, axes = plt.subplots(1, 3, figsize=(10, 3.2))
 
 # A1 K ablation (MixSNIPS IoU)
 K = [0, 1, 2, 3]
@@ -227,7 +232,7 @@ axes[0].plot(K, iou_k_atis, "s-", color=C_QP, lw=1.7, ms=6,
 axes[0].set_xlabel("k_max (auxiliary intents)"); axes[0].set_ylabel("Set IoU")
 axes[0].legend(); axes[0].axvline(1, ls=":", color=C_GREY)
 
-# A3 fusion alpha
+# A3 fusion weight lambda
 fa = [0.0, 0.1, 1.0]
 ece_clinc = [0.0183, 0.0049, 0.0837]
 ece_snips = [0.0368, 0.0083, 0.6407]
@@ -235,7 +240,7 @@ axes[1].plot(fa, ece_clinc, "o-", color=C_MULA, lw=1.7, ms=6,
              markeredgecolor="black", markeredgewidth=0.5, label="CLINC150")
 axes[1].plot(fa, ece_snips, "s-", color=C_OURS, lw=1.7, ms=6,
              markeredgecolor="black", markeredgewidth=0.5, label="MixSNIPS")
-axes[1].set_xlabel("α (weight on LLM confidence)")
+axes[1].set_xlabel("λ (weight on LLM confidence)")
 axes[1].set_ylabel("ECE")
 axes[1].set_yscale("log"); axes[1].legend(); axes[1].axvline(0.1, ls=":", color=C_GREY)
 
@@ -259,7 +264,7 @@ save(fig, "fig7_ablation")
 groups = ["Old intents\n(before)", "Old intents\n(after)", "New intents\n(before)", "New intents\n(after)"]
 cov = [0.850, 0.855, 0.870, 0.000]
 colors8 = [C_MULA, C_MULA, C_QP, C_OURS]
-fig, ax = plt.subplots(figsize=(5.5, 3.4))
+fig, ax = plt.subplots(figsize=(5, 3.0))
 bars = ax.bar(groups, cov, color=colors8, edgecolor="white", linewidth=0.8)
 for b, v in zip(bars, cov):
     ax.text(b.get_x()+b.get_width()/2, v+0.02, f"{v:.2f}", ha="center", fontsize=9)
