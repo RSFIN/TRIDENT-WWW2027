@@ -103,14 +103,6 @@ We evaluate on three standard intent recognition benchmarks:
 - Average set size: **0.87 / 1.52 / 1.80** on CLINC150 / MixATIS / MixSNIPS
 - Training-free: zero gradient updates on our side, only a small calibration set and off-the-shelf LLM API
 
-## Citation
+## Contact
 
-If you find this work useful, please cite our paper:
-```
-@inproceedings{trident2027,
-  title={TRIDENT: Training-Free Conformal Prediction for Set-Valued Intent Understanding with Calibrated Refusal},
-  booktitle={Proceedings of the ACM Web Conference 2027 (WWW '27)},
-  pages={1--10},
-  year={2027}
-}
-```
+For questions or issues, please open a GitHub issue.
