@@ -1,0 +1,29 @@
+{
+  "dataset": "clinc150",
+  "protocol_version": "unified_v1.0",
+  "data_format": "unified_clinc150",
+  "data_path": "../../../data/processed/clinc150",
+  "hard_negative_path": null,
+  "output_dir": "results/cicc_clinc150",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "calibration_fraction": 0.5,
+  "conformal_method": "aps",
+  "alpha_grid": [
+    0.1
+  ],
+  "max_clarification_size_grid": [
+    5
+  ],
+  "retriever": {
+    "temperature": 0.07,
+    "label_name_weight": 2.0,
+    "sublinear_tf": true
+  },
+  "ece_bins": 15,
+  "target_oos_recall": 0.95,
+  "clarification_panel_limit": 100
+}

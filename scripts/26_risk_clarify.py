@@ -1,4 +1,4 @@
-"""P0 补充实验：等风险公平对比 + oracle 澄清口径。
+"""Equal-risk fair comparison and oracle-clarification protocol.
 
 Mode 1 (risk): 扫描 OOS gate 的 FPR 标定（oos_fpr），得到"不同 OOS 拒识率下的
 F1/ECE/误拒率/IoU"权衡曲线，用于与少样本基线（OOS 拒识 83%-96%）公平对比。

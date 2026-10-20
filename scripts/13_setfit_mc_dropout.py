@@ -1,4 +1,4 @@
-"""R13: SetFit + MC Dropout 混合路由基线。
+"""SetFit + MC Dropout hybrid routing baseline.
 
 流程：
 1. 每类 16 例 few-shot 训练 SetFit（BGE-small backbone）
@@ -116,7 +116,7 @@ def main():
         if pred == s.main_intent: correct += 1
 
     auroc = roc_auc_score(oos_labels, oos_scores)
-    print(f"\n=== R13 SetFit+MC Dropout Router ({args.dataset}) ===")
+    print(f"\n=== SetFit+MC Dropout Router ({args.dataset}) ===")
     print(f"Acc: {correct/n:.4f}")
     print(f"LLM call rate: {llm_called/n:.1%}")
     print(f"OOS AUROC (entropy): {auroc:.4f}")

@@ -1,4 +1,4 @@
-﻿[R10 mixsnips] UniCR-style learned fusion, alpha=0.1, full-level 统一口径
+﻿mixsnips UniCR-style learned fusion, alpha=0.1, full-level 统一口径
 theta=-4.6400 emp_cov=0.9001 (n_cal=9942) theta_oos=0.7321
 Main Macro-F1:      0.7436
 Set Exact Match:    0.1628

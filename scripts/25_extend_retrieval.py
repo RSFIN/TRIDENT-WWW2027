@@ -1,4 +1,4 @@
-"""P3 补充：将已有 predictions 的检索候选扩展为 top-10（本地嵌入检索，零 LLM API）。
+"""Extend the retrieval candidates of existing predictions to top-10 (local embedding retrieval, no LLM API).
 
 用法：
     python scripts/25_extend_retrieval.py --dataset clinc150

@@ -57,12 +57,14 @@ def calibrate_threshold(
     calib_main: List[str],
     calib_aux: List[List[str]],
     alpha: float = 0.1,
-    tau_aux: float = 1.0,
+    tau_aux: float = 0.5,
     k_max: int = 3,
 ) -> Tuple[float, Dict]:
     """在校准集上选最小 λ 使经验风险 ≤ α。
 
-    返回 (lambda_hat, meta)。
+    返回 (lambda_hat, meta)。若整条风险曲线都无法降到 α 以下（目标不可达），
+    返回 λ=1.0（最大预测集）及其实际经验风险，并在 meta["feasible"]=False 标记，
+    而不是返回 1.0 这个哨兵值——否则下游会把"没有可行解"误读成"风险 = 100%"。
     """
     # 收集所有候选分数作为阈值候选
     all_scores = sorted({s for d in calib_scores for s in d.values() if s < float("inf")})
@@ -71,6 +73,8 @@ def calibrate_threshold(
 
     best_lam = 1.0
     best_risk = 1.0
+    feasible = False
+    risk_at_lam1 = 1.0     # λ=1.0 时的实际风险，用于不可达时的报告
     for lam in candidates:
         losses = []
         for d, true_m, true_a in zip(calib_scores, calib_main, calib_aux):
@@ -84,13 +88,26 @@ def calibrate_threshold(
             pred_main = sorted_intents[0][0]
             pred_aux = [i for i, _ in sorted_intents[1:k_max + 1]]
             losses.append(stratified_loss(pred_main, pred_aux, true_m, true_a, tau_aux))
-        risk = np.mean(losses)
-        if risk <= alpha:
+        risk = float(np.mean(losses))
+        if lam >= 1.0:
+            risk_at_lam1 = risk
+        if risk <= alpha and not feasible:
             best_lam = lam
             best_risk = risk
+            feasible = True
             break  # 从小到大，第一个满足的就是最小 λ
 
-    meta = {"empirical_risk": best_risk, "n_calib": len(calib_scores)}
+    if not feasible:
+        best_lam = 1.0
+        best_risk = risk_at_lam1
+
+    meta = {
+        "empirical_risk": best_risk,
+        "n_calib": len(calib_scores),
+        "feasible": feasible,
+        "tau_aux": tau_aux,
+        "k_max": k_max,
+    }
     return best_lam, meta
 
 

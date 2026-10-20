@@ -17,7 +17,7 @@ retriever:
   top_k_r: 5  # 检索候选数（消融 {1,3,5,10}）；评估时按 k_r_use 截断
 
 llm:
-  model: qwen3.7-plus
+  model: qwen2.5-72b-instruct
   temperature: 0.0
   max_tokens: 256
   prompt_template: default
@@ -26,8 +26,8 @@ conformal:
   alpha: 0.1  # 目标覆盖率 1-alpha
   fusion_alpha: 0.1  # 融合权重，可消融 {0.0,0.1,0.2,0.5}
   tau_aux: 0.5  # 次意图 Jaccard 阈值，可消融 {0.5,0.75,1.0}
-  k_max: 1  # 澄清集最大大小（P3 消融后定稿：K=1 在多意图上最优）
-  k_r_use: 1  # 评估时检索候选截断数（P3 消融后定稿：K_r=1 最紧致）
+  k_max: 1  # 澄清集最大大小（消融确定：K=1 在多意图上最优）
+  k_r_use: 1  # 评估时检索候选截断数（消融确定：K_r=1 最紧致）
   oos_fpr: 0.05  # OOS gate 的 FPR95 标定
 
 eval:

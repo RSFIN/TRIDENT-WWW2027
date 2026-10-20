@@ -1,4 +1,4 @@
-"""R11: TECP-style token entropy 共形预测。
+"""TECP-style token-entropy conformal prediction.
 
 对每条 query 用 temperature>0 采样 LLM T 次，收集 main intent 分布，
 后续在 11_eval_tecp.py 里算 entropy 做 split CP。

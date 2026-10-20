@@ -1,4 +1,4 @@
-﻿[R10 clinc150] UniCR-style learned fusion, alpha=0.1, full-level 统一口径
+﻿clinc150 UniCR-style learned fusion, alpha=0.1, full-level 统一口径
 theta=-3.5713 emp_cov=0.9004 (n_cal=3375) theta_oos=0.7115
 Main Macro-F1:      0.9049
 Set Exact Match:    0.8669

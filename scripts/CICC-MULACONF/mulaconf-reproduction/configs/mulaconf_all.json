@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "mixatis",
+      "format": "agif_mix",
+      "path": "../data/MixATIS_clean"
+    },
+    {
+      "name": "mixsnips",
+      "format": "agif_mix",
+      "path": "../data/MixSNIPS_clean"
+    },
+    {
+      "name": "clinc150",
+      "format": "unified_clinc150",
+      "path": "../../../data/processed/clinc150"
+    }
+  ],
+  "methods": [
+    "powerset",
+    "tree_fixed_alpha"
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "calibration_fraction": 0.5,
+  "alpha": 0.1,
+  "protocol_version": "unified_v1.0",
+  "max_clarification_size": 5,
+  "target_oos_recall": 0.95,
+  "ece_bins": 15,
+  "retriever": {
+    "temperature": 0.07,
+    "label_name_weight": 2.0
+  },
+  "output_dir": "results/mulaconf_all"
+}

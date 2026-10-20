@@ -31,8 +31,15 @@ def f_llm(llm_result: Dict, candidates: List[Tuple[str, float]]) -> Dict[str, fl
 
 
 def rank_normalize(scores: Dict[str, float]) -> Dict[str, float]:
-    """在候选集内做 rank 归一化到 [0,1]。分越高越非一致。"""
-    items = sorted(scores.items(), key=lambda x: x[1])
+    """在候选集内做 rank 归一化到 [0,1]。分越高越非一致。
+
+    注意：按 (score, intent) 排序而不是只按 score。候选里经常出现分数完全相同的
+    元素（f_llm 只有 0.0/0.3/0.7 三档），若只按 score 排序，Python 的稳定排序会
+    保留输入顺序，而输入来自 set，其迭代顺序由 str 哈希决定、每个进程随机化。
+    结果是同一份数据在不同进程里得到不同的预测集主意图选择，指标随之抖动。
+    加上 intent 作为次级键即可得到全局确定的顺序。
+    """
+    items = sorted(scores.items(), key=lambda x: (x[1], x[0]))
     n = len(items)
     if n <= 1:
         return {k: 0.0 for k in scores}

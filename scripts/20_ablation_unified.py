@@ -1,4 +1,4 @@
-"""P3 消融：统一口径评估，支持 K(k_max) / fusion_alpha / K_r(检索候选截断) 三个维度。
+"""Ablation under the unified protocol over K (k_max), fusion_alpha, and K_r (retrieval truncation).
 
 用法：
     python scripts/20_ablation_unified.py --dataset clinc150 --k-max 0

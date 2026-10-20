@@ -1,4 +1,4 @@
-﻿[R10 mixatis] UniCR-style learned fusion, alpha=0.1, full-level 统一口径
+﻿mixatis UniCR-style learned fusion, alpha=0.1, full-level 统一口径
 theta=1.0000 emp_cov=0.9656 (n_cal=3284) theta_oos=0.8251
 Main Macro-F1:      0.4387
 Set Exact Match:    0.2621

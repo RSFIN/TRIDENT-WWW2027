@@ -103,6 +103,35 @@ We evaluate on three standard intent recognition benchmarks:
 - Average set size: **0.87 / 1.52 / 1.80** on CLINC150 / MixATIS / MixSNIPS
 - Training-free: zero gradient updates on our side, only a small calibration set and off-the-shelf LLM API
 
+## Experiment Scripts
+
+The numbered scripts in `scripts/` form a reproducible pipeline. Core workflow
+(`01`–`05`) runs the full TRIDENT method; `10`–`26` run baselines and ablations;
+`31_mcnemar.py` computes significance tests.
+
+| Stage | Script | Purpose |
+|-------|--------|---------|
+| Data | `01_download_data.py` | Download CLINC150 / MixATIS / MixSNIPS |
+| Index | `02_build_index.py` | Build FAISS intent/utterance index (BGE-M3) |
+| Inference | `03_run_llm.py` | Query the LLM (DashScope OpenAI-compatible) |
+| Calibration | `04_calibrate_and_eval.py` | Split-conformal calibration + metrics |
+| Evaluation | `05_eval_unified.py` | Unified three-state evaluation protocol |
+| Baselines | `10_eval_unicr.py`, `11_eval_tecp.py`, `13_setfit_mc_dropout.py` | Conformal / fine-tuning baselines |
+| Ablations | `20`–`26` | $K_{\text{aux}}$, $\lambda$, $K_r$, risk, temperature, KB-update, retrieval-extension, clarify ablations |
+| Statistics | `31_mcnemar.py` | McNemar's test on paired per-query outcomes |
+
+Ablation and evaluation results are written to `results/` as plain-text tables
+(e.g. `results/clinc150_unified.txt`, `results/ablation_*.txt`); no metric value
+is hardcoded in the evaluation scripts.
+
+## Reproducibility Notes
+
+- `src/conformal/scores.py` sorts rank ties by `(score, intent)`, so results are
+  deterministic across processes (independent of `PYTHONHASHSEED`). Runs without
+  the tie-break varied by up to ±0.003 in empirical risk.
+- The LLM is queried once per query with `temperature=0`; the fused score is
+  therefore a deterministic function of the index and the prompt.
+
 ## Contact
 
 For questions or issues, please open a GitHub issue.

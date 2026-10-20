@@ -1,4 +1,4 @@
-"""R10: UniCR-style learned fusion 基线。
+"""UniCR-style learned fusion baseline.
 
 在 calib 集上拟合 logistic calibration head，融合四类信号预测"候选意图是否属于真实意图集"，
 以 1 - p(correct) 作为非一致性分数，再做单标签 split CP（主意图上的分位数阈值），
@@ -223,7 +223,7 @@ def main():
         oos_rej, m2 = None, None
 
     # === 输出 ===
-    print(f"[R10 {ds}] UniCR-style learned fusion, alpha={ALPHA}, full-level 统一口径")
+    print(f"{ds} UniCR-style learned fusion, alpha={ALPHA}, full-level 统一口径")
     print(f"theta={theta:.4f} emp_cov={emp_cov:.4f} (n_cal={n_cal}) theta_oos={theta_oos:.4f}")
     print(f"Main Macro-F1:      {f1:.4f}")
     print(f"Set Exact Match:    {exact:.4f}")

@@ -1,4 +1,4 @@
-"""R11: TECP 评测——用采样 entropy 做 split conformal。
+"""TECP evaluation: split conformal with sampled token entropy.
 
 读 data/predictions/{dataset}/tecp_{split}.jsonl，
 对每条算 main intent 预测分布熵，calib 上取分位数，test 上评测。

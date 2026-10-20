@@ -1,0 +1,17 @@
+[project]
+name = "cicc-reproduction"
+version = "0.1.0"
+description = "Training-free CICC baseline with split-conformal clarification and OOS evaluation"
+readme = "README.md"
+requires-python = ">=3.11,<3.15"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3,<9",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider"

@@ -4,8 +4,8 @@
 !.env.example
 
 # 数据与索引
-data/
-!data/.gitkeep
+/data/
+!/data/.gitkeep
 *.faiss
 *.index
 *.npy
@@ -29,3 +29,36 @@ venv/
 experiments/**/results/
 experiments/**/cache/
 *.log
+
+# 论文稿件（不随代码库分发）
+latex/
+overleaf_submission/
+trident_overleaf/
+final_submission/
+*.zip
+
+# 论文评审与写作中间产物
+doc-fetch-resources/
+docs/
+c2_parallel_packages/
+results/_*
+results/*.pid
+results/*.log
+results/p4_s123_logs/
+c2_ablation_results.md
+experiments/*.md
+!experiments/README.md
+experiments/raw/
+
+# 工作区
+.workbuddy/
+.idea/
+
+# 基线复现目录的运行时产物（只提交代码）
+scripts/CICC-MULACONF/**/results/
+scripts/CICC-MULACONF/**/data/
+scripts/CICC-MULACONF/**/__pycache__/
+scripts/CICC-MULACONF/**/.pytest_cache/
+*.jsonl
+*.pkl
+*.pt
